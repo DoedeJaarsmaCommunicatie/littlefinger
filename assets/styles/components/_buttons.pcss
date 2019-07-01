@@ -1,0 +1,53 @@
+.button {
+    padding: 0.25rem *;
+
+    &.round { @include radii; }
+
+    &.centered { text-align: center; }
+
+    &.shaded {
+        @include shadow;
+
+        &.animated {
+            &:hover {
+                box-shadow: none;
+            }
+        }
+    }
+
+    &.animated { @include transition; }
+
+    &.primary {
+        &.outline {
+            border: 1px solid $primary;
+            color: $black;
+        }
+
+        &:not(.outline) {
+            background: $primary;
+            color: $white;
+            border: 1px solid $primary;
+        }
+    }
+
+    &.secondary {
+        &.outline {
+            border: 1px solid $secondary;
+            color: $black;
+        }
+
+        &:not(.outline) {
+            background: $secondary;
+            color: $white;
+            border: 1px solid $secondary;
+        }
+    }
+
+    &.small {
+        padding: 0;
+    }
+
+    &.large {
+        padding: 0.5rem;
+    }
+}

@@ -1,0 +1,11 @@
+{% extends 'base/app.twig' %}
+
+{% block content %}
+    <section class="frontpage-hero">
+        {% include 'partials/home/hero-product.twig' with { product: featured} %}
+    </section>
+
+    <div class="">
+        {{ post.content }}
+    </div>
+{% endblock %}

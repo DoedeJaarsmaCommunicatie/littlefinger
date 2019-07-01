@@ -1,0 +1,8 @@
+<article class="card">
+    <span>{{ product.get_price }}</span>
+    <img src="{{ product.thumbnail.src }}" alt="{{ product.thumbnail.alt }}">
+
+    {{ product.name }}
+
+    <a class="button secondary rounded shade animated large" href="?add-to-cart={{ product.ID }}"><i class="fas fa-shopping-cart"></i></a>
+</article>

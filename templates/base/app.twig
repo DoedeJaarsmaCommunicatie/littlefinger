@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="{{ site.language }}">
+<!--suppress HtmlRequiredTitleElement -->
+<head>
+    {% block head %}{% include 'base/helpers/head.twig' %}{% endblock %}
+
+    {{ fn('wp_head') }}
+</head>
+<body {{ fn('body_class') }}>
+
+{% block header %}{% include 'base/helpers/header.twig' %}{% endblock %}
+{% block content %}{{ post.content }}{% endblock %}
+{% block footer %}{% include 'base/helpers/footer.twig' %}{% endblock footer %}
+{{ fn('wp_footer') }}
+</body>
+</html>

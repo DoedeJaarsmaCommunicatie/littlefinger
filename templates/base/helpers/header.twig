@@ -1,0 +1,14 @@
+<header class="header" role="banner">
+    <button role="button" class="js-menu-open">
+        <i class="fas fa-store"></i>
+    </button>
+
+    {% set _logo = Image(theme.theme_mod('custom_logo')) %}
+    <img src="{{ _logo.src }}" alt="{{ _logo.alt?? 'LOGO ' ~ site.name }}" class="custom_logo" id="logo_{{ post.ID }}" />
+
+    <nav class="top-navigation" role="navigation">
+        <a href="{{ fn('get_option', 'woocommerce_myaccount_page_id') }}" class="top-nav-item"><i class="fas fa-user"></i></a>
+
+        <a href="{{ fn('wc_get_checkout_url') }}" class="top-nav-item"><i class="fas fa-shopping-basket"></i></a>
+    </nav>
+</header>

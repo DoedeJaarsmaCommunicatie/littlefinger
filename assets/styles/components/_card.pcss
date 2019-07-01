@@ -1,0 +1,18 @@
+$card_background: $white;
+$card_color: $black;
+$shadow: true;
+$card_radius: true;
+
+.card {
+    background: $card_background;
+    color: $card_color;
+    padding: $padding;
+
+    @if $shadow {
+        @include shadow;
+    }
+
+    @if $card_radius {
+        @include radii;
+    }
+}

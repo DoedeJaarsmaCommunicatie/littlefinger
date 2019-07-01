@@ -1,0 +1,43 @@
+.frontpage-hero {
+    background-size: $hero_size;
+
+    padding: $padding;
+
+    @if $hero_height {
+        height: $hero_height;
+    }
+
+    @if $hero_background {
+        background-color: $primary;
+    }
+}
+
+.product-payoff {
+    font-size: theme('fontSize.xl');
+    font-weight: bold;
+    margin-bottom: $padding_small;
+}
+
+.product-title {
+    @apply leading-none;
+    font-size: theme('fontSize.xl');
+    font-weight: 300;
+    margin-bottom: $padding_small;
+}
+
+.product-card-floating-price {
+    position: relative;
+
+    & .price {
+        position: absolute;
+        top: 75px;
+        left: 0px;
+        width: 75px;
+        height: 75px;
+        background: color-mod($primary a(85%));
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
