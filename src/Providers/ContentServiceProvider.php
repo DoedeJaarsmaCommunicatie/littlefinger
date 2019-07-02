@@ -35,6 +35,7 @@ class ContentServiceProvider {
 					);
 				}
 				$context['kiyoh'] = (new cdk_model())->get();
+				$context['featured'] = new \Timber\Post(carbon_get_theme_option('featured_product')[0]['id']);
 				
 				return $context;
 			}
@@ -43,7 +44,9 @@ class ContentServiceProvider {
 		add_filter(
 			'timber/twig',
 			static function ($twig) {
-				$twig->add_function(new \Timber\Twig_Function( 'theme_option', 'carbon_get_theme_option' ));
+				$twig->addFunction(new \Timber\Twig_Function( 'theme_option', 'carbon_get_theme_option' ));
+				
+				return $twig;
 			}
 		);
 	}
