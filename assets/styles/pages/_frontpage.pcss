@@ -42,8 +42,18 @@
     }
 }
 
+.product-card-floating-image {
+    @screen lg {
+        max-height: 300px;
+    }
+}
 
 .products {
     display: grid;
     grid-template-columns: 1fr;
+
+    @screen lg {
+        grid-template-columns: repeat(2, 1fr);
+        grid-column-gap: $padding;
+    }
 }

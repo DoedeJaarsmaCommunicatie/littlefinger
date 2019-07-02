@@ -2,7 +2,9 @@
 
 {% block content %}
     <section class="frontpage-hero">
-        {% include 'partials/home/hero-product.twig' with { product: featured} %}
+        <div class="container mx-auto">
+            {% include 'partials/home/hero-product.twig' with { product: featured} %}
+        </div>
     </section>
 
     <div class="">

@@ -1,4 +1,4 @@
-<section class="products px-4">
+<section class="products px-4 {{ attributes.className }}">
     {% for product in posts %}
         {% include 'partials/tease/product.twig' with { product: product } only %}
     {% endfor %}

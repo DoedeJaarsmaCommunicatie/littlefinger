@@ -15,15 +15,20 @@ add_action(
 			            	'rose'  => 'Rose wijnen',
 			            	'mousserend'  => 'Mousserende wijnen',
 			            	'dessert'  => 'Dessert wijnen',
-			            ])
+			            ]),
+			        
+			        \Carbon_Fields\Field::make('text', 'limit', __('Limit'))
+			            ->set_attribute('type', 'number')
+			            ->set_attribute('min', 0)
+			            ->set_attribute('max', 8)
 		        ]
 		      )
-			 ->set_render_callback(static function ($fields) {
+			 ->set_render_callback(static function ( $fields, $attributes ) {
 				 $context = \Timber\Timber::get_context();
 				 $context['posts'] = \Timber\Timber::get_posts(
 				 	[
 				 		'post_type'         => 'product',
-					    'posts_per_page'    => 12,
+					    'posts_per_page'    => $fields['limit']?? 12,
 					    'post_status'       => 'publish',
 					    'tax_query' => [
 					    	[
@@ -34,6 +39,8 @@ add_action(
 					    ]
 				    ]
 				 );
+				 
+				 $context['attributes'] = $attributes;
 				
 				 return \Timber\Timber::render('partials/blocks/products.twig', $context);
 			 });

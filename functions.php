@@ -2,7 +2,7 @@
 include_once get_stylesheet_directory() . '/vendor/autoload.php';
 
 add_theme_support('custom-logo');
-add_theme_support('WooCommerce');
+add_theme_support('woocommerce');
 
 \Timber\Timber::$locations = [
 	get_stylesheet_directory() . '/templates/',

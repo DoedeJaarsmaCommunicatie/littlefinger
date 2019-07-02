@@ -10,5 +10,6 @@ mix
             require('postcss-short-border'),
             require('postcss-short-spacing'),
             require('postcss-color-mod-function'),
+            require('autoprefixer')
         ]
     })

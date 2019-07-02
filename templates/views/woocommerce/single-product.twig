@@ -1,13 +1,39 @@
 {% extends 'base/app.twig' %}
 
 {% block content %}
-    <main class="product">
+    {% do action('woocommerce_before_single_product') %}
+    <main class="product container mx-auto">
         <img src="{{ post.thumbnail.src('large') }}" alt="{{ post.thumbnail.alt }}" class="product-image" />
 
         <h1 class="product-title">{{ post.title }}</h1>
 
-        <section>
+        <section class="product-attributes">
             Categorie: {{ fn('wc_get_product_category_list', post.ID) }}
         </section>
+
+        <span class="product-price">
+            &euro; {{ product.get_price }}
+            <small>per fles</small>
+        </span>
+
+        <section class="product-content">
+            {{ post.content }}
+        </section>
+
+        <form method="get" class="product-form">
+            <input id="quantity" type="number" name="quantity" value="1" min="1" max="{{ product.get_stock_quantity }}">
+            <input type="hidden" name="add-to-cart" value="{{ post.ID }}">
+            <button type="submit" class="button secondary rounded">
+                <i class="fas fa-shopping-cart"></i> in winkelwagen
+            </button>
+        </form>
     </main>
+
+    <form class="product-add-to-cart-container" method="GET">
+        <input id="qty" type="number" name="quantity" value="1" min="1" max="{{ product.get_stock_quantity }}">
+        <input type="hidden" name="add-to-cart" value="{{ post.ID }}">
+        <button type="submit" class="button secondary rounded">
+            <i class="fas fa-shopping-cart"></i> in winkelwagen
+        </button>
+    </form>
 {% endblock %}
