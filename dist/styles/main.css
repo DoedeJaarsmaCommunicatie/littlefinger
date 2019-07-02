@@ -643,6 +643,10 @@ video {
  Frontpage
  */
 
+/*
+ Product cards.
+ */
+
 html {
   font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
@@ -756,6 +760,38 @@ header.header .top-navigation > .top-nav-item:not(:last-of-type) {
     -webkit-align-items: center;
             align-items: center;
   }
+
+.product-card {
+  background: #ffffff;
+  color: #000000;
+  padding: 1rem; box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1); border-radius: 0.25rem; box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1); border-radius: 0.25rem;
+  display: grid;
+  grid-template-areas: "thumb title" "thumb ." "thumb button";
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 0.75rem;
+  position: relative;
+}
+
+.product-card .product-label {
+    position: absolute;
+    top: 1rem;
+    left: 0;
+    background: #00C378;
+    color: #ffffff;
+}
+
+.product-card .product-image {
+    max-height: 180px;
+    grid-area: thumb;
+}
+
+.product-card .product-add-to-cart {
+    grid-area: button;
+}
+
+.product-card:not(:last-of-type) {
+    margin-bottom: 1rem;
+}
 
 .appearance-none {
   -webkit-appearance: none;

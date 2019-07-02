@@ -1,8 +1,9 @@
-<article class="card">
-    <span>{{ product.get_price }}</span>
-    <img src="{{ product.thumbnail.src }}" alt="{{ product.thumbnail.alt }}">
+{% set _product = fn('wc_get_product', product.ID) %}
+<article class="product-card">
+    <span class="product-label">{{ _product.get_price }}</span>
+    <img src="{{ product.thumbnail.src('medium') }}" alt="{{ product.thumbnail.alt }}" class="product-image">
 
     {{ product.name }}
 
-    <a class="button secondary rounded shade animated large" href="?add-to-cart={{ product.ID }}"><i class="fas fa-shopping-cart"></i></a>
+    <a class="button secondary rounded shade animated large ml-auto product-add-to-cart" href="?add-to-cart={{ product.ID }}"><i class="fas fa-shopping-cart"></i></a>
 </article>

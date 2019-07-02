@@ -1,0 +1,32 @@
+.product-card {
+    @extend .card;
+    @include shadow;
+    @include radii;
+    display: grid;
+
+    grid-template-areas: "thumb title" "thumb ." "thumb button";
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 0.75rem;
+    position: relative;
+
+    & .product-label {
+        position: absolute;
+        top: 1rem;
+        left: 0;
+        background: $product_price_background;
+        color: $product_price_color;
+    }
+
+    & .product-image {
+        max-height: 180px;
+        grid-area: thumb;
+    }
+
+    & .product-add-to-cart {
+        grid-area: button;
+    }
+
+    &:not(:last-of-type) {
+        margin-bottom: $padding;
+    }
+}
