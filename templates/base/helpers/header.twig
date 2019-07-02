@@ -4,7 +4,9 @@
     </button>
 
     {% set _logo = Image(theme.theme_mod('custom_logo')) %}
-    <img src="{{ _logo.src }}" alt="{{ _logo.alt?? 'LOGO ' ~ site.name }}" class="custom_logo" id="logo_{{ post.ID }}" />
+    <a href="/">
+        <img src="{{ _logo.src }}" alt="{{ _logo.alt?? 'LOGO ' ~ site.name }}" class="custom_logo" id="logo_{{ post.ID }}" />
+    </a>
 
     <nav class="top-navigation" role="navigation">
         <a href="{{ fn('get_option', 'woocommerce_myaccount_page_id') }}" class="top-nav-item"><i class="fas fa-user"></i></a>

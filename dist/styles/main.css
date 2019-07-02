@@ -761,6 +761,11 @@ header.header .top-navigation > .top-nav-item:not(:last-of-type) {
             align-items: center;
   }
 
+.products {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
 .product-card {
   background: #ffffff;
   color: #000000;
@@ -774,10 +779,20 @@ header.header .top-navigation > .top-nav-item:not(:last-of-type) {
 
 .product-card .product-label {
     position: absolute;
-    top: 1rem;
+    top: 2rem;
     left: 0;
     background: #00C378;
     color: #ffffff;
+    border-top-right-radius: 0.25rem;
+    border-bottom-right-radius: 0.25rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.product-card .product-title {
+    font-size: 1.25rem;
+    font-weight: 500;
+    grid-area: title;
 }
 
 .product-card .product-image {

@@ -1,9 +1,12 @@
 {% set _product = fn('wc_get_product', product.ID) %}
 <article class="product-card">
     <span class="product-label">{{ _product.get_price }}</span>
-    <img src="{{ product.thumbnail.src('medium') }}" alt="{{ product.thumbnail.alt }}" class="product-image">
-
-    {{ product.name }}
+    <a href="{{ product.link }}">
+        <img src="{{ product.thumbnail.src('medium') }}" alt="{{ product.thumbnail.alt }}" class="product-image">
+    </a>
+    <h2 class="product-title">
+        <a href="{{ product.link }}">{{ product.name }}</a>
+    </h2>
 
     <a class="button secondary rounded shade animated large ml-auto product-add-to-cart" href="?add-to-cart={{ product.ID }}"><i class="fas fa-shopping-cart"></i></a>
 </article>

@@ -11,10 +11,19 @@
 
     & .product-label {
         position: absolute;
-        top: 1rem;
+        top: 2rem;
         left: 0;
         background: $product_price_background;
         color: $product_price_color;
+        border-top-right-radius: $radius;
+        border-bottom-right-radius: $radius;
+        padding: * $padding;
+    }
+
+    & .product-title {
+        font-size: $fontSizeLarge;
+        font-weight: 500;
+        grid-area: title;
     }
 
     & .product-image {
