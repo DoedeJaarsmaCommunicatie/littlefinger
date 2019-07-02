@@ -4,7 +4,8 @@
         "aristath/kirki": "^3.0",
         "timber/timber": "^1.10",
         "jjgrainger/posttypes": "^2.0",
-        "htmlburger/carbon-fields": "^3.1"
+        "htmlburger/carbon-fields": "^3.1",
+        "dusank/knapsack": "^10.0"
     },
     "require-dev": {
         "roave/security-advisories": "dev-master"
@@ -16,7 +17,8 @@
         "files": [
             "vendor/aristath/kirki/kirki.php",
             "src/app.php",
-            "src/Controllers/Resources/CustomBlocks.php"
+            "src/Controllers/Resources/CustomBlocks.php",
+            "src/Controllers/Resources/FrontpageMeta.php"
         ]
     }
 }

@@ -2,6 +2,7 @@ const mix = require('laravel-mix');
 
 mix
     .postCss('assets/styles/main.pcss', 'dist/styles')
+    .copyDirectory('assets/images', 'dist/images')
     .options({
         postCss: [
             require('postcss-import'),

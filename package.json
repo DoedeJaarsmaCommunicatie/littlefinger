@@ -28,6 +28,7 @@
     "sass-loader": "7.*"
   },
   "browserslist": [
+    "defaults",
     "last 1 version",
     "> 0.2% in NL",
     "not dead"

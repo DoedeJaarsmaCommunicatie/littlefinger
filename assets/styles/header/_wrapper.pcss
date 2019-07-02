@@ -3,8 +3,11 @@ header.header {
     color: $header_color;
     padding: $header_padding;
 
-    display: flex;
-    justify-content: space-between;
+    & > .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
 
     @if $header_shadow {
         @include shadow;

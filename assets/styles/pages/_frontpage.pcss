@@ -10,6 +10,20 @@
     @if $hero_background {
         background-color: $primary;
     }
+
+    position: relative;
+
+    @screen lg {
+        padding-bottom: calc( $padding + 2.5rem );
+    }
+
+    & .product-title {
+        @apply leading-none;
+        font-size: theme('fontSize.xl');
+        font-weight: 300;
+        margin-bottom: $padding_small;
+        text-transform: uppercase;
+    }
 }
 
 .product-payoff {
@@ -18,11 +32,13 @@
     margin-bottom: $padding_small;
 }
 
-.product-title {
-    @apply leading-none;
-    font-size: theme('fontSize.xl');
-    font-weight: 300;
-    margin-bottom: $padding_small;
+.kiyoh-reviews {
+    display: flex;
+    align-content: center;
+
+    & .kiyoh-score {
+        font-size: $fontSizeLarge;
+    }
 }
 
 .product-card-floating-price {
@@ -51,9 +67,35 @@
 .products {
     display: grid;
     grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-gap: $padding;
 
     @screen lg {
         grid-template-columns: repeat(2, 1fr);
-        grid-column-gap: $padding;
+    }
+}
+
+.usp-banner {
+    display: none;
+
+    @screen lg {
+        display: block;
+        position: absolute;
+        background: color-mod($primary a(60%));
+        width: 100%;
+        bottom: 0;
+        left: 0;
+        padding: calc( $padding / 2 );
+        text-align: center;
+        color: $white;
+    }
+}
+
+.shop-container {
+    @extend .content;
+    display: none;
+
+    @screen lg {
+        display: block;
     }
 }

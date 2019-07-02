@@ -1,4 +1,7 @@
-<section class="products px-4 {{ attributes.className }}">
+{% if title %}
+    <h2 class="bg-primary text-2xl text-white py-2 text-center">{{ title }}</h2>
+{% endif %}
+<section class="products p-4 lg:px-0 {{ attributes.className }}">
     {% for product in posts %}
         {% include 'partials/tease/product.twig' with { product: product } only %}
     {% endfor %}

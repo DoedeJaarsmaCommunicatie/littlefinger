@@ -23,8 +23,8 @@
         <form method="get" class="product-form">
             <input id="quantity" type="number" name="quantity" value="1" min="1" max="{{ product.get_stock_quantity }}">
             <input type="hidden" name="add-to-cart" value="{{ post.ID }}">
-            <button type="submit" class="button secondary rounded">
-                <i class="fas fa-shopping-cart"></i> in winkelwagen
+            <button type="submit" class="btn secondary rounded large mr-auto ml-4">
+                <i class="fas fa-shopping-cart"></i>
             </button>
         </form>
     </main>
@@ -32,7 +32,7 @@
     <form class="product-add-to-cart-container" method="GET">
         <input id="qty" type="number" name="quantity" value="1" min="1" max="{{ product.get_stock_quantity }}">
         <input type="hidden" name="add-to-cart" value="{{ post.ID }}">
-        <button type="submit" class="button secondary rounded">
+        <button type="submit" class="btn secondary rounded">
             <i class="fas fa-shopping-cart"></i> in winkelwagen
         </button>
     </form>

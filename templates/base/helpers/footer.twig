@@ -1,3 +1,63 @@
+<footer role="group" class="footer">
+
+    <div role="group" class="container content mx-auto my-4">
+        <div role="group" class="lg:flex seo_small px-4 lg:px-0">
+            <section class="lg:w-1/4">
+                <h4>{{ theme.theme_mod('shop_list_title', 'Onze winkels')}}</h4>
+                {{ theme.theme_mod('shop_list') }}
+            </section>
+            <section class="lg:w-1/4">
+                <h4>{{ theme.theme_mod('domain_list_title', 'Onze wijnhuizen')}}</h4>
+                {{ theme.theme_mod('domain_list') }}
+            </section>
+            <section class="lg:w-1/4">
+                <h4>{{ theme.theme_mod('grapes_list_title', 'Druiven') }}</h4>
+                {{ theme.theme_mod('grapes_list') }}
+            </section>
+            <section class="lg:w-1/4">
+                <h4>{{ theme.theme_mod('regions_list_titel', 'Al onze regio\'s') }}</h4>
+                {{ theme.theme_mod('regions_list') }}
+            </section>
+        </div>
+
+        <section role="complementary" class="content  px-4 lg:px-0" id="seo_large_{{ post.ID }}">
+            {{ theme.theme_mod('seo_large')|wpautop }}
+        </section>
+    </div>
+
+    <div class="bg-primary text-white py-6 px-4 lg:px-0">
+        <div role="group" class="container mx-auto lg:flex">
+            <address class="lg:w-1/4 addressInfo">
+                <strong>Contact</strong>
+                <p>{{ theme.theme_mod('address', 'Lauriergracht 54BG')}}</p>
+                <p>{{ theme.theme_mod('postalcode', '1016RL')}}, {{ theme.theme_mod('city', 'Amsterdam')}}</p>
+                <p>Telefoon: <a href="tel:{{ theme.theme_mod('phone', '020-2614758') }}">{{ theme.theme_mod('phone', '020-2614758')}}</a></p>
+                <p>Email: <a href="mailto:{{ theme.theme_mod('email', 'info@postwijnen.nl') }}">{{ theme.theme_mod('email', 'info@postwijnen.nl')}}</a></p>
+            </address>
+            <nav role="navigation" class="lg:w-1/4 flex flex-col menu">
+                <strong>Meer informatie</strong>
+                {% for item in footerMenu.items %}
+                    <a
+                            class="menuitem"
+                            href="{{ item.link }}"
+                            target="_self"
+                            title="{{ item.title }}"
+                            role="navigation"
+                    >
+                        {{ item.title }}
+                    </a>
+                {% endfor %}
+            </nav>
+            <aside role="complementary" class="nix-block">
+                {{ theme.theme_mod('no_alcohol')|wpautop }}
+            </aside>
+            <aside role="complementary" class="benefits-block">
+                {{ theme.theme_mod('benefits')|wpautop }}
+            </aside>
+        </div>
+    </div>
+</footer>
+
 
 <link rel="stylesheet" type="text/css" href="{{ theme.link }}/dist/styles/main.css">
 <link href="https://fonts.googleapis.com/css?family=Montserrat:200,400,600&display=swap" rel="stylesheet">

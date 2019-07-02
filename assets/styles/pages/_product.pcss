@@ -8,14 +8,16 @@
                          "main main main main";
 
     grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr;
     grid-gap: 0.5rem;
     padding: $padding *;
 
     @screen lg {
         padding: 2.25rem 0 0;
-        grid-template-areas: "thumb thumb . title title title title title . . price price"
-                             "thumb thumb . attributes attributes attributes attributes attributes . . form form"
-                             "thumb thumb . main main main main main . . form form";
+        grid-template-areas: "thumb thumb . title title title title title . price price price"
+                             "thumb thumb . attributes attributes attributes attributes attributes . form form form"
+                             "thumb thumb . main main main main main . . . ."
+                             ". . . main main main main main . . . .";
         grid-template-columns: repeat(12, 1fr);
     }
 
