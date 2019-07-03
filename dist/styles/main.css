@@ -781,6 +781,17 @@ header.header .top-navigation > .top-nav-item:not(:last-of-type) {
   border-radius: 50%;
 }
 
+.js-menu-open {
+  display: block
+}
+
+@media (min-width: 1024px) {
+
+.js-menu-open {
+    display: none
+}
+  }
+
 .footer {
   background: rgb(244, 244, 244);
   padding-top: 1rem;
@@ -807,6 +818,16 @@ header.header .top-navigation > .top-nav-item:not(:last-of-type) {
     margin-bottom: 0.5rem;
     text-transform: uppercase;
   }
+
+.single-product .frontpage-hero {
+    display: none
+  }
+
+@media (min-width: 1024px) {
+  .single-product .frontpage-hero {
+      display: block
+  }
+    }
 
 .product-payoff {
   font-size: 1.25rem;

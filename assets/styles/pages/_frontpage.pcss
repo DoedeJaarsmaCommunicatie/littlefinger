@@ -24,6 +24,14 @@
         margin-bottom: $padding_small;
         text-transform: uppercase;
     }
+
+    .single-product & {
+        display: none;
+
+        @screen lg {
+            display: block;
+        }
+    }
 }
 
 .product-payoff {

@@ -1,6 +1,6 @@
 <header class="header" role="banner">
     <div class="container mx-auto">
-        <button role="btn" class="js-menu-open lg:bulbed hidden">
+        <button role="button" class="js-menu-open lg:bulbed">
             <i class="fas fa-store"></i>
         </button>
 
@@ -10,9 +10,9 @@
         </a>
 
         <nav class="top-navigation" role="navigation">
-            <a href="{{ fn('get_option', 'woocommerce_myaccount_page_id') }}" class="top-nav-item lg:bulbed btn shaded animated"><i class="fas fa-user"></i></a>
+            <a href="{{ fn('get_permalink', fn('get_option', 'woocommerce_myaccount_page_id')) }}" class="top-nav-item lg:bulbed"><i class="fas fa-user"></i></a>
 
-            <a href="{{ fn('wc_get_cart_url') }}" class="top-nav-item lg:bulbed btn shaded animated"><i class="fas fa-shopping-basket"></i></a>
+            <a href="{{ fn('wc_get_cart_url') }}" class="top-nav-item lg:bulbed"><i class="fas fa-shopping-basket"></i></a>
         </nav>
     </div>
 </header>
