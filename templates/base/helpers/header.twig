@@ -29,11 +29,15 @@
 
 <section class="container mx-auto py-8 flex">
     {% include 'partials/blocks/kiyoh.twig' %}
-    <nav class="w-2/5 shop-container">
+    <nav class="w-3/5 shop-container">
 
         <h3>Al onze shops</h3>
-        {% for site in sites %}
-
-        {% endfor %}
+        <div style="columns: 3;">
+            {% for site in sites %}
+                <a href="{{ site.domain }}">
+                    {{ site.domain }}
+                </a>
+            {% endfor %}
+        </div>
     </nav>
 </section>

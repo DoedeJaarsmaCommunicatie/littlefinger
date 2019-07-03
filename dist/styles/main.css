@@ -788,7 +788,7 @@ header.header .top-navigation > .top-nav-item:not(:last-of-type) {
 @media (min-width: 1024px) {
 
 .js-menu-open {
-    display: none
+    display: none !important
 }
   }
 
