@@ -4,7 +4,7 @@
     @include radii;
     display: grid;
 
-    grid-template-areas: "thumb title" "thumb ." "thumb button";
+    grid-template-areas: "thumb title" "thumb content" "thumb button";
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: 1fr;
     grid-column-gap: 0.75rem;
@@ -35,6 +35,10 @@
         @screen lg {
             max-height: 300px;
         }
+    }
+
+    & .product-content {
+        grid-area: content;
     }
 
     & .product-add-to-cart {
