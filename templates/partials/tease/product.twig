@@ -8,7 +8,7 @@
         <a href="{{ product.link }}">{{ product.name }}</a>
     </h2>
     <div class="product-content">
-        {{ product.content|exceprt(15) }}
+        {{ product.content|excerpt(15) }}
     </div>
     <a class="btn secondary rounded shade animated large mt-auto ml-auto product-add-to-cart" href="?add-to-cart={{ product.ID }}"><i class="fas fa-shopping-cart"></i></a>
 </article>
