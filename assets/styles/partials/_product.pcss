@@ -28,14 +28,19 @@
         grid-area: title;
     }
 
-    & .product-image {
-        max-height: 180px;
+    & .product-image-wrapper {
         grid-area: thumb;
 
-        @screen lg {
-            max-height: 300px;
+        & .product-image {
+            max-height: 180px;
+
+            @screen lg {
+                max-height: 300px;
+            }
         }
     }
+
+
 
     & .product-content {
         grid-area: content;

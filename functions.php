@@ -22,4 +22,5 @@ $myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
 	'littlefinger'
 );
 
+remove_filter('the_content', 'wpautop');
 
