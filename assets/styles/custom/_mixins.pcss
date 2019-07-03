@@ -1,6 +1,6 @@
 @mixin shadow { box-shadow: 0px 3px 6px color-mod($black a(10%)); }
 
-@mixin sticky($top: 0) { position: sticky; top: $top; }
+@mixin sticky($top: 0, $z: 1) { position: sticky; top: $top; z-index: $z; }
 
 @mixin radii { border-radius: $radius; }
 

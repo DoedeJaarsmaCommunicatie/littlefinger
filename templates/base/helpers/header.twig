@@ -29,15 +29,29 @@
 
 <section class="container mx-auto py-8 flex">
     {% include 'partials/blocks/kiyoh.twig' %}
-    <nav class="w-3/5 shop-container">
-
-        <h3>Al onze shops</h3>
-        <div style="columns: 3;">
-            {% for site in sites %}
-                <a href="{{ site.domain }}">
-                    {{ site.domain }}
-                </a>
-            {% endfor %}
+    <nav class="lg:w-3/5 shop-container">
+        <div class="shops-wrapper">
+            <h3>Al onze shops</h3>
+            <div class="columned-sites">
+                {% for site in sites %}
+                    <a href="{{ site.domain }}">
+                        {{ site.domain }}
+                    </a>
+                {% endfor %}
+            </div>
         </div>
     </nav>
 </section>
+
+<script>
+    document.querySelector('.js-menu-open').addEventListener('click', function (ev) {
+        document.querySelector('.shop-container').classList.toggle('active');
+    })
+    document.querySelector('.shop-container').addEventListener('click', function (ev) {
+        if (ev.target !== this) {
+            return;
+        }
+
+        document.querySelector('.shop-container').classList.remove('active');
+    })
+</script>
