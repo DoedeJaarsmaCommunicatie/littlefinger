@@ -16,10 +16,10 @@ add_action(
 	}
 );
 
-//$myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
-//	'https://github.com/DoedeJaarsmaCommunicatie/casadelkiyoh/',
-//	__FILE__,
-//	'casadelkiyoh'
-//);
+$myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
+	'https://github.com/DoedeJaarsmaCommunicatie/littlefinger/',
+	__FILE__,
+	'littlefinger'
+);
 
 
