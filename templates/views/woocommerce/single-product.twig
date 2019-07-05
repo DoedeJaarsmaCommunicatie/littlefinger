@@ -32,8 +32,8 @@
     <form class="product-add-to-cart-container" method="GET">
         <input id="qty" type="number" name="quantity" value="1" min="1" max="{{ product.get_stock_quantity }}">
         <input type="hidden" name="add-to-cart" value="{{ post.ID }}">
-        <button type="submit" class="btn secondary rounded">
-            <i class="fas fa-shopping-cart"></i> in winkelwagen
+        <button type="submit" class="btn secondary rounded large">
+            <i class="fas fa-shopping-cart mr-2"></i> in winkelwagen
         </button>
     </form>
 {% endblock %}

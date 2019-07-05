@@ -18,7 +18,7 @@
     </a>
 </section>
 
-<section class="frontpage-hero" style="background-image: url('{{ Image(theme_option('hero_image')).src('large') }}')">
+<section class="frontpage-hero {{ fn('is_home')? 'home': 'not_home' }}" style="background-image: url('{{ Image(theme_option('hero_image')).src('large') }}')">
     <div class="container mx-auto">
         {% include 'partials/home/hero-product.twig' with { product: featured, title: theme_option('title') } only %}
     </div>
