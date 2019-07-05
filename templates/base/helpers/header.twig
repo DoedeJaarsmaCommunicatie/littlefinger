@@ -11,12 +11,27 @@
         </nav>
     </div>
 </header>
+
+<nav class="shop-container-slider">
+    <div class="shops-wrapper">
+        <h3>Al onze shops</h3>
+        <div class="columned-sites">
+            {% for site in sites %}
+                <a href="{{ site.domain }}">
+                    {{ site.domain }}
+                </a>
+            {% endfor %}
+        </div>
+    </div>
+</nav>
+
 <section class="container mx-auto py-2 px-4 lg:px-0">
     {% set _logo = Image(theme.theme_mod('custom_logo')) %}
     <a href="/">
         <img src="{{ _logo.src }}" alt="{{ _logo.alt?? 'LOGO ' ~ site.name }}" class="custom_logo" id="logo_{{ post.ID }}" />
     </a>
 </section>
+
 
 <section class="frontpage-hero {{ fn('is_front_page')? 'home': 'not_home' }}" style="background-image: url('{{ Image(theme_option('hero_image')).src('large') }}')">
     <div class="container mx-auto">
@@ -27,6 +42,7 @@
         <small><i class="fas fa-dolly"></i> {{ theme.theme_mod('delivery_time')}} </small>
     </aside>
 </section>
+
 
 <section class="container mx-auto py-8 flex">
     {% include 'partials/blocks/kiyoh.twig' %}
@@ -46,13 +62,13 @@
 
 <script>
     document.querySelector('.js-menu-open').addEventListener('click', function (ev) {
-        document.querySelector('.shop-container').classList.toggle('active');
+        document.querySelector('.shop-container-slider').classList.toggle('active');
     })
-    document.querySelector('.shop-container').addEventListener('click', function (ev) {
+    document.querySelector('.shop-container-slider').addEventListener('click', function (ev) {
         if (ev.target !== this) {
             return;
         }
 
-        document.querySelector('.shop-container').classList.remove('active');
+        document.querySelector('.shop-container-slider').classList.remove('active');
     })
 </script>

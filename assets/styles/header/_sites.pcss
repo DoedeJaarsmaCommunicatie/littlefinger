@@ -1,3 +1,32 @@
+.shop-container-slider {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: color-mod($grey a(40%));
+    @include transition;
+    z-index: 3;
+    transform: scale(0, 1);
+    transform-origin: left;
+
+    &.active {
+        transform: scale(1);
+    }
+
+    & .shops-wrapper {
+        height: 100vh;
+        width: 75vw;
+        background: color-mod($white);
+        padding: $padding;
+    }
+
+    .admin-bar & {
+        height: calc(100vh - 32px);
+        top: 32px;
+    }
+}
+
 @media screen and (max-width: theme('screens.lg')) {
     .shop-container {
         position: fixed;
