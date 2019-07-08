@@ -1,0 +1,41 @@
+{% macro add_to_cart(ID, classes, qty_id = 'quantity', size = 'large', max = false) %}
+
+{% if size is same as('large') %}    
+    <form method="GET" class="{{ classes }}" data-action="add-to-cart" data-product="{{ ID }}" data-size="{{ size }}" enctype="multipart/form-data">
+        <input
+            type="number"
+            name="quantity"
+            value="1"
+            min="1" 
+            id="{{ qty_id }}"
+            {% if max %}max="{{ max }}"{% endif %}
+            >
+
+        <input type="hidden" name="product" id="product" value={{ ID }}>
+
+        <button type="submit" class="btn secondary rounded large mr-auto ml-4">
+            <i class="fas fa-shopping-cart mr-2"></i> <span>in winkelwagen</span>
+        </button>
+    </form>
+{% endif %}
+
+{% if size is same as('small') %}
+    <form method="GET" class="{{ classes }}" data-action="add-to-cart" data-product="{{ ID }}" data-size="{{ size }}" enctype="multipart/form-data">
+            <input
+            type="hidden"
+            name="quantity"
+            value="1"
+            min="1" 
+            id="{{ qty_id }}"
+            {% if max %}max="{{ max }}"{% endif %}
+            >
+            <input type="hidden" name="product" id="product" value="{{ ID }}">
+
+            <button type="submit" class="btn secondary rounded large">
+                <i class="fas fa-shopping-cart"></i>
+            </button>
+        <input type="hidden" name="product" id="product" value={{ ID }}>
+    </form>
+{% endif %}
+
+{% endmacro %}
