@@ -2,7 +2,7 @@
 namespace App\Providers;
 
 use cdk_model;
-use cdk_model_hashed;
+use cdk_hashed_model;
 use function get_sites;
 
 /**
@@ -39,7 +39,7 @@ class ContentServiceProvider
                     );
                 }
                 if (true === get_theme_mod('cdelk_use_hash')) {
-                    $context['kiyoh'] = (new cdk_model_hashed())->get();
+                    $context['kiyoh'] = (new cdk_hashed_model())->get();
                 } else {
                     $context['kiyoh'] = (new cdk_model())->get();
                 }
