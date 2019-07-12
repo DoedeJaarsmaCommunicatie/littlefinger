@@ -2,6 +2,7 @@
 namespace App\Providers;
 
 use cdk_model;
+use cdk_model_hashed;
 use function get_sites;
 
 /**
