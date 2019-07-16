@@ -115,6 +115,7 @@ class ComposerStaticInita67614bc66ffb6b3b4b9cec0688277f9
         'App\\Controllers\\Customizer\\General\\FooterListsCustomizerController' => __DIR__ . '/../..' . '/src/Controllers/Customizer/FooterListsCustomizerController.php',
         'App\\Controllers\\Customizer\\General\\GeneralCustomizerController' => __DIR__ . '/../..' . '/src/Controllers/Customizer/General/GeneralCustomizerController.php',
         'App\\Controllers\\Customizer\\General\\GeneralWoocommerceCustomizerController' => __DIR__ . '/../..' . '/src/Controllers/Customizer/General/GeneralWoocommerceCustomizerController.php',
+        'App\\Controllers\\Customizer\\General\\ScriptsCustomizerController' => __DIR__ . '/../..' . '/src/Controllers/Customizer/General/ScriptsCustomizerController.php',
         'App\\Controllers\\Customizer\\General\\SeoCustomizerController' => __DIR__ . '/../..' . '/src/Controllers/Customizer/SeoCustomizerController.php',
         'App\\Controllers\\Customizer\\General\\StoreCustomizerController' => __DIR__ . '/../..' . '/src/Controllers/Customizer/StoreCustomizerController.php',
         'App\\Controllers\\Customizer\\General\\UspCustomizerController' => __DIR__ . '/../..' . '/src/Controllers/Customizer/UspCustomizerController.php',

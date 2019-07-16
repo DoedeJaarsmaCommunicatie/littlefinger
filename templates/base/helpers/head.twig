@@ -15,3 +15,15 @@
 {#<meta name="ck_token" content="{{ theme.theme_mod('ck_woocommerce') }}">#}
 {#<meta name="cs_token" content="{{ theme.theme_mod('cs_woocommerce') }}">#}
 {#<meta name="theme-color" content="{{ theme.theme_mod('theme_color') }}">#}
+
+<!-- start custom theme code -->
+<script>
+    {{ theme.theme_mod('code_header_js')|raw }}
+</script>
+
+<style type="text/css">
+    {{ theme.theme_mod('code_header_css')|raw }}
+</style>
+
+{{ theme.theme_mod('code_header_html')|raw }}
+<!-- end custom theme code -->

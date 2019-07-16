@@ -12,6 +12,7 @@ return array(
     'App\\Controllers\\Customizer\\General\\FooterListsCustomizerController' => $baseDir . '/src/Controllers/Customizer/FooterListsCustomizerController.php',
     'App\\Controllers\\Customizer\\General\\GeneralCustomizerController' => $baseDir . '/src/Controllers/Customizer/General/GeneralCustomizerController.php',
     'App\\Controllers\\Customizer\\General\\GeneralWoocommerceCustomizerController' => $baseDir . '/src/Controllers/Customizer/General/GeneralWoocommerceCustomizerController.php',
+    'App\\Controllers\\Customizer\\General\\ScriptsCustomizerController' => $baseDir . '/src/Controllers/Customizer/General/ScriptsCustomizerController.php',
     'App\\Controllers\\Customizer\\General\\SeoCustomizerController' => $baseDir . '/src/Controllers/Customizer/SeoCustomizerController.php',
     'App\\Controllers\\Customizer\\General\\StoreCustomizerController' => $baseDir . '/src/Controllers/Customizer/StoreCustomizerController.php',
     'App\\Controllers\\Customizer\\General\\UspCustomizerController' => $baseDir . '/src/Controllers/Customizer/UspCustomizerController.php',
