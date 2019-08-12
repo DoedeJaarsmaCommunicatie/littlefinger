@@ -9,12 +9,13 @@ header.header {
         align-items: center;
     }
 
-    @if $header_shadow {
-        @include shadow;
-    }
 
     @if $header_sticky {
         @include sticky(0);
+
+        .admin-bar & {
+            @include sticky(32px);
+        }
     }
 
     & .top-navigation {
@@ -26,6 +27,23 @@ header.header {
     }
 }
 
-.custom_logo {
-    max-height: 40px;
+.logo-header {
+
+    @if $header_sticky {
+        background: $white;
+        @include sticky(64px);
+
+        .admin-bar & {
+            @include sticky(96px);
+        }
+    }
+
+    @if $header_shadow {
+        @include shadow;
+    }
+
+    & .custom_logo {
+        max-height: 45px;
+    }
 }
+
