@@ -69,7 +69,7 @@ class ContentServiceProvider
 			    }
 			    $context['featured'] = new Post(carbon_get_theme_option('featured_product')[0]['id']);
 			
-			    if (function_exists('wc')) {
+			    if ( function_exists( 'wc' ) && ! is_admin() ) {
 				    $context['wc_cart_count'] = wc()->cart->get_cart_contents_count();
 			    }
 			
