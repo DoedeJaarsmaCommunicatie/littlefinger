@@ -5,13 +5,13 @@ export class AddToCart {
     static product_query: string = '[data-product]';
     static quantity_query: string = '[name="quantity"]';
 
-    products: Array<HTMLFormElement> = [];
+    products: HTMLFormElement[] = [];
 
     constructor() {
         this.init();
     }
 
-    init() {
+    init(): void {
         this.scanProducts();
     }
 
@@ -19,7 +19,7 @@ export class AddToCart {
         let els = document.querySelectorAll(AddToCart.action_query);
 
         for (let i = 0; i < els.length; i++) {
-            const element = els[i] as HTMLFormElement
+            const element = els[i] as HTMLFormElement;
             this.products.push(element);
             this.preventDef(element);
             this.addToCartEvent(element);
@@ -28,6 +28,7 @@ export class AddToCart {
         return this;
     }
 
+    // noinspection JSMethodCanBeStatic
     preventDef(el: HTMLFormElement): void {
         el.addEventListener('submit', (e) => e.preventDefault());
     }
@@ -36,7 +37,7 @@ export class AddToCart {
         el.addEventListener('submit', async (e) => {
             let data: FormData = new FormData();
             const product_id = this.getProductId(el);
-            
+
             if (!product_id) {
                 throw Error('Product ID not found');
             }
@@ -48,12 +49,13 @@ export class AddToCart {
 
             if (res.data.fragments) {
                 this.injectMiniCart(res.data.fragments['div.widget_shopping_cart_content']);
-            } 
+                this.refreshCartAmount(res.data.fragments['cart_contents_count']);
+            }
         });
     }
 
-    injectMiniCart(cart: string) {
-        const el = document.querySelector('div.widget_shopping_cart_content')
+    injectMiniCart(cart: string): void {
+        const el = document.querySelector('div.widget_shopping_cart_content');
         if (! el) {
             throw Error('Shopping cart does not exist');
         }
@@ -67,7 +69,7 @@ export class AddToCart {
         cart.classList.add('active');
 
         cart.addEventListener('click', function (e) {
-            //@ts-ignore
+            // @ts-ignore
             if (e.target !== this) {
                 return;
             }
@@ -76,13 +78,27 @@ export class AddToCart {
         });
     }
 
+    // noinspection JSMethodCanBeStatic
+    refreshCartAmount(count: number|string): void {
+        const badge = document.querySelector<HTMLSpanElement>('.js-cart-amount')!;
+
+        badge.dataset['amount'] = count.toString() as string;
+        badge.innerText = count.toString() as string;
+    }
+
+    // noinspection JSMethodCanBeStatic
     getProductId(el: HTMLFormElement): string|undefined {
         return el.dataset['product'];
     }
 
+    // noinspection JSMethodCanBeStatic
     getProductQuantity(el: HTMLFormElement): string {
-        let qty_el = el.querySelector(AddToCart.quantity_query) as HTMLInputElement;
-        return qty_el.value || "1";
+        let qty_el = el.querySelector<HTMLInputElement>(AddToCart.quantity_query);
+        if (qty_el) {
+            return qty_el.value;
+        }
+
+        return "1";
     }
 }
 

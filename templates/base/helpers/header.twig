@@ -17,11 +17,12 @@
                 <span class="not-mobile">{{ theme.theme_mod('my_account-text', 'Mijn account') }}</span>
             </a>
 
-            <a href="{{ fn('wc_get_cart_url') }}" class="top-nav-item">
+            <a href="{{ fn('wc_get_cart_url') }}" class="top-nav-item has-badge">
                 <span class="lg:bulbed">
                     <i class="fas fa-shopping-basket"></i>
                 </span>
                 <span class="not-mobile">{{ theme.theme_mod('winkelmand-text', 'Winkelmandje') }}</span>
+                <span class="badge top right white js-cart-amount" data-amount="{{ wc_cart_count }}">{{ wc_cart_count }}</span>
             </a>
         </nav>
     </div>

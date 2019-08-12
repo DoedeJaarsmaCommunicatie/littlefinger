@@ -5,3 +5,9 @@
 @mixin radii { border-radius: $radius; }
 
 @mixin transition { transition: all 225ms cubic-bezier(0.2, 0.4, 0.2, 1.0); }
+
+@mixin outlined() {
+    &.outlined {
+        @content;
+    }
+}
