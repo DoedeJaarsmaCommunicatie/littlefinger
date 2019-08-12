@@ -24,6 +24,32 @@
         @media screen and (min-width: theme('screens.md')) {
             max-width: 25vw;
             @include shadow;
+
+            & .site-nav-item {
+                margin-bottom: 0.5rem;
+                position: relative;
+
+                &::after {
+                    transition: all 0.6s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+
+                    position: absolute;
+                    width: 100%;
+                    top: 100%;
+                    left: 0;
+                    height: 2px;
+                    transform: scale(0, 1);
+                    transform-origin: left center;
+                    content: ' ';
+                    background: $primary;
+                }
+
+
+                &:hover {
+                    &::after {
+                        transform: scale(1);
+                    }
+                }
+            }
         }
     }
 
