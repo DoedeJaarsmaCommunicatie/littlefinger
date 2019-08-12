@@ -53,5 +53,14 @@ class UspCustomizerController extends Customizer
             'default'  => 'Voor 15:00 besteld, dezelfde werkdag verzonden.',
             'priority' => 20,
         ],
+        [
+            'id'       => CustomizerServiceProvider::CONFIG_ID,
+            'type'     => 'text',
+            'settings' => 'more_shops',
+            'label'    => 'Ook bij onze andere shops:',
+            'section'  => 'usp_settings',
+            'default'  => 'Bestellen bij meerdere webshops.',
+            'priority' => 30,
+        ],
     ];
 }
