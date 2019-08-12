@@ -19,6 +19,12 @@
         width: 75vw;
         background: color-mod($white);
         padding: $padding;
+        border-right: 5px solid color-mod($primary);
+
+        @media screen and (min-width: theme('screens.md')) {
+            max-width: 25vw;
+            @include shadow;
+        }
     }
 
     .admin-bar & {

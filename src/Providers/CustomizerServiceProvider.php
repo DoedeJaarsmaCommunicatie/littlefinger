@@ -13,6 +13,7 @@ namespace App\Providers;
 use App\Controllers\Customizer\General\FooterCustomizerController;
 use App\Controllers\Customizer\General\FooterListsCustomizerController;
 use App\Controllers\Customizer\General\GeneralCustomizerController;
+use App\Controllers\Customizer\General\GeneralLayoutCustomizerController;
 use App\Controllers\Customizer\General\GeneralWoocommerceCustomizerController;
 use App\Controllers\Customizer\General\SeoCustomizerController;
 use App\Controllers\Customizer\General\StoreCustomizerController;
@@ -63,6 +64,7 @@ class CustomizerServiceProvider
         new GeneralCustomizerController();
         new GeneralWoocommerceCustomizerController();
         new ScriptsCustomizerController();
+        new GeneralLayoutCustomizerController();
     }
 
     /**
