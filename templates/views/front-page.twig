@@ -1,21 +1,5 @@
 {% extends 'base/app.twig' %}
 
-{% block header_bar %}
-    {{ parent() }}
-
-    <!-- Hero banner -->
-    <section class="frontpage-hero {{ fn('is_front_page')? 'home': 'not_home' }}" style="background-image: url('{{ Image(theme_option('hero_image')).src('large') }}')">
-        <div class="container mx-auto">
-            {% include 'partials/home/hero-product.twig' with { product: featured, title: theme_option('title') } only %}
-        </div>
-        <aside class="usp-banner">
-            <small><i class="fas fa-truck"></i> {{ theme.theme_mod('shipping_fee') }}</small>
-            <small><i class="fas fa-dolly"></i> {{ theme.theme_mod('delivery_time')}} </small>
-            <small><i class="fas fa-store-alt"></i> {{ theme.theme_mod('more_shops', 'Bestellen bij meerdere webshops.') }}</small>
-        </aside>
-    </section>
-{% endblock %}
-
 {% block content %}
     <div>
         {{ post.content }}

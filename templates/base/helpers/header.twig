@@ -55,16 +55,25 @@
         </a>
     </div>
 </section>
-
 {% endblock %}
 
-{% block kiyoh_banner %}
+<!-- Hero banner -->
+<section class="frontpage-hero {{ fn('is_front_page')? 'home': 'not_home' }}" style="background-image: url('{{ Image(theme_option('hero_image')).src('large') }}')">
+    <div class="container mx-auto">
+        {% include 'partials/home/hero-product.twig' with { product: featured, title: theme_option('title') } only %}
+    </div>
+    <aside class="usp-banner">
+        <small><i class="fas fa-truck"></i> {{ theme.theme_mod('shipping_fee') }}</small>
+        <small><i class="fas fa-dolly"></i> {{ theme.theme_mod('delivery_time')}} </small>
+        <small><i class="fas fa-store-alt"></i> {{ theme.theme_mod('more_shops', 'Bestellen bij meerdere webshops.') }}</small>
+    </aside>
+</section>
+
 <!-- Kiyoh Banner -->
 <section class="container mx-auto py-8 flex">
     {% include 'partials/blocks/kiyoh.twig' %}
     <nav class="lg:w-3/5 shop-container">
         <div class="shops-wrapper">
-            <h6>Welkom bij {{ site.name }}</h6>
             <h3>Makkelijk bestellen bij meerdere wijnwebshops</h3>
 
             {% for item in theme.theme_mod('seo_reviews') %}
@@ -72,7 +81,7 @@
                     <li class="review-seo-list-item">{{ item.item_text }}</li>
                 {% if loop.last %}
                     </ul>
-                    <button role="button" class="js-menu-open">
+                    <button role="button" class="js-menu-open btn round animated shaded primary outline large">
                         <span class="not-mobile">{{ theme.theme_mod('header_store-text', 'Bekijk alle shops') }}</span>
                     </button>
                 {% endif %}
@@ -84,4 +93,3 @@
         </div>
     </nav>
 </section>
-{% endblock %}

@@ -8,7 +8,7 @@
 </head>
 <body {{ fn('body_class') }}>
 
-{% block header %}{% include 'base/helpers/header.twig' %}{% endblock %}
+{% block header %}{% include('base/helpers/header.twig') %}{% endblock %}
 {% block content %}{{ post.content }}{% endblock %}
 {% block footer %}{% include 'base/helpers/footer.twig' %}{% endblock footer %}
 {{ fn('wp_footer') }}
