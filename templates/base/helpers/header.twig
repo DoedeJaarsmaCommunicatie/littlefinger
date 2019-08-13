@@ -1,4 +1,6 @@
 {% from "macro/sites.twig" import sites_list %}
+
+{% block header_topper %}
 <!-- Header topper -->
 <header class="header" role="banner">
     <div class="container mx-auto">
@@ -28,6 +30,9 @@
     </div>
 </header>
 
+{% endblock %}
+
+{% block flyout_stores %}
 <!-- All stores flyout menu -->
 <nav class="shop-container-slider">
     <div class="shops-wrapper">
@@ -38,6 +43,9 @@
     </div>
 </nav>
 
+{% endblock %}
+
+{% block header_bar %}
 <!-- Header bar -->
 <section class="logo-header">
     <div class="container mx-auto py-2 px-4 lg:px-0 ">
@@ -48,18 +56,9 @@
     </div>
 </section>
 
-<!-- Hero banner -->
-<section class="frontpage-hero {{ fn('is_front_page')? 'home': 'not_home' }}" style="background-image: url('{{ Image(theme_option('hero_image')).src('large') }}')">
-    <div class="container mx-auto">
-        {% include 'partials/home/hero-product.twig' with { product: featured, title: theme_option('title') } only %}
-    </div>
-    <aside class="usp-banner">
-        <small><i class="fas fa-truck"></i> {{ theme.theme_mod('shipping_fee') }}</small>
-        <small><i class="fas fa-dolly"></i> {{ theme.theme_mod('delivery_time')}} </small>
-        <small><i class="fas fa-store-alt"></i> {{ theme.theme_mod('more_shops', 'Bestellen bij meerdere webshops.') }}</small>
-    </aside>
-</section>
+{% endblock %}
 
+{% block kiyoh_banner %}
 <!-- Kiyoh Banner -->
 <section class="container mx-auto py-8 flex">
     {% include 'partials/blocks/kiyoh.twig' %}
@@ -72,16 +71,4 @@
         </div>
     </nav>
 </section>
-
-<script>
-    document.querySelector('.js-menu-open').addEventListener('click', function (ev) {
-        document.querySelector('.shop-container-slider').classList.toggle('active');
-    })
-    document.querySelector('.shop-container-slider').addEventListener('click', function (ev) {
-        if (ev.target !== this) {
-            return;
-        }
-
-        document.querySelector('.shop-container-slider').classList.remove('active');
-    })
-</script>
+{% endblock %}
