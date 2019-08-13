@@ -3,15 +3,15 @@
     "@fullhuman/postcss-purgecss": "^1.2.0",
     "axios": "^0.19.0",
     "cross-env": "^5.2.0",
-    "css-loader": "^3.0.0",
-    "laravel-mix": "^4.0.16",
+    "css-loader": "^3.2.0",
+    "laravel-mix": "^4.1.2",
     "postcss-color-mod-function": "^3.0.3",
-    "postcss-import": "^12.0",
+    "postcss-import": "^12.0.1",
     "postcss-loader": "^3.0.0",
     "postcss-short-border": "^4.0.0",
     "postcss-short-spacing": "^4.0.0",
     "precss": "^4.0.0",
-    "tailwindcss": "^1.0.4",
+    "tailwindcss": "^1.1.1",
     "vue": "^2.6.10"
   },
   "scripts": {
@@ -23,17 +23,11 @@
     "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
   },
   "devDependencies": {
-    "autoprefixer": "^9.6.0",
-    "resolve-url-loader": "2.3.1",
-    "sass": "^1.22.1",
-    "sass-loader": "7.*",
+    "autoprefixer": "^9.6.1",
+    "resolve-url-loader": "3.1.0",
+    "sass": "^1.22.9",
+    "sass-loader": "7.2.0",
     "ts-loader": "^6.0.4",
-    "typescript": "^3.5.2"
-  },
-  "browserslist": [
-    "defaults",
-    "last 1 version",
-    "> 0.2% in NL",
-    "not dead"
-  ]
+    "typescript": "^3.5.3"
+  }
 }
