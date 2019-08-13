@@ -14,7 +14,9 @@ header.header {
         @include sticky(0);
 
         .admin-bar & {
-            @include sticky(32px);
+            @media screen and (min-width: 415px) {
+                @include sticky(32px);
+            }
         }
     }
 
@@ -31,10 +33,12 @@ header.header {
 
     @if $header_sticky {
         background: $white;
-        @include sticky(64px);
+        @include sticky(56px);
 
         .admin-bar & {
-            @include sticky(96px);
+            @media screen and (min-width: 415px) {
+                @include sticky(88px);
+            }
         }
     }
 

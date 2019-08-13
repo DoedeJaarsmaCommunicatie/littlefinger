@@ -32,6 +32,7 @@ class ContentServiceProvider
     public function boot(): void
     {
     	$this->add_to_twig_context();
+    	$this->add_search_placeholder();
     	$this->add_to_twig_functions();
     }
 	
@@ -62,6 +63,7 @@ class ContentServiceProvider
 					    ]
 				    );
 			    }
+			    
 			    if (true === get_theme_mod('cdelk_use_hash')) {
 				    $context['kiyoh'] = (new cdk_hashed_model())->get();
 			    } else {
@@ -72,7 +74,7 @@ class ContentServiceProvider
 			    if ( function_exists( 'wc' ) && ! is_admin() ) {
 				    $context['wc_cart_count'] = wc()->cart->get_cart_contents_count();
 			    }
-			
+			    
 			    return $context;
 		    }
 	    );
@@ -106,5 +108,26 @@ class ContentServiceProvider
 			    return $fragments;
 		    }
 	    );
+    }
+	
+	public function add_search_placeholder(): void {
+		add_filter(
+			'timber/context',
+			static function ($context) {
+				$prefix = '';
+				$name = '';
+				$context['search_placeholder'] = 'Hi, waar ben je naar op zoek?';
+				
+				if (is_user_logged_in()) {
+					$name = wp_get_current_user()->user_firstname;
+					$context['search_placeholder'] = sprintf('Hi %s, waar ben je naar op zoek?', $name);
+					
+				}
+				
+				
+				
+				return $context;
+			}
+		);
     }
 }
