@@ -1,7 +1,17 @@
-import { addToCart } from './cart/add-to-cart';
-import { openFlyoutMenu } from "./shops/flyout-menu";
+import Router from './tools/Router';
+
+// Import routes
+import common from './routes/common';
+import home from './routes/home';
+
+const routes = {
+    common,
+    home
+};
+
+const router = new Router(routes);
 
 // @ts-ignore
-window['cartAdder'] = addToCart;
-// @ts-ignore
-window['flyoutOpener'] = openFlyoutMenu;
+window['routes'] = router;
+
+document.addEventListener('DOMContentLoaded', () => router.loadEvents());

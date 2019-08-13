@@ -43,6 +43,15 @@ class FooterListsCustomizerController extends Customizer
             'section'  => 'footer_lists_settings',
             'priority' => 5,
         ],
+	    [
+	    	'id'        => CustomizerServiceProvider::CONFIG_ID,
+		    'type'      => 'switch',
+		    'settings'  => 'shop_list_dynamic',
+		    'label'     => 'Dynamisch lijstje invoegen',
+		    'section'   => 'footer_lists_settings',
+		    'default'   => '1',
+		    'priority'  => 8
+	    ],
         [
             'id'       => CustomizerServiceProvider::CONFIG_ID,
             'type'     => 'editor',

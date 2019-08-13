@@ -64,10 +64,23 @@
     {% include 'partials/blocks/kiyoh.twig' %}
     <nav class="lg:w-3/5 shop-container">
         <div class="shops-wrapper">
-            <h3>Al onze shops</h3>
-            <div class="columned-sites">
-                {{ sites_list(sites)}}
-            </div>
+            <h6>Welkom bij {{ site.name }}</h6>
+            <h3>Makkelijk bestellen bij meerdere wijnwebshops</h3>
+
+            {% for item in theme.theme_mod('seo_reviews') %}
+                {% if loop.first %}<ul class="review-seo-list">{% endif %}
+                    <li class="review-seo-list-item">{{ item.item_text }}</li>
+                {% if loop.last %}
+                    </ul>
+                    <button role="button" class="js-menu-open">
+                        <span class="not-mobile">{{ theme.theme_mod('header_store-text', 'Bekijk alle shops') }}</span>
+                    </button>
+                {% endif %}
+            {% else %}
+                <div class="columned-sites">
+                    {{ sites_list(sites)}}
+                </div>
+            {% endfor %}
         </div>
     </nav>
 </section>

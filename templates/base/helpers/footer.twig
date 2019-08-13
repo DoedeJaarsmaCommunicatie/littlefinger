@@ -1,10 +1,18 @@
+{% from "macro/sites.twig" import sites_list %}
+
 <footer role="group" class="footer">
 
     <div role="group" class="container content mx-auto my-4">
         <div role="group" class="lg:flex seo_small px-4 lg:px-0">
             <section class="lg:w-1/4">
                 <h4>{{ theme.theme_mod('shop_list_title', 'Onze winkels')}}</h4>
-                {{ theme.theme_mod('shop_list') }}
+                {% if theme.theme_mod('shop_list_dynamic') %}
+                    <div class="flex flex-col">
+                        {{ sites_list(sites) }}
+                    </div>
+                {% else %}
+                    {{ theme.theme_mod('shop_list') }}
+                {% endif %}
             </section>
             <section class="lg:w-1/4">
                 <h4>{{ theme.theme_mod('domain_list_title', 'Onze wijnhuizen')}}</h4>

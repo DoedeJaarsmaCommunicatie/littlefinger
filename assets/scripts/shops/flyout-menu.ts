@@ -14,14 +14,15 @@ export class OpenFlyoutMenu {
     }
 
     openFlyOut(): void {
-        OpenFlyoutMenu
-            .getElement(OpenFlyoutMenu.open_query)
-            .addEventListener('click', () => {
-
-                OpenFlyoutMenu.getElement(OpenFlyoutMenu.flyout_query)
-                    .classList
-                    .toggle(OpenFlyoutMenu.active_class);
-        });
+        // @ts-ignore
+        for (let el of OpenFlyoutMenu.getElements(OpenFlyoutMenu.open_query)) {
+            el
+                .addEventListener('click', () => {
+                    OpenFlyoutMenu.getElement(OpenFlyoutMenu.flyout_query)
+                        .classList
+                        .add(OpenFlyoutMenu.active_class);
+                });
+        }
     }
 
     closeFlyOut(): void {
@@ -40,12 +41,20 @@ export class OpenFlyoutMenu {
         });
     }
 
-    static getElement( name: string): HTMLElement {
+    static getElement(name: string): HTMLElement {
         const el = document.querySelector<HTMLElement>(name);
         if (!el) {
             throw new Error('Element not found.');
         }
         return el;
+    }
+
+    static getElements(name: string): NodeListOf<Element> {
+        const els = document.querySelectorAll(name);
+        if (els.length === 0) {
+            throw new Error('No elements found.');
+        }
+        return els;
     }
 }
 
