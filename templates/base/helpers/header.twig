@@ -37,13 +37,14 @@
 <!-- All stores flyout menu -->
 <nav class="shop-container-slider">
     <div class="shops-wrapper">
-        <h3>Al onze shops</h3>
+        <div class="content">
+            {{ theme.theme_mod('seo_store_flyout')|wpautop }}
+        </div>
         <div class="flex flex-col">
             {{ sites_list(sites) }}
         </div>
     </div>
 </nav>
-
 {% endblock %}
 
 <!-- Header bar -->

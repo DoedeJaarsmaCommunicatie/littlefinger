@@ -43,6 +43,14 @@ class SeoCustomizerController extends Customizer
             'section'  => 'seo_settings',
             'priority' => 10,
         ],
+	    [
+	    	'id'        => CustomizerServiceProvider::CONFIG_ID,
+		    'type'      => 'editor',
+		    'settings'  => 'seo_store_flyout',
+		    'label'     => 'Text flyout',
+		    'section'   => 'seo_settings',
+		    'priority'  => 20
+	    ]
     ];
     
     public function register_custom_controls() : void {
