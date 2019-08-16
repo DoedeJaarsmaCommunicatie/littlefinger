@@ -10,6 +10,12 @@
         <a href="{{ product.link }}">{{ product.name }}</a>
     </h2>
     <div class="product-content content">
+        <p class="product-content_attributes">
+            <span>Streek: {{ _product.get_attribute('pa_streek') }}</span>
+            <span>Jaargang: {{ _product.get_attribute('pa_jaar') }}</span>
+            <span>Druiven: {{ _product.get_attribute('pa_druif') }}</span>
+        </p>
+
         {{ product.content|excerpt(15) }} <a href="{{ product.link }}">Lees meer</a>
     </div>
     {{ add_to_cart(product.ID, 'ml-auto mt-auto product-add-to-cart', 'qty', 'small') }}

@@ -44,6 +44,16 @@
 
     & .product-content {
         grid-area: content;
+
+        & .product-content_attributes {
+            & span {
+                display: block;
+            }
+
+            @media screen and (max-width: 414px) {
+                display: none;
+            }
+        }
     }
 
     & .product-add-to-cart {

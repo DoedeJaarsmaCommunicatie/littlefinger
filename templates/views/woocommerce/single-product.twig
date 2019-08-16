@@ -10,8 +10,15 @@
 
         <section class="product-attributes">
             <p class="product-attributes_category">Categorie: {{ fn('wc_get_product_category_list', post.ID) }}</p>
+            {% for attribute in product.get_attributes %}
+                {% if attribute.get_visible %}
+                    <p class="product-attributes_{{ attribute.get_name|replace({'pa_': ''}) }}">
+                        {{ attribute.get_name|replace({'pa_': ''})|capitalize }}:
+                        {{ product.get_attribute(attribute.get_name) }}
+                    </p>
+                {% endif %}
+            {% endfor %}
         </section>
-
         <span class="product-price">
             &euro; {{ product.get_price }}
             <small class="product-price_small">per fles</small>
