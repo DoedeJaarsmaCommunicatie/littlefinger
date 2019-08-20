@@ -37,7 +37,13 @@
         <div role="group" class="container mx-auto lg:flex">
             <address class="lg:w-1/4 addressInfo">
                 <strong>Contact</strong>
-                <p>{{ theme.theme_mod('address', 'Lauriergracht 54BG')}}</p>
+                <p class="mb-2">
+                    {{
+                        __('%s is een wijnwebshop van <a href="https://postwijnen.nl/" target="_blank">Postwijnen.nl</a>')|format(site.name)
+                    }}
+                </p>
+                <p>Postwijnen.nl</p>
+                <p>{{ theme.theme_mod('address', 'Lauriergracht 54BG (afhalen op afspraak)')}}</p>
                 <p>{{ theme.theme_mod('postalcode', '1016RL')}}, {{ theme.theme_mod('city', 'Amsterdam')}}</p>
                 <p>Telefoon: <a href="tel:{{ theme.theme_mod('phone', '020-2614758') }}">{{ theme.theme_mod('phone', '020-2614758')}}</a></p>
                 <p>Email: <a href="mailto:{{ theme.theme_mod('email', 'info@postwijnen.nl') }}">{{ theme.theme_mod('email', 'info@postwijnen.nl')}}</a></p>
@@ -56,11 +62,30 @@
                     </a>
                 {% endfor %}
             </nav>
-            <aside role="complementary" class="nix-block">
-                {{ theme.theme_mod('no_alcohol')|wpautop }}
+            <aside role="complementary" class="nix-block lg:w-1/4">
+                {% if theme.theme_mod('no_alcohol') %}
+                    {{ theme.theme_mod('no_alcohol')|wpautop }}
+                {% else %}
+                    <strong>&lt; 18 geen alcohol</strong>
+                    <img src="{{ theme.link }}/dist/images/nix18.png" alt="NIX18" class="nix-18-logo">
+                    <strong>Veilig betalen</strong>
+                {% endif %}
             </aside>
-            <aside role="complementary" class="benefits-block">
-                {{ theme.theme_mod('benefits')|wpautop }}
+            <aside role="complementary" class="benefits-block lg:w-1/4">
+                {% if theme.theme_mod('benefits') %}
+                    {{ theme.theme_mod('benefits')|wpautop }}
+                {% else %}
+                    <strong>Voordelen</strong>
+                    <ul>
+                        <li>Groot assortiment wijnen op voorraad</li>
+                        <li>Per fles te bestellen</li>
+                        <li>Gratis verzending vanaf €50,- (NL)</li>
+                        <li>Gratis verzending vanaf € 100,- (BE)</li>
+                        <li>Snel bezorgd via PostNL</li>
+                        <li>Proefgarantie</li>
+                        <li>Ophalen in Amsterdam mogelijk</li>
+                    </ul>
+                {% endif %}
             </aside>
         </div>
     </div>
