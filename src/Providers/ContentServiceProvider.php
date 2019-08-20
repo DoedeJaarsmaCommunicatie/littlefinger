@@ -5,6 +5,7 @@ use cdk_model;
 use cdk_hashed_model;
 use Timber\Post;
 use Timber\Twig_Function;
+use Twig\TwigFunction;
 use function get_sites;
 
 /**
@@ -123,8 +124,6 @@ class ContentServiceProvider
 					$context['search_placeholder'] = sprintf('Hi %s, waar ben je naar op zoek?', $name);
 					
 				}
-				
-				
 				
 				return $context;
 			}

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "91f5e5e1f6ae31670aa89c16e228c1fe",
+    "content-hash": "52d834a7826d0ac0170aa5ebead403d9",
     "packages": [
         {
             "name": "altorouter/altorouter",
@@ -352,12 +352,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Pridestalker/CasaProductsFactory.git",
-                "reference": "a3e185a5b27895019e466419733bc9ff28b43d2f"
+                "reference": "724c1d89853e58b174d53bb4abdcc09ee62ebd8e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Pridestalker/CasaProductsFactory/zipball/a3e185a5b27895019e466419733bc9ff28b43d2f",
-                "reference": "a3e185a5b27895019e466419733bc9ff28b43d2f",
+                "url": "https://api.github.com/repos/Pridestalker/CasaProductsFactory/zipball/724c1d89853e58b174d53bb4abdcc09ee62ebd8e",
+                "reference": "724c1d89853e58b174d53bb4abdcc09ee62ebd8e",
                 "shasum": ""
             },
             "type": "library",
@@ -377,7 +377,7 @@
                 }
             ],
             "description": "A product factory for CasaDelVino et al",
-            "time": "2019-08-20T11:53:46+00:00"
+            "time": "2019-08-20T11:55:25+00:00"
         },
         {
             "name": "htmlburger/carbon-fields",

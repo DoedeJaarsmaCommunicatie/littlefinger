@@ -12,9 +12,12 @@
             <p class="product-attributes_category">Categorie: {{ fn('wc_get_product_category_list', post.ID) }}</p>
             {% for attribute in product.get_attributes %}
                 {% if attribute.get_visible %}
+                    {% set _attributes = fn('get_the_terms', post.ID, attribute.get_name) %}
                     <p class="product-attributes_{{ attribute.get_name|replace({'pa_': ''}) }}">
                         {{ attribute.get_name|replace({'pa_': ''})|capitalize }}:
-                        {{ product.get_attribute(attribute.get_name) }}
+                        {% for _attribute in _attributes %}
+                            <span data-attribute="{{ attribute.get_name|replace({'pa_': ''}) }}" data-value="{{ _attribute.slug }}">{{ _attribute.name }}{% if not loop.last %},{% endif %} </span>
+                        {% endfor %}
                     </p>
                 {% endif %}
             {% endfor %}
