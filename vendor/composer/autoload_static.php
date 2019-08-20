@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInita67614bc66ffb6b3b4b9cec0688277f9
+class ComposerStaticInita4e963b6e5d6d8aa647f93058b15a4d8
 {
     public static $files = array (
         '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
@@ -32,6 +32,10 @@ class ComposerStaticInita67614bc66ffb6b3b4b9cec0688277f9
         'P' => 
         array (
             'PostTypes\\' => 10,
+        ),
+        'E' => 
+        array (
+            'Elderbraum\\CasaProductFactory\\' => 30,
         ),
         'D' => 
         array (
@@ -68,6 +72,10 @@ class ComposerStaticInita67614bc66ffb6b3b4b9cec0688277f9
         'PostTypes\\' => 
         array (
             0 => __DIR__ . '/..' . '/jjgrainger/posttypes/src',
+        ),
+        'Elderbraum\\CasaProductFactory\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/elderbraum/casa-products-factory/src',
         ),
         'DusanKasan\\Knapsack\\' => 
         array (
@@ -114,6 +122,7 @@ class ComposerStaticInita67614bc66ffb6b3b4b9cec0688277f9
         'App\\Controllers\\Customizer\\General\\FooterCustomizerController' => __DIR__ . '/../..' . '/src/Controllers/Customizer/FooterCustomizerController.php',
         'App\\Controllers\\Customizer\\General\\FooterListsCustomizerController' => __DIR__ . '/../..' . '/src/Controllers/Customizer/FooterListsCustomizerController.php',
         'App\\Controllers\\Customizer\\General\\GeneralCustomizerController' => __DIR__ . '/../..' . '/src/Controllers/Customizer/General/GeneralCustomizerController.php',
+        'App\\Controllers\\Customizer\\General\\GeneralLayoutCustomizerController' => __DIR__ . '/../..' . '/src/Controllers/Customizer/General/GeneralLayoutCustomizerController.php',
         'App\\Controllers\\Customizer\\General\\GeneralWoocommerceCustomizerController' => __DIR__ . '/../..' . '/src/Controllers/Customizer/General/GeneralWoocommerceCustomizerController.php',
         'App\\Controllers\\Customizer\\General\\ScriptsCustomizerController' => __DIR__ . '/../..' . '/src/Controllers/Customizer/General/ScriptsCustomizerController.php',
         'App\\Controllers\\Customizer\\General\\SeoCustomizerController' => __DIR__ . '/../..' . '/src/Controllers/Customizer/SeoCustomizerController.php',
@@ -282,6 +291,7 @@ class ComposerStaticInita67614bc66ffb6b3b4b9cec0688277f9
         'Composer\\Installers\\CraftInstaller' => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers/CraftInstaller.php',
         'Composer\\Installers\\CroogoInstaller' => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers/CroogoInstaller.php',
         'Composer\\Installers\\DecibelInstaller' => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers/DecibelInstaller.php',
+        'Composer\\Installers\\DframeInstaller' => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers/DframeInstaller.php',
         'Composer\\Installers\\DokuWikiInstaller' => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers/DokuWikiInstaller.php',
         'Composer\\Installers\\DolibarrInstaller' => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers/DolibarrInstaller.php',
         'Composer\\Installers\\DrupalInstaller' => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers/DrupalInstaller.php',
@@ -299,6 +309,7 @@ class ComposerStaticInita67614bc66ffb6b3b4b9cec0688277f9
         'Composer\\Installers\\JoomlaInstaller' => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers/JoomlaInstaller.php',
         'Composer\\Installers\\KanboardInstaller' => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers/KanboardInstaller.php',
         'Composer\\Installers\\KirbyInstaller' => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers/KirbyInstaller.php',
+        'Composer\\Installers\\KnownInstaller' => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers/KnownInstaller.php',
         'Composer\\Installers\\KodiCMSInstaller' => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers/KodiCMSInstaller.php',
         'Composer\\Installers\\KohanaInstaller' => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers/KohanaInstaller.php',
         'Composer\\Installers\\LanManagementSystemInstaller' => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers/LanManagementSystemInstaller.php',
@@ -333,6 +344,7 @@ class ComposerStaticInita67614bc66ffb6b3b4b9cec0688277f9
         'Composer\\Installers\\PxcmsInstaller' => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers/PxcmsInstaller.php',
         'Composer\\Installers\\RadPHPInstaller' => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers/RadPHPInstaller.php',
         'Composer\\Installers\\ReIndexInstaller' => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers/ReIndexInstaller.php',
+        'Composer\\Installers\\Redaxo5Installer' => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers/Redaxo5Installer.php',
         'Composer\\Installers\\RedaxoInstaller' => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers/RedaxoInstaller.php',
         'Composer\\Installers\\RoundcubeInstaller' => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers/RoundcubeInstaller.php',
         'Composer\\Installers\\SMFInstaller' => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers/SMFInstaller.php',
@@ -343,6 +355,7 @@ class ComposerStaticInita67614bc66ffb6b3b4b9cec0688277f9
         'Composer\\Installers\\Symfony1Installer' => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers/Symfony1Installer.php',
         'Composer\\Installers\\TYPO3CmsInstaller' => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers/TYPO3CmsInstaller.php',
         'Composer\\Installers\\TYPO3FlowInstaller' => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers/TYPO3FlowInstaller.php',
+        'Composer\\Installers\\TaoInstaller' => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers/TaoInstaller.php',
         'Composer\\Installers\\TheliaInstaller' => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers/TheliaInstaller.php',
         'Composer\\Installers\\TuskInstaller' => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers/TuskInstaller.php',
         'Composer\\Installers\\UserFrostingInstaller' => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers/UserFrostingInstaller.php',
@@ -361,6 +374,18 @@ class ComposerStaticInita67614bc66ffb6b3b4b9cec0688277f9
         'DusanKasan\\Knapsack\\Exceptions\\ItemNotFound' => __DIR__ . '/..' . '/dusank/knapsack/src/Exceptions/ItemNotFound.php',
         'DusanKasan\\Knapsack\\Exceptions\\NoMoreItems' => __DIR__ . '/..' . '/dusank/knapsack/src/Exceptions/NoMoreItems.php',
         'DusanKasan\\Knapsack\\Exceptions\\RuntimeException' => __DIR__ . '/..' . '/dusank/knapsack/src/Exceptions/RuntimeException.php',
+        'Elderbraum\\CasaProductFactory\\ProductsFactory' => __DIR__ . '/..' . '/elderbraum/casa-products-factory/src/ProductsFactory.php',
+        'Elderbraum\\CasaProductFactory\\Products\\Awarded' => __DIR__ . '/..' . '/elderbraum/casa-products-factory/src/Products/Awarded.php',
+        'Elderbraum\\CasaProductFactory\\Products\\Biologisch' => __DIR__ . '/..' . '/elderbraum/casa-products-factory/src/Products/Biologisch.php',
+        'Elderbraum\\CasaProductFactory\\Products\\Dessert' => __DIR__ . '/..' . '/elderbraum/casa-products-factory/src/Products/Dessert.php',
+        'Elderbraum\\CasaProductFactory\\Products\\Mousserend' => __DIR__ . '/..' . '/elderbraum/casa-products-factory/src/Products/Mousserend.php',
+        'Elderbraum\\CasaProductFactory\\Products\\Newest' => __DIR__ . '/..' . '/elderbraum/casa-products-factory/src/Products/Newest.php',
+        'Elderbraum\\CasaProductFactory\\Products\\Popular' => __DIR__ . '/..' . '/elderbraum/casa-products-factory/src/Products/Popular.php',
+        'Elderbraum\\CasaProductFactory\\Products\\Product' => __DIR__ . '/..' . '/elderbraum/casa-products-factory/src/Products/Product.php',
+        'Elderbraum\\CasaProductFactory\\Products\\Red' => __DIR__ . '/..' . '/elderbraum/casa-products-factory/src/Products/Red.php',
+        'Elderbraum\\CasaProductFactory\\Products\\Rose' => __DIR__ . '/..' . '/elderbraum/casa-products-factory/src/Products/Rose.php',
+        'Elderbraum\\CasaProductFactory\\Products\\Sale' => __DIR__ . '/..' . '/elderbraum/casa-products-factory/src/Products/Sale.php',
+        'Elderbraum\\CasaProductFactory\\Products\\White' => __DIR__ . '/..' . '/elderbraum/casa-products-factory/src/Products/White.php',
         'PostTypes\\Columns' => __DIR__ . '/..' . '/jjgrainger/posttypes/src/Columns.php',
         'PostTypes\\PostType' => __DIR__ . '/..' . '/jjgrainger/posttypes/src/PostType.php',
         'PostTypes\\Taxonomy' => __DIR__ . '/..' . '/jjgrainger/posttypes/src/Taxonomy.php',
@@ -778,11 +803,11 @@ class ComposerStaticInita67614bc66ffb6b3b4b9cec0688277f9
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInita67614bc66ffb6b3b4b9cec0688277f9::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInita67614bc66ffb6b3b4b9cec0688277f9::$prefixDirsPsr4;
-            $loader->fallbackDirsPsr4 = ComposerStaticInita67614bc66ffb6b3b4b9cec0688277f9::$fallbackDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInita67614bc66ffb6b3b4b9cec0688277f9::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInita67614bc66ffb6b3b4b9cec0688277f9::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInita4e963b6e5d6d8aa647f93058b15a4d8::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInita4e963b6e5d6d8aa647f93058b15a4d8::$prefixDirsPsr4;
+            $loader->fallbackDirsPsr4 = ComposerStaticInita4e963b6e5d6d8aa647f93058b15a4d8::$fallbackDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInita4e963b6e5d6d8aa647f93058b15a4d8::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInita4e963b6e5d6d8aa647f93058b15a4d8::$classMap;
 
         }, null, ClassLoader::class);
     }
