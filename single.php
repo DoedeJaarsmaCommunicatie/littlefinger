@@ -33,10 +33,54 @@ if (get_post_type() === 'streek') {
 	
 	if ($products->initialize_query()->get_wp_query()->have_posts()) {
 		$context['products'] = Timber::get_posts($products->query->posts);
-		
+	}
+}
+
+if (get_post_type() === 'druif') {
+	/** @var Newest $products */
+	$products = ProductsFactory::create('Newest');
+	$products->boot();
+	$products->add_args(
+		[
+			'tax_query' => [
+				[
+					'taxonomy'      => 'pa_druif',
+					'field'         => 'slug',
+					'operator'      => 'IN',
+					'terms'         => $context['post']->slug
+				]
+			]
+		]
+	);
+	
+	if ($products->initialize_query()->get_wp_query()->have_posts()) {
+		$context['products'] = $products->query->posts;
 	}
 	
-	array_unshift($templates, 'views/single/streek/' . $context['post']->slug . '.twig', 'views/single/streek.twig');
 }
+
+if (get_post_type() === 'producent') {
+	/** @var Newest $products */
+	$products = ProductsFactory::create('Newest');
+	$products->boot();
+	$products->add_args(
+		[
+			'tax_query'     => [
+				[
+					'taxonomy'  => 'pa_domein',
+					'field'     => 'slug',
+					'operator'  => 'IN',
+					'terms'     => $context['post']->slug
+				]
+			]
+		]
+	);
+	
+	if ($products->initialize_query()->get_wp_query()->have_posts()) {
+		$context['products'] = Timber::get_posts($products->query->posts);
+	}
+}
+
+array_unshift($templates, 'views/single/' . get_post_type() . '/' . $context['post']->slug . '.twig', 'views/single/' . get_post_type() . '.twig');
 
 Timber::render($templates, $context);
