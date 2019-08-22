@@ -38,7 +38,7 @@ if (get_post_type() === 'streek') {
 
 if (get_post_type() === 'druif') {
 	/** @var Newest $products */
-	$products = ProductsFactory::create('Newest');
+	$products = ProductsFactory::create(Newest::class);
 	$products->boot();
 	$products->add_args(
 		[
@@ -54,14 +54,14 @@ if (get_post_type() === 'druif') {
 	);
 	
 	if ($products->initialize_query()->get_wp_query()->have_posts()) {
-		$context['products'] = $products->query->posts;
+		$context['products'] = Timber::get_posts($products->query->posts);
 	}
 	
 }
 
 if (get_post_type() === 'producent') {
 	/** @var Newest $products */
-	$products = ProductsFactory::create('Newest');
+	$products = ProductsFactory::create(Newest::class);
 	$products->boot();
 	$products->add_args(
 		[
