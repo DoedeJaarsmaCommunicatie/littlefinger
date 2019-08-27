@@ -1,0 +1,52 @@
+betalen:
+  title: Betalen
+  questions:
+    - question: Hoe kan ik betalen bij Postwijnen.nl?
+      answer: Je kan in onze webshop betalen met alle gebruikelijke betaalmethoden in Nederland en België.
+    - question: Kan ik op factuur betalen?
+      answer: Dat kan! Je kan je bestelling per bankoverschrijving betalen. Neem met ons contact op over je bestelling.
+bestellen:
+  title: Bestellen
+  questions:
+    - question: Hoe weet ik wat de status van mijn bestelling is?
+      answer:  Zodra je inlogt met je Postwijnen.nl- account, dan kan je bij “mijn bestellingen” zien wat de status van je bestelling is. Hier kan je ook bekijken wat je precies hebt besteld.
+    - question: Ik heb geen bevestigingsmail ontvangen.
+      answer: Zodra de bestelling succesvol is afgerond krijg je binnen enkele minuten een e-mail als bevestiging. Als je geen bevestigingsemail hebt ontvangen, zou het kunnen dat deze door je e-mailinstellingen in je ongewenste postvak (spambox) is beland. Soms gebeurt het ook wel eens dat er een fout is gemaakt in het e-mailadres. Mocht je nog steeds geen bevestigingsemail hebben ontvangen, neem dan contact met ons op via [info@postwijnen.nl](mailto:info@postwijnen.nl), of bel even met 020-2614758.
+    - question: Kan ik mijn bestelling wijzigen? 
+      answer: We willen je bestelling snel bij je afleveren. Onze logistieke planning is daardoor heel strak. Het kan voorkomen dat de wijnen ons magazijn al uit zijn, waardoor de bestelling helaas niet meer gewijzigd kan worden. Als je je bestelling wil wijzigen, kan je contact met ons opnemen via 06 46 132142. Dan kunnen we meteen bekijken wat de mogelijkheden zijn.
+    - question: Hoe plaats ik een bestelling op postwijnen.nl?
+      answer: 1. Voeg via de ‘in winkelmand’-knop de gewenste artikelen in de winkelwagen
+        1. Klik vervolgens op je winkelwagen en klik op “bestellen” of
+        1. Klik op je winkelwagen en druk op “toon winkelwagen” en vervolgens op “ok”
+        1. Log vervolgens in, of maak een account aan als je nog geen account hebt
+        1. Geef vervolgens aan naar welk adres je bestelling moet worden verzonden en druk op “ok”
+        1. Kies de verzend-methode.
+        1. Kies een betaalmethode en druk op “ok”
+        1. Ga akkoord met de algemene voorwaarden en druk op “ok”
+        1. Zodra de betaling is afgerond krijg je een e-mail met de bevestiging van je bestelling en zullen wij de wijn zo snel mogelijk bij je afleveren.
+bezorgen:
+  title: Bezorgen
+  questions:
+    - question: Wat is de levertijd van mijn bestelling?
+      answer: Alle bestellingen die worden geplaatst vóór 15.00 uur worden dezelfde dag verzonden en worden dan in 99% van de gevallen volgende werkdag bezorgd op het door jou aangegeven adres. Plaats je de bestelling na 15.00 uur, dan kan de bezorgtijd maximaal twee werkdagen bedragen.
+        Hou rekening met piek-momenten bij de pakketjesbezorgers! Bijvoorbeeld met Sinterklaas en Kerst kan het wat duren voordat je pakket wordt afgeleverd. Bestel dus op tijd!
+    - question: Hoe worden mijn bestellingen afgeleverd?
+      answer: Onze bestellingen worden afgeleverd door PostNL.
+    - question: Wat zijn de kosten voor het thuis laten bezorgen?
+      answer: We bezorgen onze wijn in heel Nederland gratis vanaf € 50,-. Bij een bestelling onder dit bedrag rekenen we € 6,95 verzendkosten. In België bezorgen we kostenloos vanaf € 100. Bij bestellingen onder dit bedrag rekenen we € 9,95
+    - question: Kan ik mijn bestelling ook ophalen?
+      answer: Het is mogelijk de bestelling bij ons af te halen. Neem hiervoor even contact met ons op om een afspraak te maken. Dan zorgen we dat je bestelling op ons kantoor klaar staat. De meeste voorraad bewaren we elders.
+account:
+  title: Mijn account op Postwijnen.nl
+  questions:
+    - question: Waarom moet ik een account aanmaken?
+      answer: Om een bestelling te plaatsen op casadelvino.nl is het handig een account aan te maken. Via jouw account heb je de mogelijkheid de status van je bestelling te controleren. Ook hoef je dan bij een volgende bestelling niet weer al je gegevens opnieuw in te voeren.
+    - question: Wat doet Postwijnen.nl met mijn gegevens?
+      answer: Wij gaan vertrouwelijk met je gegevens om en zullen deze nooit aan anderen verstrekken.
+returns:
+  title: Retourneren
+  questions:
+    - question: Hoe kan ik mijn producten retourneren of ruilen?
+      answer: Voldoet de geleverde wijn niet aan de verwachtingen, dan kan je de doos binnen 14 dagen retourneren. De verzendkosten zijn voor eigen rekening. Retourzendingen worden alleen geaccepteerd als de originele verpakking en de flessen, inclusief de etiketten onbeschadigd zijn.
+    - question: Proefgarantie
+      answer: Is de wijn die u bij ons heeft gekocht absoluut niet uw smaak? Neem dan contact met ons op voor een passende oplossing. [info@postwijnen.nl](mailto:info@postwijnen.nl)

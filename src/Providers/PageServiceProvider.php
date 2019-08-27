@@ -3,6 +3,7 @@ namespace App\Providers;
 
 use Carbon\Carbon;
 use Pagerange\Markdown\MetaParsedown;
+use Symfony\Component\Yaml\Yaml;
 
 class PageServiceProvider
 {
@@ -12,6 +13,7 @@ class PageServiceProvider
 	{
 		$this->fill_files();
 		$this->create_pages();
+		$this->createFAQ();
 	}
 	
 	protected function create_pages()
@@ -66,6 +68,44 @@ class PageServiceProvider
 			'terms.md',
 			'pros.md'
 		]);
+	}
+	
+	protected function createFAQ() {
+		$pd = new \Parsedown();
+		$faq_file = get_stylesheet_directory() . '/faq.yml';
+		
+		$contents = Yaml::parseFile($faq_file);
+		
+		$html = '';
+		
+		foreach ($contents as $content) {
+			$html .= "<h2>{$content['title']}</h2>";
+			
+			foreach ($content['questions'] as $question) {
+				$html .= "<p class='faq-question'>{$question['question']}</p>";
+				$html .= "<p class='faq-answer'>{$pd->line($question['answer'])}</p>";
+			}
+		}
+		
+		$slug = 'veelgestelde-vragen';
+		
+		/** @var \WP_Post $page */
+		$page = $this->getPage($slug);
+		
+		if ($page) {
+			$page->post_content = $html;
+			wp_update_post($page);
+		} else {
+			wp_insert_post([
+				'post_author'           => 1,
+				'post_content'          => $html,
+				'post_title'            => 'Veelgestelde vragen',
+				'post_name'             => $slug,
+				'post_status'           => 'publish',
+				'post_type'             => 'page',
+				'post_parent'           => 0,
+			]);
+		}
 	}
 	
 	private function getPage(string $slug) {
