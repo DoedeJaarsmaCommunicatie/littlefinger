@@ -34,13 +34,13 @@ add_action(
 				 		'post_type'         => 'product',
 					    'posts_per_page'    => $fields['limit']?? 12,
 					    'post_status'       => 'publish',
-//					    'tax_query' => [
-//					    	[
-//					    		'taxonomy'  => 'product_cat',
-//							    'terms'     => $fields['category'],
-//							    'field'     => 'slug'
-//						    ]
-//					    ]
+					    'tax_query' => [
+					    	[
+					    		'taxonomy'  => 'product_cat',
+							    'terms'     => $fields['category'],
+							    'field'     => 'slug'
+						    ]
+					    ]
 				    ]
 				 );
 				 
