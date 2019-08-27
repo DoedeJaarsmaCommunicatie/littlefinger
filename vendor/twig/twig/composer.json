@@ -35,15 +35,15 @@
     },
     "autoload": {
         "psr-0" : {
-            "Twig_" : "lib/"
+            "Twig_" : "lib"
         },
         "psr-4" : {
-            "Twig\\" : "src/"
+            "Twig\\" : "src"
         }
     },
     "autoload-dev": {
         "psr-0" : {
-            "Twig_Tests_" : "test/"
+            "Twig_Tests_" : "test"
         }
     },
     "extra": {

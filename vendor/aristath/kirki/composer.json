@@ -13,7 +13,8 @@
       "role":"Developer"
     }
   ],
-  "include-path": [".", "core"],
+  "include-path": [
+    "", "core"],
   "require": {
     "php": ">=5.2"
   },

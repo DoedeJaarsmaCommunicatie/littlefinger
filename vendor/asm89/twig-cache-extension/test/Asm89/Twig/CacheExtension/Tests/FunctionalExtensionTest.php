@@ -58,7 +58,7 @@ class FunctionalExtensionTest extends \PHPUnit_Framework_TestCase
 
     protected function createTwig($cacheStrategyName = null)
     {
-        $loader = new Twig_Loader_Filesystem(__DIR__ . '/fixtures/');
+        $loader = new Twig_Loader_Filesystem( __DIR__ . '/fixtures/' );
         $twig = new Twig_Environment($loader);
 
         $cacheExtension = new Extension($this->createCacheStrategy($cacheStrategyName));

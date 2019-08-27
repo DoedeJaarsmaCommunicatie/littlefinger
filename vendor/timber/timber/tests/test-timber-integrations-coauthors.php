@@ -45,7 +45,7 @@
 				$dest_name = $img;
 			}
 			$destination = $upload_dir['path'].'/'.$dest_name;
-			copy( __DIR__.'/assets/'.$img, $destination );
+			copy( __DIR__ . '/assets/' . $img, $destination );
 			return $destination;
 		}
 		/* ----------------

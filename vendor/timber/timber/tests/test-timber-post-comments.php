@@ -39,7 +39,7 @@
 		}
 
 		function testPostWithCustomCommentClass() {
-			require_once(__DIR__.'/php/timber-custom-comment.php');
+			require_once( __DIR__ . '/php/timber-custom-comment.php' );
 			$post_id = $this->factory->post->create(array('post_title' => 'Gobbles'));
 			$comment_id_array = $this->factory->comment->create_many( 5, array('comment_post_ID' => $post_id) );
 			$post = new TimberPost($post_id);

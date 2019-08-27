@@ -26,7 +26,7 @@ class TestTimberImage extends TimberImage_UnitTestCase {
 			$dest_name = $img;
 		}
 		$destination = $upload_dir['path'].'/'.$dest_name;
-		copy( __DIR__.'/assets/'.$img, $destination );
+		copy( __DIR__ . '/assets/' . $img, $destination );
 		return $destination;
 	}
 
@@ -766,7 +766,7 @@ class TestTimberImage extends TimberImage_UnitTestCase {
 
 	function testThemeImageResize() {
 		$theme_url = get_theme_root_uri().'/'.get_stylesheet();
-		$source = __DIR__.'/assets/cardinals.jpg';
+		$source = __DIR__ . '/assets/cardinals.jpg';
 		$dest = get_stylesheet_directory_uri().'/cardinals.jpg';
 		if ( strpos($dest, 'http') === 0 ) {
 			$dest = Timber\URLHelper::url_to_file_system($dest);
@@ -804,7 +804,7 @@ class TestTimberImage extends TimberImage_UnitTestCase {
 		if ( ! extension_loaded( 'gd' ) ) {
 			self::markTestSkipped( 'Letterbox image test requires GD extension' );
 		}
-		$source = __DIR__.'/assets/cardinals.jpg';
+		$source = __DIR__ . '/assets/cardinals.jpg';
 		$dest = self::maybe_realpath(get_template_directory()).'/cardinals.jpg';
 		copy($source, $dest);
 		$image = $theme_url.'/cardinals.jpg';
@@ -905,8 +905,8 @@ class TestTimberImage extends TimberImage_UnitTestCase {
 	}
 
 	function testImageSizeWithWPNameUsingNative(){
-		require_once('wp-overrides.php');
-		$filename = __DIR__.'/assets/tom-brady.jpg';
+		require_once( 'wp-overrides.php' );
+		$filename = __DIR__ . '/assets/tom-brady.jpg';
 		$filesize = filesize($filename);
 		$data = array('tmp_name' => $filename, 'name' => 'tom-brady.jpg', 'type' => 'image/jpg', 'size' => $filesize, 'error' => 0);
 		$this->assertTrue(file_exists($filename));
@@ -923,8 +923,8 @@ class TestTimberImage extends TimberImage_UnitTestCase {
 	}
 
 	function testImageSizeWithWPNameUsingNativeGif(){
-		require_once('wp-overrides.php');
-		$filename = __DIR__.'/assets/boyer.gif';
+		require_once( 'wp-overrides.php' );
+		$filename = __DIR__ . '/assets/boyer.gif';
 		$filesize = filesize($filename);
 		$data = array('tmp_name' => $filename, 'name' => 'boyer.gif', 'type' => 'image/gif', 'size' => $filesize, 'error' => 0);
 		$this->assertTrue(file_exists($filename));
@@ -1112,8 +1112,8 @@ class TestTimberImage extends TimberImage_UnitTestCase {
 	 * Unlike raster (JPEG, PNG, etc.) SVG is vector-type file so resizing
 	 * shouldn't affect the file. Why is this necessary? B/C a user could have
 	 * uploaded an SVG or JPEG to a particular field and we need to handle
-	 * for either case. 
-	 */	
+	 * for either case.
+	 */
 	function testSVGResize() {
 		$image = self::copyTestImage('icon-twitter.svg');
 		$data = [];
