@@ -24,7 +24,7 @@ add_action(
 			        Field::make('text', 'limit', __('Limit'))
 			            ->set_attribute('type', 'number')
 			            ->set_attribute('min', 0)
-			            ->set_attribute('max', 8)
+			            ->set_attribute('max', 12)
 		        ]
 		      )
 			 ->set_render_callback(static function ( $fields, $attributes ) {
