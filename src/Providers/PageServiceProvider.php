@@ -36,7 +36,14 @@ class PageServiceProvider
 			
 			/** @var \WP_Post $page */
 			$page = $this->getPage($slug);
-			if ($page && Carbon::parse($page->post_date)->isBefore($date)) {
+			
+			if ($page) {
+				if (Carbon::parse($page->post_date)->isBefore($date)) {
+					$page->post_content = $mp->text($ct);
+					wp_update_post($page);
+					continue;
+				}
+				
 				continue;
 			}
 			
