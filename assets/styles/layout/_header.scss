@@ -1,0 +1,194 @@
+header.header {
+  background: $header_background;
+  color: $header_color;
+  padding: $header_padding;
+
+  & > .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+
+  @if $header_sticky {
+    @include sticky(0);
+
+    .admin-bar & {
+      @media screen and (min-width: 415px) {
+        @include sticky(32px);
+      }
+    }
+  }
+
+  & .top-navigation {
+    @if ($topnav_spacing) {
+      & > .top-nav-item:not(:last-of-type) {
+        margin-right: $topnav_spacing;
+      }
+    }
+  }
+}
+
+.logo-header {
+
+  @if $header_sticky {
+    background: $white;
+    @include sticky(56px);
+
+    .admin-bar & {
+      @media screen and (min-width: 415px) {
+        @include sticky(88px);
+      }
+    }
+  }
+
+  @if $header_shadow {
+    @include shadow;
+  }
+
+  & .custom_logo {
+    max-height: 45px;
+  }
+}
+
+.shop-container-slider {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: adjust-color($grey, $alpha: -0.4%);
+  @include transition;
+  z-index: 3;
+  transform: scale(0, 1);
+  transform-origin: left;
+
+  &.active {
+    transform: scale(1);
+  }
+
+  & .shops-wrapper {
+    height: 100vh;
+    width: 75vw;
+    background: adjust-color($white);
+    padding: $padding;
+    border-right: 5px solid adjust-color($primary);
+
+    @media screen and (min-width: 768px) {
+      max-width: 25vw;
+      @include shadow;
+
+      & .site-nav-item {
+        margin-bottom: 0.5rem;
+        position: relative;
+
+        &::after {
+          transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+          position: absolute;
+          width: 100%;
+          top: 100%;
+          left: 0;
+          height: 2px;
+          transform: scale(0, 1);
+          transform-origin: left center;
+          content: ' ';
+          background: $primary;
+        }
+
+
+        &:hover {
+          &::after {
+            transform: scale(0);
+          }
+        }
+      }
+    }
+  }
+
+  .admin-bar & {
+    height: calc(100vh - 32px);
+    top: 32px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .shop-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: adjust-color($grey, $alpha: -0.4%);
+    z-index: 3;
+    transform: scale(0, 1);
+    transform-origin: left;
+
+    &.active {
+      transform: scale(1);
+    }
+
+    & .shops-wrapper {
+      height: 100vh;
+      width: 75vw;
+      background: adjust-color($white);
+      padding: $padding;
+    }
+  }
+}
+
+.shop-container {
+  @extend .content;
+  @include transition;
+}
+
+@media screen and (min-width: 1024px) {
+  .shop-container {
+    & .columned-sites {
+      columns: 3;
+    }
+  }
+}
+
+.bulbed {
+  background: $white;
+  color: $primary;
+  width: 2rem;
+  height: 2rem;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+
+
+.js-menu-open {
+  display: block;
+}
+
+.search-form {
+  display: flex;
+  @media screen and (min-width: 768px) {
+    margin-left: auto;
+    min-width: 350px;
+  }
+  padding: 0 0.5rem;
+
+  border: 1px solid $primary;
+  @include radii;
+
+  & .search-form-input {
+    width: 100%;
+    &:focus {
+      outline: none;
+    }
+  }
+
+  & .search-button {
+    color: $primary;
+  }
+}
+
+.review-seo-list {
+  list-style-type: disc;
+}

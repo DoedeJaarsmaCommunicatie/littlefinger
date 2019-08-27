@@ -1,0 +1,15 @@
+@mixin shadow {
+  box-shadow: 0 3px 6px adjust-color($black, $alpha: -0.9%);
+}
+
+@mixin sticky($top: 0, $z: 1) { position: sticky; top: $top; z-index: $z; }
+
+@mixin radii { @extend %default-radius; }
+
+@mixin transition { @extend %default-transition; }
+
+@mixin outlined() {
+  &.outlined {
+    @content;
+  }
+}

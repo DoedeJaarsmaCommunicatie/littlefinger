@@ -1,0 +1,9 @@
+.footer {
+  background: scale-color($grey, $lightness: 90% );
+  padding: $padding 0 0;
+
+  & .nix-18-logo {
+    width: 150px;
+    margin: 0.5rem auto;
+  }
+}

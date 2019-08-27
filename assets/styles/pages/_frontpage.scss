@@ -13,13 +13,13 @@
 
     position: relative;
 
-    @screen lg {
-        padding-bottom: calc( $padding + 2.5rem );
+    @media screen and (min-width: 1024px) {
+        padding-bottom: $padding + 2.5rem;
     }
 
     & .product-title {
-        @apply leading-none;
-        font-size: theme('fontSize.xl');
+        line-height: 1;
+        font-size: $fontSizeLarge;
         font-weight: 300;
         margin-bottom: $padding_small;
         text-transform: uppercase;
@@ -28,7 +28,7 @@
     .single-product & {
         display: none;
 
-        @screen lg {
+        @media screen and (min-width: 1024px) {
             display: block;
         }
     }
@@ -58,7 +58,7 @@
         left: 0px;
         width: 75px;
         height: 75px;
-        background: color-mod($primary a(85%));
+        background: adjust-color($primary, $alpha: -0.15%);
         border-radius: 50%;
         display: flex;
         justify-content: center;
@@ -67,7 +67,7 @@
 }
 
 .product-card-floating-image {
-    @screen lg {
+    @media screen and (min-width: 1024px) {
         max-height: 300px;
     }
 }
@@ -78,7 +78,7 @@
     grid-template-rows: 1fr;
     grid-gap: $padding;
 
-    @screen lg {
+    @media screen and (min-width: 1024px) {
         grid-template-columns: repeat(2, 1fr);
     }
 }
@@ -86,14 +86,14 @@
 .usp-banner {
     display: none;
 
-    @screen lg {
+    @media screen and (min-width: 1024px) {
         display: block;
         position: absolute;
-        background: color-mod($primary a(60%));
+        background: adjust-color($primary, $alpha: -0.6%);
         width: 100%;
         bottom: 0;
         left: 0;
-        padding: calc( $padding / 2 );
+        padding: $padding / 2;
         text-align: center;
         color: $white;
     }

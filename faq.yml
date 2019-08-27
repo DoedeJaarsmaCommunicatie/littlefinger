@@ -1,6 +1,14 @@
 betalen:
   title: Betalen
   questions:
+    - question: Ik bestel bij een andere webshop dan postwijnen, maar moet wel bij postwijnen.nl afrekenen. Klopt dat wel?
+      answer: "Postwijnen.nl heeft veel verschillende wijnwebshops die gespecialiseerd zijn in één land of type wijn. Kijk [hier](https://postwijnen.nl) voor het overzicht. Je kan bij al deze wijnwinkels bestellen en in één keer afrekenen. Dit heeft de volgende voordelen:
+
+      - Groot assortiment
+
+      - Per fles te bestellen
+
+      - gratis verzending vanaf € 50 over alle shops"
     - question: Hoe kan ik betalen bij Postwijnen.nl?
       answer: Je kan in onze webshop betalen met alle gebruikelijke betaalmethoden in Nederland en België.
     - question: Kan ik op factuur betalen?

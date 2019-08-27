@@ -66,9 +66,13 @@ class ContentServiceProvider
 			    }
 			    
 			    if (true === get_theme_mod('cdelk_use_hash')) {
-				    $context['kiyoh'] = (new cdk_hashed_model())->get();
+			    	if (class_exists('cdk_hashed_model')) {
+			    		$context['kiyoh'] = (new cdk_hashed_model())->get();
+				    }
 			    } else {
-				    $context['kiyoh'] = (new cdk_model())->get();
+			    	if (class_exists('cdk_model')) {
+			    		$context['kiyoh'] = (new cdk_model())->get();
+				    }
 			    }
 			    $context['featured'] = new Post(carbon_get_theme_option('featured_product')[0]['id']);
 			
@@ -115,14 +119,10 @@ class ContentServiceProvider
 		add_filter(
 			'timber/context',
 			static function ($context) {
-				$prefix = '';
-				$name = '';
 				$context['search_placeholder'] = 'Hi, waar ben je naar op zoek?';
-				
 				if (is_user_logged_in()) {
 					$name = wp_get_current_user()->user_firstname;
 					$context['search_placeholder'] = sprintf('Hi %s, waar ben je naar op zoek?', $name);
-					
 				}
 				
 				return $context;

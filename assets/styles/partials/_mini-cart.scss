@@ -9,7 +9,7 @@
 
     &.active {
         transform: scale(1);
-        background: color-mod($white a(20%));
+        background: adjust-color($white, $alpha: 0.2%);
     }
 
     & .mini-cart-contents {
@@ -38,16 +38,16 @@
         & .cart_list.mini-cart {
             all: unset;
         }
-        
+
         & .shopping-cart-title {
             display: block;
             text-align: center;
         }
-        
+
         & .woo-mini-cart-item {
             border-bottom: 1px solid $primary;
-            margin: $padding *;
-            padding: $padding *;
+            margin: $padding auto;
+            padding: $padding auto;
             display: flex;
 
             & .woo-mini-cart-item_product {

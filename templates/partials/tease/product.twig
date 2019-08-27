@@ -2,7 +2,7 @@
 {% from "macro/add-to-cart.twig" import add_to_cart %}
 
 <article class="product-card">
-    <span class="product-label">&euro; {{ _product.get_price }}</span>
+    <span class="product-label" hidden>&euro; {{ _product.get_price }}</span>
     <a href="{{ product.link }}" class="product-image-wrapper">
         <img src="{{ product.thumbnail.src('medium') }}" alt="{{ product.thumbnail.alt }}" class="product-image">
     </a>
@@ -18,5 +18,6 @@
 
         {{ product.content|excerpt(15) }} <a href="{{ product.link }}">Lees meer</a>
     </div>
+    <span class="product-price">&euro; {{ _product.get_price }}</span>
     {{ add_to_cart(product.ID, 'ml-auto mt-auto product-add-to-cart', 'qty', 'small') }}
 </article>

@@ -1,5 +1,5 @@
 .btn {
-    padding: 0.25rem *;
+    padding: 0.25rem 0;
     display: flex;
     align-items: center;
 
@@ -52,4 +52,29 @@
     &.large {
         padding: 0.5rem;
     }
+}
+
+.quantity_button {
+    width: 3rem;
+    color: white;
+    background: $primary;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &.left {
+        border-top-left-radius: $radius;
+        border-bottom-left-radius: $radius;
+    }
+
+    &.right {
+        border-bottom-right-radius: $radius;
+        border-top-right-radius: $radius;
+    }
+
+    &:hover {
+        background: adjust-color($primary, $lightness: -20%);
+    }
+
+    @include transition;
 }

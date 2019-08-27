@@ -3,7 +3,7 @@ title: Onze Voordelen
 slug: onze-voordelen
 author: 1
 status: 'publish'
-created_at: 28-08-2019
+created_at: 27-08-2019 12:00:00
 parent: null
 ---
 
@@ -11,10 +11,11 @@ parent: null
 * Makkelijk bestellen bij meerdere webshops, je kan je wijnmandje meenemen
 * Alle wijnen zijn per fles te bestellen
 * Persoonlijk advies en service via e-mail en telefoon
-* Klanten beoordelen ons met een 9,4
+* Klanten beoordelen ons met een 9,4 \*
 
 ## Voor 15:00 uur besteld, dezelfde dag verzonden
 Bestel je voor 15:00 uur, dan gaat je bestelling die dag direct met PostNL mee. In 99% van de bestellingen heb je de wijn dan de volgende dag in huis. Wij hebben de wijnen uit ons assortiment op voorraad (in tegenstelling tot veel andere online wijnwinkels).  Je ontvangt van ons een track & tracecode zodra je bestelling onderweg is, zodat je kan zien waar je bestelling is.
+
 
 ## Gratis verzending vanaf € 50
 
@@ -40,5 +41,5 @@ De proefgarantie houdt het volgende in:
 * Wij kunnen verzendkosten in rekening brengen bij het omruilen van wijnen
 
 
-* Deze beoordeling is voor onze langstlopende webshop casadelvino.nl
+\* Deze beoordeling is voor onze langstlopende webshop casadelvino.nl
 

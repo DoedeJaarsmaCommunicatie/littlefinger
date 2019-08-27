@@ -1,7 +1,7 @@
 .woocommerce form.checkout .form-row input.input-text, .woocommerce form.checkout .form-row textarea.input-text {
     border: 1px solid $primary;
-    @include radii;
     padding: $padding_small $padding;
+    @include radii;
 }
 
 .woocommerce #place_order {
