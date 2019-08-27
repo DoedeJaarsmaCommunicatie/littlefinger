@@ -11,19 +11,27 @@ bestellen:
     - question: Hoe weet ik wat de status van mijn bestelling is?
       answer:  Zodra je inlogt met je Postwijnen.nl- account, dan kan je bij “mijn bestellingen” zien wat de status van je bestelling is. Hier kan je ook bekijken wat je precies hebt besteld.
     - question: Ik heb geen bevestigingsmail ontvangen.
-      answer: Zodra de bestelling succesvol is afgerond krijg je binnen enkele minuten een e-mail als bevestiging. Als je geen bevestigingsemail hebt ontvangen, zou het kunnen dat deze door je e-mailinstellingen in je ongewenste postvak (spambox) is beland. Soms gebeurt het ook wel eens dat er een fout is gemaakt in het e-mailadres. Mocht je nog steeds geen bevestigingsemail hebben ontvangen, neem dan contact met ons op via [info@postwijnen.nl](mailto:info@postwijnen.nl), of bel even met 020-2614758.
+      answer: Zodra de bestelling succesvol is afgerond krijg je binnen enkele minuten een e-mail als bevestiging. Als je geen bevestigingsemail hebt ontvangen, zou het kunnen dat deze door je e-mailinstellingen in je ongewenste postvak (spambox) is beland. Soms gebeurt het ook wel eens dat er een fout is gemaakt in het e-mailadres. Mocht je nog steeds geen bevestigingsemail hebben ontvangen, neem dan contact met ons op via [info@postwijnen.nl](mailto:info@postwijnen.nl), of bel even met [020-2614758](tel:020-2614758).
     - question: Kan ik mijn bestelling wijzigen? 
-      answer: We willen je bestelling snel bij je afleveren. Onze logistieke planning is daardoor heel strak. Het kan voorkomen dat de wijnen ons magazijn al uit zijn, waardoor de bestelling helaas niet meer gewijzigd kan worden. Als je je bestelling wil wijzigen, kan je contact met ons opnemen via 06 46 132142. Dan kunnen we meteen bekijken wat de mogelijkheden zijn.
+      answer: We willen je bestelling snel bij je afleveren. Onze logistieke planning is daardoor heel strak. Het kan voorkomen dat de wijnen ons magazijn al uit zijn, waardoor de bestelling helaas niet meer gewijzigd kan worden. Als je je bestelling wil wijzigen, kan je contact met ons opnemen via [06 46 132142](tel:06-46-132142). Dan kunnen we meteen bekijken wat de mogelijkheden zijn.
     - question: Hoe plaats ik een bestelling op postwijnen.nl?
-      answer: 1. Voeg via de ‘in winkelmand’-knop de gewenste artikelen in de winkelwagen
-        1. Klik vervolgens op je winkelwagen en klik op “bestellen” of
-        1. Klik op je winkelwagen en druk op “toon winkelwagen” en vervolgens op “ok”
-        1. Log vervolgens in, of maak een account aan als je nog geen account hebt
-        1. Geef vervolgens aan naar welk adres je bestelling moet worden verzonden en druk op “ok”
-        1. Kies de verzend-methode.
-        1. Kies een betaalmethode en druk op “ok”
-        1. Ga akkoord met de algemene voorwaarden en druk op “ok”
-        1. Zodra de betaling is afgerond krijg je een e-mail met de bevestiging van je bestelling en zullen wij de wijn zo snel mogelijk bij je afleveren.
+      answer: '1. Voeg via de ‘in winkelmand’-knop de gewenste artikelen in de winkelwagen
+
+        2. Klik vervolgens op je winkelwagen en klik op “bestellen” of
+
+        3. Klik op je winkelwagen en druk op “toon winkelwagen” en vervolgens op “ok”
+
+        4. Log vervolgens in, of maak een account aan als je nog geen account hebt
+
+        5. Geef vervolgens aan naar welk adres je bestelling moet worden verzonden en druk op “ok”
+
+        6. Kies de verzend-methode.
+
+        7. Kies een betaalmethode en druk op “ok”
+
+        8. Ga akkoord met de algemene voorwaarden en druk op “ok”
+
+        9. Zodra de betaling is afgerond krijg je een e-mail met de bevestiging van je bestelling en zullen wij de wijn zo snel mogelijk bij je afleveren.'
 bezorgen:
   title: Bezorgen
   questions:

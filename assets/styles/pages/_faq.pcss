@@ -1,0 +1,33 @@
+.content p.faq-question {
+    background: color-mod($grey a(30%));
+    color: $black;
+    padding: 1rem 1rem 1rem 3rem;
+    margin: 0;
+
+    position: relative;
+
+    &::before {
+        content: 'Q';
+        color: $primary;
+        position: absolute;
+        left: 1rem;
+        top: 1rem;
+    }
+}
+
+.content p.faq-answer {
+    background: white;
+    margin-bottom: 1rem;
+
+    padding: 1rem 1rem 1rem 3rem;
+
+    position: relative;
+
+    &::before {
+        content: 'A';
+        color: $primary;
+        position: absolute;
+        left: 1rem;
+        top: 1rem;
+    }
+}
