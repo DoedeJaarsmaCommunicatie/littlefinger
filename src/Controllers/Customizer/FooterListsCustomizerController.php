@@ -78,7 +78,7 @@ class FooterListsCustomizerController extends Customizer
         ],
         [
             'id'       => CustomizerServiceProvider::CONFIG_ID,
-            'type'     => 'editor',
+            'type'     => 'text',
             'settings' => 'grapes_list_title',
             'label'    => 'Al onze Druiven titel',
             'section'  => 'footer_lists_settings',
