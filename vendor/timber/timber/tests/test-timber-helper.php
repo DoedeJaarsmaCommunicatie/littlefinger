@@ -34,7 +34,7 @@
 		}
 
 		function testPluckObjectWithMethod() {
-			require_once( __DIR__ . '/php/timber-post-subclass.php' );
+			require_once(__DIR__.'/php/timber-post-subclass.php');
 			$tps = new TimberPostSubclass();
 			$jimmy = new stdClass();
 			$jimmy->name = 'Jimmy';
@@ -284,7 +284,7 @@
 
  		function testCovertPostWithClassMap() {
 			register_post_type('book');
-			require_once( 'assets/Sport.php' );
+			require_once('assets/Sport.php');
 			add_filter('Timber\PostClassMap', function( $post_classes ) {
 				$post_classes = array('sport' => 'Sport', 'post' => 'Timber');
 				$post_classes['sport'] = 'Sport';

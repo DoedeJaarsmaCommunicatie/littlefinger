@@ -852,7 +852,7 @@
 
 		function testPostTermClass() {
 			$class_name = 'TimberTermSubclass';
-			require_once( 'php/timber-term-subclass.php' );
+			require_once('php/timber-term-subclass.php');
 
 			// create new post
 			$pid = $this->factory->post->create();

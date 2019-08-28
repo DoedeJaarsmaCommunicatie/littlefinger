@@ -21,8 +21,8 @@ tests_add_filter( 'muplugins_loaded', '_manually_load_plugin' );
 
 require $_tests_dir . '/includes/bootstrap.php';
 
-require_once __DIR__ . '/Timber_UnitTestCase.php';
-require_once __DIR__ . '/TimberImage_UnitTestCase.php';
+require_once __DIR__.'/Timber_UnitTestCase.php';
+require_once __DIR__.'/TimberImage_UnitTestCase.php';
 
 error_log('Use http://build.starter-theme.dev/ for testing with UI');
 

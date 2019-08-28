@@ -38,7 +38,7 @@
 		function testSubclass(){
 			$term_ids = array();
 			$class_name = 'TimberTermSubclass';
-			require_once( 'php/timber-term-subclass.php' );
+			require_once('php/timber-term-subclass.php');
 			$term_ids[] = $this->factory->term->create();
 			$term_ids[] = $this->factory->term->create();
 			$term_ids[] = $this->factory->term->create();

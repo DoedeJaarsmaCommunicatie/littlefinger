@@ -743,7 +743,7 @@ class TestTimberMenu extends Timber_UnitTestCase {
 	}
 
 	function testCustomMenuItemClass() {
-		require_once( 'php/custom-menu-item-class.php' );
+		require_once('php/custom-menu-item-class.php');
 		$term    = self::_createTestMenu();
 		$menu_id = $term['term_id'];
 		$menu_items = wp_get_nav_menu_items($menu_id);

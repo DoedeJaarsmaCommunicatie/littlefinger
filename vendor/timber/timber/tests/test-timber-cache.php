@@ -227,7 +227,7 @@
             $clear = $loader->clear_cache_timber(\Timber\Loader::CACHE_OBJECT);
             $this->assertTrue($clear);
             $works = true;
-            if ( isset($wp_object_cache->cache[\Timber\Loader::CACHEGROUP])
+            if ( isset($wp_object_cache->cache[\Timber\Loader::CACHEGROUP]) 
                 && !empty($wp_object_cache->cache[\Timber\Loader::CACHEGROUP]) ) {
                 $works = false;
             }
@@ -274,13 +274,13 @@
         }
 
         function _swapFiles() {
-            rename( __DIR__ . '/assets/single-post-rand.twig', __DIR__ . '/assets/single-post-rand.twig.tmp');
-            rename( __DIR__ . '/assets/relative.twig', __DIR__ . '/assets/single-post-rand.twig');
+            rename(__DIR__.'/assets/single-post-rand.twig', __DIR__.'/assets/single-post-rand.twig.tmp');
+            rename(__DIR__.'/assets/relative.twig', __DIR__.'/assets/single-post-rand.twig');
         }
 
         function _unswapFiles() {
-            rename( __DIR__ . '/assets/single-post-rand.twig', __DIR__ . '/assets/relative.twig');
-            rename(__DIR__.'/assets/single-post-rand.twig.tmp', __DIR__ . '/assets/single-post-rand.twig' );
+            rename(__DIR__.'/assets/single-post-rand.twig', __DIR__.'/assets/relative.twig');
+            rename(__DIR__.'/assets/single-post-rand.twig.tmp', __DIR__.'/assets/single-post-rand.twig');
         }
 
         function testTimberLoaderCacheTransientsAdminLoggedOut() {
@@ -367,7 +367,7 @@
         public function _get_cache_key() {
             return 'iamakey';
         }
-    }
+    } 
 
 	function my_test_callback(){
 		return "lbj";

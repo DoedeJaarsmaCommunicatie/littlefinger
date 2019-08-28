@@ -85,7 +85,7 @@ EOHTML
 
     public function testTwigExceptionGuessWithMissingVarAndFilesystemLoader()
     {
-        $loader = new FilesystemLoader( __DIR__ . '/Fixtures/errors' );
+        $loader = new FilesystemLoader(__DIR__.'/Fixtures/errors');
         $twig = new Environment($loader, ['strict_variables' => true, 'debug' => true, 'cache' => false]);
 
         $template = $twig->load('index.html');
@@ -98,13 +98,13 @@ EOHTML
             $this->assertEquals(3, $e->getTemplateLine());
             $this->assertEquals('index.html', $e->getSourceContext()->getName());
             $this->assertEquals(3, $e->getLine());
-            $this->assertEquals(strtr( __DIR__ . '/Fixtures/errors/index.html', '/', DIRECTORY_SEPARATOR), $e->getFile());
+            $this->assertEquals(strtr(__DIR__.'/Fixtures/errors/index.html', '/', DIRECTORY_SEPARATOR), $e->getFile());
         }
     }
 
     public function testTwigExceptionGuessWithExceptionAndFilesystemLoader()
     {
-        $loader = new FilesystemLoader( __DIR__ . '/Fixtures/errors' );
+        $loader = new FilesystemLoader(__DIR__.'/Fixtures/errors');
         $twig = new Environment($loader, ['strict_variables' => true, 'debug' => true, 'cache' => false]);
 
         $template = $twig->load('index.html');
@@ -117,7 +117,7 @@ EOHTML
             $this->assertEquals(3, $e->getTemplateLine());
             $this->assertEquals('index.html', $e->getSourceContext()->getName());
             $this->assertEquals(3, $e->getLine());
-            $this->assertEquals(strtr( __DIR__ . '/Fixtures/errors/index.html', '/', DIRECTORY_SEPARATOR), $e->getFile());
+            $this->assertEquals(strtr(__DIR__.'/Fixtures/errors/index.html', '/', DIRECTORY_SEPARATOR), $e->getFile());
         }
     }
 
@@ -203,14 +203,14 @@ EOHTML
 
     public function testTwigLeakOutputInDebugMode()
     {
-        $output = exec(sprintf('%s %s debug', \PHP_BINARY, escapeshellarg( __DIR__ . '/Fixtures/errors/leak-output.php' )));
+        $output = exec(sprintf('%s %s debug', \PHP_BINARY, escapeshellarg(__DIR__.'/Fixtures/errors/leak-output.php')));
 
         $this->assertSame('Hello OOPS', $output);
     }
 
     public function testDoesNotTwigLeakOutput()
     {
-        $output = exec(sprintf('%s %s', \PHP_BINARY, escapeshellarg( __DIR__ . '/Fixtures/errors/leak-output.php' )));
+        $output = exec(sprintf('%s %s', \PHP_BINARY, escapeshellarg(__DIR__.'/Fixtures/errors/leak-output.php')));
 
         $this->assertSame('', $output);
     }

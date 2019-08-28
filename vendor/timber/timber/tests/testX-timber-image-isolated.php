@@ -10,7 +10,7 @@ class TestTimberImageIsolated extends Timber_UnitTestCase {
 		$upload_dir = wp_upload_dir();
 		$destination = $upload_dir['path'].'/'.$img;
 		if ( !file_exists( $destination ) ) {
-			copy( __DIR__ . '/assets/' . $img, $destination );
+			copy( __DIR__.'/assets/'.$img, $destination );
 		}
 		return $destination;
 	}

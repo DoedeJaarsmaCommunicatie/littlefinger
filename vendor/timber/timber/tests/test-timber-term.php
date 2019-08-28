@@ -180,7 +180,7 @@
 		}
 
 		function testGetPostsNew() {
-			require_once( 'php/timber-post-subclass.php' );
+			require_once('php/timber-post-subclass.php');
 			$term_id = $this->factory->term->create();
 			$posts = array();
 			$posts[] = $this->factory->post->create();

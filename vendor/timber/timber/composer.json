@@ -48,12 +48,12 @@
   },
   "autoload": {
     "psr-4": {
-      "Timber\\": "lib"
+      "Timber\\": "lib/"
     }
   },
   "autoload-dev": {
     "classmap": [
-      "tests"
+      "tests/"
     ],
     "exclude-from-classmap": [
       "tests/php"

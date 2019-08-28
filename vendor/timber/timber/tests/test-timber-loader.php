@@ -10,7 +10,7 @@
 		    });
 		    $str = Timber::compile('assets/single.twig', array());
 		}
-		
+				
 		function testBogusTemplate() {
 			$str = Timber::compile('assets/darkhelmet.twig');
 			$this->assertFalse($str);
@@ -29,7 +29,7 @@
 		function testTwigPathFilterAdded() {
 			$php_unit = $this;
 			add_filter('timber/loader/paths', function($paths) use ($php_unit) {
-				$paths[] = __DIR__ . '/october/';
+				$paths[] = __DIR__.'/october/';
 				return $paths;
 			});
 			$str = Timber::compile('spooky.twig', array());
@@ -69,8 +69,8 @@
 			if (!file_exists($dest_dir.'/views')) {
     			mkdir($dest_dir.'/views', 0777, true);
 			}
-			copy( __DIR__ . '/assets/style.css', $dest_dir . '/style.css');
-			copy( __DIR__ . '/assets/single.twig', $dest_dir . '/views/single.twig');
+			copy(__DIR__.'/assets/style.css', $dest_dir.'/style.css');
+			copy(__DIR__.'/assets/single.twig', $dest_dir.'/views/single.twig');
 		}
 
 		static function _setupParentTheme(){
@@ -78,8 +78,8 @@
 			if (!file_exists($dest_dir.'/views')) {
     			mkdir($dest_dir.'/views', 0777, true);
 			}
-			copy( __DIR__ . '/assets/single-parent.twig', $dest_dir . '/views/single.twig');
-			copy( __DIR__ . '/assets/single-parent.twig', $dest_dir . '/views/single-parent.twig');
+			copy(__DIR__.'/assets/single-parent.twig', $dest_dir.'/views/single.twig');
+			copy(__DIR__.'/assets/single-parent.twig', $dest_dir.'/views/single-parent.twig');
 		}
 
 		function testTwigLoadsFromParentTheme(){
@@ -95,7 +95,7 @@
 			if (!file_exists(__DIR__.'/views')) {
     			mkdir(__DIR__.'/views', 0777, true);
 			}
-			copy( __DIR__ . '/assets/relative.twig', __DIR__ . '/views/single.twig');
+			copy(__DIR__.'/assets/relative.twig', __DIR__.'/views/single.twig');
 		}
 
 		function _teardownRelativeViews(){
@@ -115,7 +115,7 @@
 		}
 
 		function testTwigLoadsFromAbsolutePathOnServer(){
-			$str = Timber::compile( __DIR__ . '/assets/image-test.twig' );
+			$str = Timber::compile(__DIR__.'/assets/image-test.twig');
 			$this->assertEquals('<img src="" />', trim($str));
 		}
 
@@ -128,13 +128,13 @@
 			if (!file_exists(get_template_directory().'/foo')) {
     			mkdir(get_template_directory().'/foo', 0777, true);
 			}
-			copy( __DIR__ . '/assets/single-foo.twig', get_template_directory() . '/foo/single-foo.twig');
+			copy(__DIR__.'/assets/single-foo.twig', get_template_directory().'/foo/single-foo.twig');
 			$str = Timber::compile('single-foo.twig');
 			$this->assertEquals('I am single-foo', trim($str));
 		}
 
 		function testTwigLoadsFromLocation(){
-			Timber::$locations = __DIR__ . '/assets';
+			Timber::$locations = __DIR__.'/assets';
 			$str = Timber::compile('thumb-test.twig');
 			$this->assertEquals('<img src="" />', trim($str));
 		}

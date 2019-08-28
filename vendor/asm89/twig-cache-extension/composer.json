@@ -23,12 +23,12 @@
     },
     "autoload": {
         "psr-4": {
-            "": "lib"
+            "": "lib/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "": "test"
+            "": "test/"
         }
     },
     "extra": {

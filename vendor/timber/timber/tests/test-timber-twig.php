@@ -16,8 +16,8 @@
 			if( !is_dir($lang_dir) ) {
 				mkdir($lang_dir , 0777, true);
 			}
-			copy( __DIR__ . '/assets/languages/en_US.po', $lang_dir . '/en_US.po' );
-			copy( __DIR__ . '/assets/languages/en_US.mo', $lang_dir . '/en_US.mo' );
+			copy( __DIR__.'/assets/languages/en_US.po', $lang_dir.'/en_US.po' );
+			copy( __DIR__.'/assets/languages/en_US.mo', $lang_dir.'/en_US.mo' );
 			return true;
 		}
 

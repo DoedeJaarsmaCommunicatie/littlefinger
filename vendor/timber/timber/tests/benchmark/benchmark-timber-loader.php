@@ -14,7 +14,7 @@
 			$upload_dir = wp_upload_dir();
 			$destination = $upload_dir['path'].'/'.$img;
 			if (!file_exists($destination)){
-				copy( __DIR__ . '/../assets/' . $img, $destination);
+				copy(__DIR__.'/../assets/'.$img, $destination);
 			}
 			for ($i = 0; $i<20; $i++){
 				$upload_dir = wp_upload_dir();
