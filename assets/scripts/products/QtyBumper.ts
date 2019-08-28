@@ -1,31 +1,62 @@
 export default class QtyBumper {
-    buttons: { less: HTMLButtonElement, add: HTMLButtonElement } = {
-        less: document.querySelector<HTMLButtonElement>('.js-less-qty ')!,
-        add: document.querySelector<HTMLButtonElement>('.js-add-qty ')!
+    buttons: { less: NodeListOf<HTMLButtonElement>, add: NodeListOf<HTMLButtonElement> } = {
+        less: document.querySelectorAll<HTMLButtonElement>('.js-less-qty ')!,
+        add: document.querySelectorAll<HTMLButtonElement>('.js-add-qty ')!
     };
 
-    input: HTMLInputElement|null = document.querySelector<HTMLInputElement>('#quantity');
-
-    maximum: string|boolean;
-
     constructor() {
-        if (!this.input) {
-            throw new Error('Input not found');
-        }
-
-        this.maximum = this.input.max.length > 0 ? this.input.max : false;
-
         this.init();
     }
 
-    public init() {
-        this.addEvents();
+    public init(): void {
+        // @ts-ignore
+        for (let less of this.buttons.less) {
+            new ButtonHandler(
+                less,
+                document.querySelector<HTMLInputElement>(less.dataset.target!)!,
+                false,
+                'less'
+            )
+        }
+
+        // @ts-ignore
+        for (let add of this.buttons.add) {
+            const input = document.querySelector<HTMLInputElement>(add.dataset.target!)!;
+            new ButtonHandler(
+                add,
+                input,
+                input.max
+            )
+        }
+    }
+}
+
+export class ButtonHandler {
+    input: HTMLInputElement;
+    button: HTMLButtonElement;
+    maximum: string|boolean;
+
+    constructor(
+        button: HTMLButtonElement,
+        input: HTMLInputElement,
+        maximum: string|boolean = false,
+        type: string = 'add')
+    {
+        this.input = input;
+        this.button = button;
+        this.maximum = maximum;
+
+        this.addEvent(type);
     }
 
-    addEvents() {
-        this.buttons.add.addEventListener('click', () => this.increaseQty());
+    addEvent(type: string) {
+        if(type === 'add') {
+            this.button.addEventListener('click', () => this.increaseQty());
+        }
 
-        this.buttons.less.addEventListener('click', () => this.decreaseQty());
+        if (type === 'less') {
+            this.button.addEventListener('click', () => this.decreaseQty());
+        }
     }
 
     increaseQty(): void {

@@ -2,7 +2,7 @@ html {
   font-family: $fontFamily;
 }
 
-.content {
+%content {
   & h1 {
     font-size: $fontSizeXXLarge;
     font-weight: bold;
@@ -39,4 +39,8 @@ html {
       color: $primary;
     }
   }
+}
+
+.content {
+  @extend %content;
 }

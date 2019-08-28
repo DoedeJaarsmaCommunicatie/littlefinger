@@ -2,7 +2,7 @@
 
 {% if size is same as('large') %}
     <form method="GET" class="{{ classes }}" data-action="add-to-cart" data-product="{{ ID }}" data-size="{{ size }}" enctype="multipart/form-data">
-        <button type="button" class="js-less-qty left quantity_button lg:ml-auto">-</button>
+        <button type="button" class="js-less-qty left quantity_button" data-target="#{{ qty_id }}">-</button>
         <input
             type="number"
             name="quantity"
@@ -11,11 +11,11 @@
             id="{{ qty_id }}"
             {% if max %}max="{{ max }}"{% endif %}
             >
-        <button type="button" class="quantity_button right js-add-qty lg:mr-auto">+</button>
+        <button type="button" class="quantity_button right js-add-qty" data-target="#{{ qty_id }}">+</button>
 
         <input type="hidden" name="product" id="product" value={{ ID }}>
 
-        <button type="submit" class="btn secondary rounded large mt-4 mx-auto">
+        <button type="submit" class="btn secondary rounded large lg:mt-4 w-full justify-center">
             <i class="fas fa-shopping-cart mr-2"></i> <span>in winkelwagen</span>
         </button>
     </form>

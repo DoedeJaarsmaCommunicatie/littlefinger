@@ -8,7 +8,8 @@
 
         <h1 class="product-title">{{ post.title }}</h1>
 
-        <section class="product-attributes">
+        <section class="product-attributes content">
+            <h3 class="mb-2">Kenmerken</h3>
             <p class="product-attributes_category">Categorie: {{ fn('wc_get_product_category_list', post.ID) }}</p>
             {% for attribute in product.get_attributes %}
                 {% if attribute.get_visible %}
@@ -22,9 +23,10 @@
                 {% endif %}
             {% endfor %}
         </section>
+
         <span class="product-price">
             &euro; {{ product.get_price }}
-            <small class="product-price_small">per fles</small>
+            <small class="product-price_small" hidden>per fles</small>
         </span>
 
         <section class="product-content">
@@ -33,6 +35,10 @@
 
         {{ add_to_cart(product.get_id, 'product-form') }}
     </main>
+
+    <section class="mt-4">
+        {% include 'partials/blocks/products.twig' with { posts: related_products, title: 'Gerelateerde producten' } only %}
+    </section>
 
     {{ add_to_cart(product.get_id, 'product-add-to-cart-container', 'qty') }}
 {% endblock %}
