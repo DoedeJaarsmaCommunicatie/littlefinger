@@ -31,3 +31,9 @@ function woocommerce_widget_shopping_cart_button_view_cart() {
 function woocommerce_widget_shopping_cart_proceed_to_checkout() {
 	echo '<a href="' . esc_url( wc_get_checkout_url() ) . '" class="btn primary round large shaded">' . esc_html__( 'Checkout', 'woocommerce' ) . '</a>';
 }
+
+add_filter('woocommerce_register_post_type_product', 'enable_product_revisions');
+function enable_product_revisions( $args ) {
+	$args['supports'][] = 'revisions';
+	return $args;
+}

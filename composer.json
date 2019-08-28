@@ -6,7 +6,7 @@
         "jjgrainger/posttypes": "^2.0",
         "htmlburger/carbon-fields": "^3.1",
         "dusank/knapsack": "^10.0",
-        "elderbraum/casa-products-factory": "@dev",
+        "elderbraum/casa-products-factory": "^1.0.0",
         "pagerange/metaparsedown": "^1.0",
         "nesbot/carbon": "^2.23",
         "symfony/yaml": "^4.3",

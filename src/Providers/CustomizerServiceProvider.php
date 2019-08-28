@@ -18,8 +18,10 @@ use App\Controllers\Customizer\General\GeneralWoocommerceCustomizerController;
 use App\Controllers\Customizer\General\SeoCustomizerController;
 use App\Controllers\Customizer\General\StoreCustomizerController;
 use App\Controllers\Customizer\General\UspCustomizerController;
+use App\Controllers\Customizer\Product\GeneralProductCustomizerController;
 use Kirki;
 use App\Controllers\Customizer\General\ScriptsCustomizerController;
+use Symfony\Component\Finder\Finder;
 
 /**
  * Class CustomizerServiceProvider
@@ -56,7 +58,7 @@ class CustomizerServiceProvider
      */
     public function register(): void
     {
-        new UspCustomizerController();
+    	new UspCustomizerController();
         new SeoCustomizerController();
         new FooterCustomizerController();
         new FooterListsCustomizerController();
@@ -65,6 +67,8 @@ class CustomizerServiceProvider
         new GeneralWoocommerceCustomizerController();
         new ScriptsCustomizerController();
         new GeneralLayoutCustomizerController();
+        
+        new GeneralProductCustomizerController();
     }
 
     /**

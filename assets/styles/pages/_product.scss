@@ -11,12 +11,13 @@
     grid-template-rows: 1fr;
     grid-gap: 0.5rem;
     padding: $padding 0;
+    position: relative;
 
-    @screen lg {
+    @media screen and (min-width: 1024px) {
         padding: 2.25rem 0 0;
-        grid-template-areas: "thumb thumb . title title title title title . price price price"
-                             "thumb thumb . attributes attributes attributes attributes attributes . form form form"
-                             "thumb thumb . attributes attributes attributes attributes attributes . . . ."
+        grid-template-areas: "thumb thumb . title title title title title . sidebar sidebar sidebar"
+                             "thumb thumb . attributes attributes attributes attributes attributes . sidebar sidebar sidebar"
+                             "thumb thumb . attributes attributes attributes attributes attributes . sidebar sidebar sidebar"
                              "thumb thumb . main main main main main . . . ."
                              ". . . main main main main main . . . .";
 
@@ -58,7 +59,6 @@
     }
 
     & .product-price {
-        grid-area: price;
         color: $black;
         font-size: $fontSizeXXLarge;
         & small {
@@ -92,11 +92,19 @@
         }
     }
 
+    .product_sidebar {
+        grid-area: sidebar;
+        background: scale-color($grey, $lightness: 90%);
+        padding: $padding;
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+
     .product-form {
         display: none;
 
         @media screen and (min-width: 1024px) {
-            grid-area: form;
             display: flex;
             flex-wrap: wrap;
 
@@ -106,6 +114,10 @@
                 border: 1px solid $primary;
                 text-align: center;
                 width: 70%;
+            }
+
+            button {
+                font-size: 1rem;
             }
         }
     }

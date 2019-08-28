@@ -17,6 +17,7 @@ return array(
     'App\\Controllers\\Customizer\\General\\SeoCustomizerController' => $baseDir . '/src/Controllers/Customizer/SeoCustomizerController.php',
     'App\\Controllers\\Customizer\\General\\StoreCustomizerController' => $baseDir . '/src/Controllers/Customizer/StoreCustomizerController.php',
     'App\\Controllers\\Customizer\\General\\UspCustomizerController' => $baseDir . '/src/Controllers/Customizer/UspCustomizerController.php',
+    'App\\Controllers\\Customizer\\Product\\GeneralProductCustomizerController' => $baseDir . '/src/Controllers/Customizer/Product/GeneralProductCustomizerController.php',
     'App\\Post' => $baseDir . '/src/Post.php',
     'App\\Providers\\AppServiceProvider' => $baseDir . '/src/Providers/AppServiceProvider.php',
     'App\\Providers\\ContentServiceProvider' => $baseDir . '/src/Providers/ContentServiceProvider.php',

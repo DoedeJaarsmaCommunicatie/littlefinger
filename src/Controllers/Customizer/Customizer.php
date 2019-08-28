@@ -129,7 +129,7 @@ abstract class Customizer
 
             Kirki::add_field(
                 $field->get('id'),
-                $field->only([ 'type', 'settings', 'label', 'section', 'default', 'priority', 'description', 'choices' ])->toArray()
+                $field->only([ 'type', 'settings', 'label', 'section', 'default', 'priority', 'description', 'choices', 'fields' ])->toArray()
             );
         }
     }
