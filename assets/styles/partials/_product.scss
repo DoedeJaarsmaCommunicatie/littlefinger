@@ -43,6 +43,7 @@
     & .product-price {
         color: $primary;
         grid-area: price;
+        font-size: $fontSizeLarge;
     }
 
     & .product-content {

@@ -77,7 +77,9 @@ class ContentServiceProvider
 			    		$context['kiyoh'] = (new cdk_model())->get();
 				    }
 			    }
-			    $context['featured'] = new Post(carbon_get_theme_option('featured_product')[0]['id']);
+			    if (carbon_get_theme_option('featured_product')) {
+			    	$context['featured'] = new Post(carbon_get_theme_option('featured_product')[0]['id']);
+			    }
 			
 			    $context['secure_payment'] = $finder->files()->in(get_stylesheet_directory() . '/dist/images/payment_methods')->name('*.svg');
 			    

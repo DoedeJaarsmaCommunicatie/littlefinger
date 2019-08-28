@@ -8,8 +8,10 @@
 
         <h1 class="product-title">{{ post.title }}</h1>
 
-        <section class="product-attributes content">
-            <h3 class="mb-2">Kenmerken</h3>
+        <section class="product-attributes">
+            <span class="content">
+                <h3 class="mb-2">Kenmerken</h3>
+            </span>
             <p class="product-attributes_category">Categorie: {{ fn('wc_get_product_category_list', post.ID) }}</p>
             {% for attribute in product.get_attributes %}
                 {% if attribute.get_visible %}

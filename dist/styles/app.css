@@ -1397,6 +1397,7 @@ header.header .top-navigation > .top-nav-item:not(:last-of-type) {
 .product-card .product-price {
   color: #ff9933;
   grid-area: price;
+  font-size: 1.25rem;
 }
 
 .product-card .product-content {
