@@ -13,6 +13,7 @@ return array(
     'Symfony\\Contracts\\Translation\\' => array($vendorDir . '/symfony/translation-contracts'),
     'Symfony\\Component\\Yaml\\' => array($vendorDir . '/symfony/yaml'),
     'Symfony\\Component\\Translation\\' => array($vendorDir . '/symfony/translation'),
+    'Symfony\\Component\\Finder\\' => array($vendorDir . '/symfony/finder'),
     'PostTypes\\' => array($vendorDir . '/jjgrainger/posttypes/src'),
     'Pagerange\\Markdown\\' => array($vendorDir . '/pagerange/metaparsedown/src'),
     'Elderbraum\\CasaProductFactory\\' => array($vendorDir . '/elderbraum/casa-products-factory/src'),

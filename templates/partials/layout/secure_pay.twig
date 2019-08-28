@@ -1,0 +1,5 @@
+<aside class="flex">
+    {% for icon in secure_payment %}
+        <img src="{{ theme.link }}/dist/images/payment_methods/{{ icon.getFileName }}" />
+    {% endfor %}
+</aside>

@@ -9,7 +9,8 @@
         "elderbraum/casa-products-factory": "@dev",
         "pagerange/metaparsedown": "^1.0",
         "nesbot/carbon": "^2.23",
-        "symfony/yaml": "^4.3"
+        "symfony/yaml": "^4.3",
+        "symfony/finder": "^4.3"
     },
     "require-dev": {
         "roave/security-advisories": "dev-master"
@@ -24,5 +25,8 @@
             "src/Controllers/Resources/CustomBlocks.php",
             "src/Controllers/Resources/FrontpageMeta.php"
         ]
+    },
+    "config": {
+        "optimize-autoloader": true
     }
 }

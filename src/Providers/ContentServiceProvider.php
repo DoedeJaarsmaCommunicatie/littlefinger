@@ -3,6 +3,7 @@ namespace App\Providers;
 
 use cdk_model;
 use cdk_hashed_model;
+use Symfony\Component\Finder\Finder;
 use Timber\Post;
 use Timber\Twig_Function;
 use Twig\TwigFunction;
@@ -55,6 +56,8 @@ class ContentServiceProvider
 	    add_filter(
 		    'timber/context',
 		    static function ($context) {
+		    	$finder = new Finder();
+		    	
 			    if (function_exists('get_sites')) {
 				    $context['sites'] = get_sites(
 					    [
@@ -76,6 +79,8 @@ class ContentServiceProvider
 			    }
 			    $context['featured'] = new Post(carbon_get_theme_option('featured_product')[0]['id']);
 			
+			    $context['secure_payment'] = $finder->files()->in(get_stylesheet_directory() . '/dist/images/payment_methods')->name('*.svg');
+			    
 			    if ( function_exists( 'wc' ) && ! is_admin() ) {
 				    $context['wc_cart_count'] = wc()->cart->get_cart_contents_count();
 			    }

@@ -1281,6 +1281,10 @@ header.header .top-navigation > .top-nav-item:not(:last-of-type) {
   display: none;
 }
 
+.single-product .seo_large {
+  display: none;
+}
+
 .product-add-to-cart-container {
   position: fixed;
   bottom: 0;

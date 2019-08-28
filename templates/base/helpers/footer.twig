@@ -28,7 +28,7 @@
             </section>
         </div>
 
-        <section role="complementary" class="content px-4 lg:px-0" id="seo_large_{{ post.ID }}">
+        <section role="complementary" class="content px-4 lg:px-0 seo_large" id="seo_large_{{ post.ID }}">
             {{ theme.theme_mod('seo_large')|wpautop }}
         </section>
     </div>
@@ -43,8 +43,8 @@
                     }}
                 </p>
                 <p>Postwijnen.nl</p>
-                <p>{{ theme.theme_mod('address', 'Lauriergracht 54BG (afhalen op afspraak)')}}</p>
-                <p>{{ theme.theme_mod('postalcode', '1016RL')}}, {{ theme.theme_mod('city', 'Amsterdam')}}</p>
+                <p>{{ theme.theme_mod('address', 'Lauriergracht 54BG <br> (afhalen op afspraak)')}}</p>
+                <p>{{ theme.theme_mod('postalcode', '1016RL')}} {{ theme.theme_mod('city', 'Amsterdam')}}</p>
                 <p>Telefoon: <a href="tel:{{ theme.theme_mod('phone', '020-2614758') }}">{{ theme.theme_mod('phone', '020-2614758')}}</a></p>
                 <p>Email: <a href="mailto:{{ theme.theme_mod('email', 'info@postwijnen.nl') }}">{{ theme.theme_mod('email', 'info@postwijnen.nl')}}</a></p>
             </address>
@@ -69,6 +69,7 @@
                     <strong>&lt; 18 geen alcohol</strong>
                     <img src="{{ theme.link }}/dist/images/nix18.png" alt="NIX18" class="nix-18-logo">
                     <strong>Veilig betalen</strong>
+                    {% include 'partials/layout/secure_pay.twig' %}
                 {% endif %}
             </aside>
             <aside role="complementary" class="benefits-block lg:w-1/4">
@@ -76,7 +77,7 @@
                     {{ theme.theme_mod('benefits')|wpautop }}
                 {% else %}
                     <strong>Voordelen</strong>
-                    <ul>
+                    <ul class="list-disc">
                         <li>Groot assortiment wijnen op voorraad</li>
                         <li>Per fles te bestellen</li>
                         <li>Gratis verzending vanaf €50,- (NL)</li>
