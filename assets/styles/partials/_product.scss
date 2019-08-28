@@ -4,8 +4,8 @@
     @include radii;
     display: grid;
 
-    grid-template-areas: "thumb thumb title title" "thumb thumb content content" "thumb thumb price button";
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas: "thumb title title" "thumb content content" "thumb price button";
+    grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 1fr;
     grid-column-gap: 0.75rem;
     position: relative;
