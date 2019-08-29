@@ -3,7 +3,7 @@
 <section class="mini-cart-contents">
     <strong class='shopping-cart-title'>Winkelmandje</strong>
     {% do action('woocommerce_before_mini_cart_contents') %}
-    {% if not WC.cart.is_empty %}    
+    {% if not WC.cart.is_empty %}
         <ul class="mini-cart cart_list products_list {{ args.list_class }}">
             {% for cart_item_key, cart_item in WC.cart.get_cart %}
                 {% set _product = cart_item.data|apply_filters('woocommerce_cart_item_product', cart_item.data, cart_item, cart_item_key) %}
@@ -42,10 +42,16 @@
             <strong>{{ _e('Subtotal', 'woocommerce') }}: </strong>
             {{ WC.cart.get_cart_subtotal }}
         </p>
+        <p class="mini-cart_close mb-4 lg:mb-0">
+            <button type="button" class="mobile-only js-close-cart btn secondary outline round large shaded w-full lg:w-auto ">
+                {{ __('Verder winkelen') }}
+            </button>
+        </p>
         {% do action('woocommerce_widget_shopping_cart_before_buttons') %}
         <p class="mini-cart_buttons">
             {% do action('woocommerce_widget_shopping_cart_buttons') %}
         </p>
+
     </footer>
 </section>
 

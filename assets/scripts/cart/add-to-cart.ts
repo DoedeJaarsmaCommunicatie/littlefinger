@@ -66,6 +66,7 @@ export class AddToCart {
 
     refreshCart(): void {
         const cart = document.querySelector('div.widget_shopping_cart_content')!;
+        const close_btn = document.querySelector<HTMLButtonElement>('.js-close-cart')!;
         cart.classList.add('active');
 
         cart.addEventListener('click', function (e) {
@@ -76,6 +77,10 @@ export class AddToCart {
 
             (<HTMLElement> e.target).classList.remove('active');
         });
+
+        close_btn.addEventListener('click', () => {
+            cart.classList.remove('active');
+        })
     }
 
     // noinspection JSMethodCanBeStatic

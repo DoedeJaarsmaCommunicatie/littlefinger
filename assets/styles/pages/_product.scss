@@ -4,7 +4,7 @@
                          "thumb . attributes attributes"
                          "thumb . attributes attributes"
                          "thumb . . ."
-                         "thumb . price price"
+                         "thumb . sidebar sidebar"
                          "main main main main";
 
     grid-template-columns: repeat(4, 1fr);
@@ -94,11 +94,21 @@
 
     .product_sidebar {
         grid-area: sidebar;
-        background: scale-color($grey, $lightness: 90%);
-        padding: $padding;
-        position: absolute;
-        top: 0;
-        right: 0;
+        background: transparent;
+        & table {
+            display: none;
+        }
+        @media screen and (min-width: 1023px) {
+            padding: $padding;
+            background: scale-color($grey, $lightness: 90%);
+            position: absolute;
+            top: 0;
+            right: 0;
+
+            & table {
+                display: block
+            }
+        }
     }
 
     .product-form {

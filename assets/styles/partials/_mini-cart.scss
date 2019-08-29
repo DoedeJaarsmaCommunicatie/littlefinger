@@ -14,6 +14,8 @@
 
     & .mini-cart_buttons {
         display: flex;
+        flex: 1 1 auto;
+        flex-wrap: wrap;
     }
 }
 
@@ -28,12 +30,11 @@
 
     @media screen and (max-width: 414px) {
         width: 100vw;
-        height: calc(100vh - 56px);
-        top: 56px;
+        height: calc(100vh - 122px);
+        top: 122px;
         left: 0;
         transform: none;
         overflow-y: scroll;
-
     }
 
     & .cart_list.mini-cart {
