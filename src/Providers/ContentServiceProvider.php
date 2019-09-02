@@ -68,23 +68,22 @@ class ContentServiceProvider
 				    );
 			    }
 			    
-			    if (true === get_theme_mod('cdelk_use_hash')) {
-			    	if (class_exists('cdk_hashed_model')) {
-			    		$context['kiyoh'] = (new cdk_hashed_model())->get();
-				    }
-			    } else {
-			    	if (class_exists('cdk_model')) {
-			    		$context['kiyoh'] = (new cdk_model())->get();
-				    }
+			    if (true === get_theme_mod('cdelk_use_hash') && class_exists('cdk_hashed_model')) {
+                    $context['kiyoh'] = (new cdk_hashed_model())->get();
+			    } else if (class_exists('cdk_model')) {
+				    $context['kiyoh'] = (new cdk_model())->get();
 			    }
-			    if (carbon_get_theme_option('featured_product')) {
-			    	$context['featured'] = new Post(carbon_get_theme_option('featured_product')[0]['id']);
-			    }
-			
+			    
 			    $context['secure_payment'] = $finder->files()->in(get_stylesheet_directory() . '/dist/images/payment_methods')->name('*.svg');
 			    
 			    if ( function_exists( 'wc' ) && ! is_admin() ) {
 				    $context['wc_cart_count'] = wc()->cart->get_cart_contents_count();
+			    }
+			    
+			    if (get_theme_mod('large_layout')) {
+			    	$context['stramien_large'] = get_theme_mod('large_layout');
+			    } else {
+			    	$context['stramien_large'] = false;
 			    }
 			    
 			    return $context;

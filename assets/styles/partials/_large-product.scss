@@ -1,0 +1,22 @@
+.product-card-large {
+  $card_radius: 0;
+  @extend %card;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.product-large-price {
+  color: $primary;
+  font-size: $fontSizeLarge;
+  margin-top: 1.125rem;
+  margin-bottom: 1.125rem;
+}
+
+.product-large-title {
+  color: $black;
+  font-size: $fontSizeLarge;
+  margin-top: 1.125rem;
+  font-weight: 600;
+}

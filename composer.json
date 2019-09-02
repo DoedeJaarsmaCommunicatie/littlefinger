@@ -21,9 +21,7 @@
         },
         "files": [
             "vendor/aristath/kirki/kirki.php",
-            "src/app.php",
-            "src/Controllers/Resources/CustomBlocks.php",
-            "src/Controllers/Resources/FrontpageMeta.php"
+            "src/app.php"
         ]
     },
     "config": {

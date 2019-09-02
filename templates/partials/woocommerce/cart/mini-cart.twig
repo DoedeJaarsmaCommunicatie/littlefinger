@@ -42,13 +42,11 @@
             <strong>{{ _e('Subtotal', 'woocommerce') }}: </strong>
             {{ WC.cart.get_cart_subtotal }}
         </p>
-        <p class="mini-cart_close mb-4 lg:mb-0">
-            <button type="button" class="mobile-only js-close-cart btn secondary outline round large shaded w-full lg:w-auto ">
-                {{ __('Verder winkelen') }}
-            </button>
-        </p>
         {% do action('woocommerce_widget_shopping_cart_before_buttons') %}
         <p class="mini-cart_buttons">
+            <button type="button" class="mobile-only js-close-cart btn secondary outline round large shaded w-full lg:w-auto mb-4 lg:mb-0 lg:mr-4">
+                {{ __('Verder winkelen') }}
+            </button>
             {% do action('woocommerce_widget_shopping_cart_buttons') %}
         </p>
 

@@ -1,0 +1,22 @@
+$logo-height: 45px !default;
+
+.logo-header {
+  @if ($header-sticky) {
+    background: $white;
+    @include sticky(56px);
+
+    .admin-bar & {
+      @media screen and (min-width: 415px) {
+        @include sticky(88px);
+      }
+    }
+  }
+
+  @if $header_shadow {
+    @include shadow;
+  }
+}
+
+.custom_logo {
+  max-height: $logo-height;
+}

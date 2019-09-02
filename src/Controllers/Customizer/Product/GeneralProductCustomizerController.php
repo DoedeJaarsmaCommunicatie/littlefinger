@@ -2,10 +2,13 @@
 namespace App\Controllers\Customizer\Product;
 
 use App\Controllers\Customizer\General\Customizer;
+use App\Enums\FontAwesome;
 use App\Providers\CustomizerServiceProvider;
 
 class GeneralProductCustomizerController extends Customizer
 {
+	use FontAwesome;
+	
 	/**
 	 * This holds the section data.
 	 *
@@ -40,39 +43,33 @@ class GeneralProductCustomizerController extends Customizer
 	 */
 	protected $panel_name = 'product_settings';
 	
-	/**
-	 * The basic fields.
-	 *
-	 * @var array
-	 */
-	protected $fields = [
-		[
-			'id'       => CustomizerServiceProvider::CONFIG_ID,
-			'type'     => 'repeater',
-			'settings' => 'product_usp',
-			'label'    => 'USP\'s',
-			'section'  => 'product_general',
-			'priority' => 10,
-			'fields' => [
-				'usp_title' => [
-					'type'        => 'text',
-					'label'       => 'USP',
-					'description' => 'Een USP',
-					'default'     => '',
-				],
-				'icon'      => [
-					'type'        => 'select',
-					'label'       => 'icon',
-					'description' => 'Icoon',
-					'choices'     => [
-						'far fa-clock'  => 'Klok',
-						'fas fa-truck'  => 'Truck',
-						'fas fa-wine-glass-alt'  => 'Wijn glas',
-						'fas fa-home'   => 'Huis',
-						'fas fa-trophy' => 'Beker'
+	
+	public function __construct() {
+		$this->fields = [
+			[
+				'id'       => CustomizerServiceProvider::CONFIG_ID,
+				'type'     => 'repeater',
+				'settings' => 'product_usp',
+				'label'    => 'USP\'s',
+				'section'  => 'product_general',
+				'priority' => 10,
+				'fields' => [
+					'usp_title' => [
+						'type'        => 'text',
+						'label'       => 'USP',
+						'description' => 'De USP tekst',
+						'default'     => '',
 					],
+					'icon'      => [
+						'type'        => 'select',
+						'label'       => 'icon',
+						'description' => 'Icoon',
+						'choices'     => $this->getIconsForSelect(false),
+					]
 				]
-			]
-		],
-	];
+			],
+		];
+		
+		parent::__construct();
+	}
 }

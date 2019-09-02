@@ -14,8 +14,6 @@ class ComposerStaticInit9edba24e2d0ef0c1020337c25818ed0e
         '89ff252b349d4d088742a09c25f5dd74' => __DIR__ . '/..' . '/yahnis-elsts/plugin-update-checker/plugin-update-checker.php',
         'c39e5e966364f845b8dc03db0a1c135c' => __DIR__ . '/..' . '/aristath/kirki/kirki.php',
         '644832821dc5f369571c226eb740f0b8' => __DIR__ . '/../..' . '/src/app.php',
-        '650757ef41a6d8c40760fccbd71baff2' => __DIR__ . '/../..' . '/src/Controllers/Resources/CustomBlocks.php',
-        'bc7839c5c55bff99d5a1b23fe6f3f17e' => __DIR__ . '/../..' . '/src/Controllers/Resources/FrontpageMeta.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -166,8 +164,17 @@ class ComposerStaticInit9edba24e2d0ef0c1020337c25818ed0e
         'App\\Controllers\\Customizer\\General\\StoreCustomizerController' => __DIR__ . '/../..' . '/src/Controllers/Customizer/StoreCustomizerController.php',
         'App\\Controllers\\Customizer\\General\\UspCustomizerController' => __DIR__ . '/../..' . '/src/Controllers/Customizer/UspCustomizerController.php',
         'App\\Controllers\\Customizer\\Product\\GeneralProductCustomizerController' => __DIR__ . '/../..' . '/src/Controllers/Customizer/Product/GeneralProductCustomizerController.php',
+        'App\\Controllers\\Meta\\Blocks\\Block' => __DIR__ . '/../..' . '/src/Controllers/Meta/Blocks/Block.php',
+        'App\\Controllers\\Meta\\Blocks\\Producten' => __DIR__ . '/../..' . '/src/Controllers/Meta/Blocks/Producten.php',
+        'App\\Controllers\\Meta\\Field' => __DIR__ . '/../..' . '/src/Controllers/Meta/Field.php',
+        'App\\Controllers\\Meta\\MenuMeta' => __DIR__ . '/../..' . '/src/Controllers/Meta/MenuMeta.php',
+        'App\\Controllers\\Meta\\Options\\Theme' => __DIR__ . '/../..' . '/src/Controllers/Meta/Options/Theme.php',
+        'App\\Enums\\FontAwesome' => __DIR__ . '/../..' . '/src/Enums/FontAwesome.php',
+        'App\\Models\\Menu\\Menu' => __DIR__ . '/../..' . '/src/Models/Menu/Menu.php',
+        'App\\Models\\Menu\\MenuItem' => __DIR__ . '/../..' . '/src/Models/Menu/MenuItem.php',
         'App\\Post' => __DIR__ . '/../..' . '/src/Post.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/src/Providers/AppServiceProvider.php',
+        'App\\Providers\\CarbonServiceProvider' => __DIR__ . '/../..' . '/src/Providers/CarbonServiceProvider.php',
         'App\\Providers\\ContentServiceProvider' => __DIR__ . '/../..' . '/src/Providers/ContentServiceProvider.php',
         'App\\Providers\\CustomizerServiceProvider' => __DIR__ . '/../..' . '/src/Providers/CustomizerServiceProvider.php',
         'App\\Providers\\MenuServiceProvider' => __DIR__ . '/../..' . '/src/Providers/MenuServiceProvider.php',

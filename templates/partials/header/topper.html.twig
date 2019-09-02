@@ -1,0 +1,32 @@
+<!-- Header topper -->
+<header class="header" role="banner">
+    <div class="container mx-auto">
+        <button role="button" class="js-menu-open">
+            <span class="bulbed">
+                <i class="fas fa-store"></i>
+            </span>
+            <span class="not-mobile">{{ theme.theme_mod('header_store-text', 'Al onze winkels') }}</span>
+        </button>
+
+        <nav class="top-navigation" role="navigation">
+            {% for item in topMenu.items %}
+                <a
+                        class="top-nav-item {{ item.get_field('has_shopping_bubble')? 'has-badge': '' }} {{ item.classes|join(' ') }}"
+                        href="{{ item.link }}"
+                >
+                    {% if item.get_field('menu_icon') %}
+                        <span class="bulbed">
+                            <i class="{{ item.get_field('menu_icon')|replace({'_': ' '}) }}"></i>
+                        </span>
+                    {% endif %}
+                    <span class="not-mobile">
+                        {{ item.title }}
+                    </span>
+                    {% if item.get_field('has_shopping_bubble') %}
+                        <span class="badge top right white js-cart-amount" data-amount="{{ wc_cart_count }}">{{ wc_cart_count }}</span>
+                    {% endif %}
+                </a>
+            {% endfor %}
+        </nav>
+    </div>
+</header>

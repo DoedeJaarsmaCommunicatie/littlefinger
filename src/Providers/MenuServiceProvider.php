@@ -1,7 +1,7 @@
 <?php
 namespace App\Providers;
 
-use Timber\Menu;
+use App\Models\Menu\Menu;
 use function register_nav_menus;
 
 /**
@@ -17,6 +17,7 @@ class MenuServiceProvider {
 	 * @var array
 	 */
 	protected $menus = [
+		'top-menu'     => 'Topmenu',
 		'primary-menu' => 'Primary',
 		'footer-menu'  => 'Footer menu',
 	];

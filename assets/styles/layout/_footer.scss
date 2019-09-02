@@ -1,9 +1,15 @@
+$footer-background-color: scale-color($grey, $lightness: 90%) !default;
+$footer-padding: $padding 0 0 !default;
+
+$nix18-margins: $padding_small auto $padding_small 0 !default;
+$nix18-width: 150px !default;
+
 .footer {
-  background: scale-color($grey, $lightness: 90% );
-  padding: $padding 0 0;
+  background: $footer-background-color;
+  padding: $footer-padding;
 
   & .nix-18-logo {
-    width: 150px;
-    margin: 0.5rem auto .5rem 0;
+    width: $nix18-width;
+    margin: $nix18-margins;
   }
 }

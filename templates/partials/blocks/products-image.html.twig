@@ -1,0 +1,22 @@
+{% set _image = Image(image) %}
+<section class="bg-grey-products">
+    <div class="container mx-auto products-large--image-container {{ image_right? 'image-right' : 'image-left' }}">
+        <a class="products-image--image-wrapper" href="{{ link }}">
+            <img src="{{ _image.src('large') }}" alt="{{ _image.alt }}" class="products-image--image">
+            <span class="products-image--caption">
+                {{ image_title }}
+            </span>
+        </a>
+
+        <aside class="products-image--products-wrapper">
+            <section class="products-image--products">
+                {% for product in posts %}
+                    {% include 'partials/tease/product-large-hor.html.twig' with { product: product } only %}
+                {% endfor %}
+            </section>
+            <a class="products-large-cta text-primary py-2" href="{{ link }}">
+                {{ button_text }}
+            </a>
+        </aside>
+    </div>
+</section>

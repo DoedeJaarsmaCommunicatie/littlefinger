@@ -1,42 +1,22 @@
-/*
- Edit these.
- */
-$primary: hsl(30, 100%, 60%);
-$secondary: hsl(157, 100%, 38%);
-$white: hsl(0, 0%, 100%);
-$grey: hsl(0, 0%, 58%);
-$black: hsl(0, 0%, 0%);
-$radius: .25rem;
+// Base colors
+@import "variables/colors";
 
-/*
- Used by the system.
- */
-$padding: 1rem;
-$padding_small: .5rem;
+$radius: .25rem !default;
+$padding: 1rem !default;
+$padding_small: $padding / 2 !default;
 
-$fontFamily: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-$fontSizeLarge: 1.25rem;
-$fontSizeXLarge: 1.5rem;
-$fontSizeXXLarge: 1.875rem;
+$fontFamily: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
+$fontSizeLarge: 1.25rem !default;
+$fontSizeXLarge: 1.5rem !default;
+$fontSizeXXLarge: 1.875rem !default;
 
-/*
- Header
- */
-$header_color: $white;
-$header_background: $primary;
-$header_padding: $padding;
-$header_shadow: true;
-$header_sticky: true;
-$topnav_spacing: $padding_small;
-
-/*
- Frontpage
- */
-$hero_height: false;
-$hero_size: cover;
-$hero_background: true;
-
-
+$WP_ADMIN_BAR_HEIGHT: 32px;
+$breakpoints: (
+  'sm': 415px,
+  'md': 768px,
+  'lg': 1024px,
+  'xl': 1200px
+);
 /*
  Product cards.
  */

@@ -32,21 +32,12 @@ class GeneralLayoutCustomizerController extends Customizer
 		],
 		[
 			'id'        => CustomizerServiceProvider::CONFIG_ID,
-			'type'      => 'text',
-			'settings'  => 'my_account-text',
-			'label'     => 'Label voor knop `mijn account`',
+			'type'      => 'switch',
+			'settings'  => 'large_layout',
+			'label'     => 'Gebruik het grotere stramien',
 			'section'   => 'general_settings_layout',
-			'default'   => 'Mijn account',
+			'default'   => '0',
 			'priority'  => 20,
-		],
-		[
-			'id'        => CustomizerServiceProvider::CONFIG_ID,
-			'type'      => 'text',
-			'settings'  => 'winkelwagen-text',
-			'label'     => 'Label voor knop `winkelwagen`',
-			'section'   => 'general_settings_layout',
-			'default'   => 'Winkelmandje',
-			'priority'  => 20,
-		],
+		]
 	];
 }

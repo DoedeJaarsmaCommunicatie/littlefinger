@@ -1,101 +1,12 @@
-{% from "macro/sites.twig" import sites_list %}
-{% from "macro/search_form.twig" import search_form %}
+{% include 'partials/header/topper.html.twig' %}
+{% include 'partials/layout/stores-flyout.html.twig' %}
 
-{% block header_topper %}
-<!-- Header topper -->
-<header class="header" role="banner">
-    <div class="container mx-auto">
-        <button role="button" class="js-menu-open">
-            <span class="lg:bulbed">
-                <i class="fas fa-store"></i>
-            </span>
-            <span class="not-mobile">{{ theme.theme_mod('header_store-text', 'Al onze winkels') }}</span>
-        </button>
+{% include 'partials/header/logobar.html.twig' %}
 
-        <nav class="top-navigation" role="navigation">
-            <a class="top-nav-item" href="{{ fn('get_permalink', fn('get_option', 'woocommerce_myaccount_page_id')) }}">
-                <span class="lg:bulbed">
-                    <i class="fas fa-user"></i>
-                </span>
-                <span class="not-mobile">{{ theme.theme_mod('my_account-text', 'Mijn account') }}</span>
-            </a>
+{% if fn('is_front_page') %}
+    {% include 'partials/home/herobanner.html.twig' %}
+{% endif %}
 
-            <a href="{{ fn('wc_get_cart_url') }}" class="top-nav-item has-badge">
-                <span class="lg:bulbed">
-                    <i class="fas fa-shopping-basket"></i>
-                </span>
-                <span class="not-mobile">{{ theme.theme_mod('winkelwagen-text', 'Winkelmandje') }}</span>
-                <span class="badge top right white js-cart-amount" data-amount="{{ wc_cart_count }}">{{ wc_cart_count }}</span>
-            </a>
-        </nav>
-    </div>
-</header>
-
-{% endblock %}
-
-{% block flyout_stores %}
-<!-- All stores flyout menu -->
-<nav class="shop-container-slider">
-    <div class="shops-wrapper">
-        <div class="content">
-            {{ theme.theme_mod('seo_store_flyout')|wpautop }}
-        </div>
-        <div class="flex flex-col">
-            {{ sites_list(sites) }}
-        </div>
-    </div>
-</nav>
-{% endblock %}
-
-<!-- Header bar -->
-<section class="logo-header">
-    <div class="container mx-auto py-2 px-4 lg:px-0 lg:flex">
-        {% set _logo = Image(theme.theme_mod('custom_logo')) %}
-        <a href="/">
-            <img src="{{ _logo.src }}" alt="{{ _logo.alt?? 'LOGO ' ~ site.name }}" class="custom_logo" id="logo_{{ post.ID }}" />
-        </a>
-
-        {{ search_form(search_placeholder) }}
-    </div>
-</section>
-
-<!-- Hero banner -->
-<section class="frontpage-hero {{ fn('is_front_page')? 'home': 'not_home' }}" style="background-image: url('{{ Image(theme_option('hero_image')).src('large') }}')">
-    <div class="container mx-auto">
-        {% include 'partials/home/hero-product.twig' with { product: featured, title: theme_option('title') } only %}
-    </div>
-    <aside class="usp-banner">
-        <div class="container mx-auto lg:flex lg:justify-around">
-            <small><i class="fas fa-store-alt"></i> {{ theme.theme_mod('more_shops', 'Bestellen bij meerdere webshops.') }}</small>
-            <small><i class="fas fa-truck"></i> {{ theme.theme_mod('shipping_fee') }}</small>
-            <small><i class="fas fa-dolly"></i> {{ theme.theme_mod('delivery_time')}} </small>
-        </div>
-    </aside>
-</section>
-
-<!-- Kiyoh Banner -->
-<div class="border-b border-primary kiyoh-banner">
-    <section class="container mx-auto py-8 flex">
-        {% include 'partials/blocks/kiyoh.twig' %}
-        <nav class="lg:w-3/5 shop-container">
-            <div class="shops-wrapper">
-                <h3>Makkelijk bestellen bij meerdere wijnwebshops</h3>
-
-                {% for item in theme.theme_mod('seo_reviews') %}
-                    {% if loop.first %}<ul class="review-seo-list">{% endif %}
-                    <li class="review-seo-list-item">{{ item.item_text }}</li>
-                    {% if loop.last %}
-                        </ul>
-                        <button role="button" class="js-menu-open btn round animated shaded primary outline large">
-                            <span class="not-mobile">{{ theme.theme_mod('header_store-text', 'Bekijk alle shops') }}</span>
-                        </button>
-                    {% endif %}
-                {% else %}
-                    <div class="columned-sites">
-                        {{ sites_list(sites)}}
-                    </div>
-                {% endfor %}
-            </div>
-        </nav>
-    </section>
-</div>
+{% if not stramien_large %}
+    {% include 'partials/header/kiyohbanner.html.twig' %}
+{% endif %}

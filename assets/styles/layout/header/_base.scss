@@ -1,0 +1,51 @@
+$header-background: $primary !default;
+$header-color: $white !default;
+$header-padding: $padding !default;
+$header-shadow: true !default;
+$header-sticky: true !default;
+$topnav-spacing: $padding_small !default;
+
+header.header {
+  background: $header-background;
+  color: $header-color;
+  padding: $header-padding;
+
+  & > .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  @if $header-sticky {
+    @include sticky(0);
+
+    .admin-bar & {
+      @media screen and (min-width: get-breakpoint('sm')) {
+        @include sticky($WP_ADMIN_BAR_HEIGHT);
+      }
+    }
+  }
+}
+
+.top-navigation {
+  @if ($topnav-spacing) {
+    & > .top-nav-item:not(:last-of-type) {
+      margin-right: $topnav-spacing;
+    }
+  }
+}
+
+.bulbed {
+  background: $header-color;
+  color: $header-background;
+  width: 2rem;
+  height: 2rem;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+
+.js-menu-open {
+  display: block;
+}

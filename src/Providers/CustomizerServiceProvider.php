@@ -31,7 +31,7 @@ use Symfony\Component\Finder\Finder;
 class CustomizerServiceProvider
 {
 
-    const CONFIG_ID = 'itww';
+    public const CONFIG_ID = 'itww';
 
     /**
      * CustomizerServiceProvider constructor.
@@ -58,17 +58,11 @@ class CustomizerServiceProvider
      */
     public function register(): void
     {
-    	new UspCustomizerController();
-        new SeoCustomizerController();
-        new FooterCustomizerController();
-        new FooterListsCustomizerController();
-        new StoreCustomizerController();
-        new GeneralCustomizerController();
-        new GeneralWoocommerceCustomizerController();
-        new ScriptsCustomizerController();
-        new GeneralLayoutCustomizerController();
-        
-        new GeneralProductCustomizerController();
+	    $fields = include get_stylesheet_directory() . '/src/config/kirki.php';
+	
+	    foreach ($fields as $field) {
+		    new $field();
+	    }
     }
 
     /**

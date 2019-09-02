@@ -13,6 +13,4 @@ return array(
     '89ff252b349d4d088742a09c25f5dd74' => $vendorDir . '/yahnis-elsts/plugin-update-checker/plugin-update-checker.php',
     'c39e5e966364f845b8dc03db0a1c135c' => $vendorDir . '/aristath/kirki/kirki.php',
     '644832821dc5f369571c226eb740f0b8' => $baseDir . '/src/app.php',
-    '650757ef41a6d8c40760fccbd71baff2' => $baseDir . '/src/Controllers/Resources/CustomBlocks.php',
-    'bc7839c5c55bff99d5a1b23fe6f3f17e' => $baseDir . '/src/Controllers/Resources/FrontpageMeta.php',
 );

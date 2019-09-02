@@ -1,13 +1,15 @@
-import streekLinker from "../products/streekLinker";
-import QtyBumper from "../products/QtyBumper";
+import QtyBumper from "./products/QtyBumper";
+import { domeinLinker, druifLinker, streekLinker } from "./products/Linker";
 
 export default {
     init() {
         new QtyBumper();
         try {
             streekLinker();
+            domeinLinker();
+            druifLinker();
         } catch ( e ) {
-            // Do Nothing
+            console.warn(e.message);
         }
     },
     finalize() {}

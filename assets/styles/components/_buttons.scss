@@ -1,5 +1,5 @@
 .btn {
-    padding: 0.25rem 0;
+    padding: ($padding_small / 2) 0;
     display: flex;
     align-items: center;
 
@@ -57,10 +57,12 @@
 .quantity_button {
     width: 15%;
     color: white;
-    background: $primary;
+    background: $black;
     display: flex;
     align-items: center;
     justify-content: center;
+    font-size: 1.875rem !important;
+    font-weight: bold;
 
     &.left {
         border-top-left-radius: $radius;
@@ -73,8 +75,25 @@
     }
 
     &:hover {
-        background: adjust-color($primary, $lightness: -20%);
+        background: adjust-color($black, $lightness: 20%);
     }
 
     @include transition;
+}
+
+.products-large-cta {
+    @include shadow;
+    border: 2px solid $primary;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: $fontSizeLarge;
+    font-weight: 600;
+
+    > .btn {
+        margin-top: 2rem;
+        padding: 0 $padding_small;
+        font-weight: 400;
+    }
 }

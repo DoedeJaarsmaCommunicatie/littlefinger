@@ -1,10 +1,13 @@
 <?php
 
-$context = \Timber\Timber::get_context();
+use App\Post;
+use Timber\Timber;
 
-$context ['post'] = new \App\Post();
+$fp = new \App\Controllers\Http\FrontPage(new Post());
 
-\Timber\Timber::render([
+$context = $fp->getContext();
+
+Timber::render([
 	'views/front-page.twig',
 	'views/index.twig'
 ], $context);

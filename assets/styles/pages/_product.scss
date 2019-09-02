@@ -106,7 +106,7 @@
             right: 0;
 
             & table {
-                display: block
+                display: unset;
             }
         }
     }
@@ -121,7 +121,7 @@
             & #quantity {
                 appearance: textfield;
                 height: 45px;
-                border: 1px solid $primary;
+                border: 1px solid $black;
                 text-align: center;
                 width: 70%;
             }
@@ -156,7 +156,7 @@
 
     #qty {
         max-width: 3rem;
-        border: 1px solid $primary;
+        border: 1px solid $black;
         @include radii;
         text-align: center;
         appearance: textfield;
@@ -164,5 +164,40 @@
 
     @media screen and (min-width: 1024px) {
         display: none;
+    }
+}
+
+.product-attributes {
+    & table {
+        & td {
+            padding-right: 4rem;
+            display: block;
+
+            &:last-of-type {
+                border-bottom: 1px solid $white;
+                padding-right: unset;
+            }
+        }
+
+        @media screen and (max-width: 1024px) {
+            tr {
+                @include after-first(3) {
+                    display: none;
+                }
+            }
+        }
+    }
+    @media screen and (min-width: 1023px) {
+        & table {
+            display: unset;
+
+            td {
+                display: table-cell;
+
+                &:last-of-type {
+                    border-bottom: none;
+                }
+            }
+        }
     }
 }

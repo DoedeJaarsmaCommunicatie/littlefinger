@@ -1,5 +1,5 @@
-import { AddToCart } from "../cart/add-to-cart";
-import { OpenFlyoutMenu } from "../shops/flyout-menu";
+import { AddToCart } from "./cart/add-to-cart";
+import { OpenFlyoutMenu } from "./shops/flyout-menu";
 
 export default {
     init() {

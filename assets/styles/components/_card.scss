@@ -1,9 +1,9 @@
-$card_background: $white;
-$card_color: $black;
-$shadow: true;
-$card_radius: true;
+$card_background: $white !default;
+$card_color: $black !default;
+$shadow: true !default;
+$card_radius: true !default;
 
-.card {
+%card {
     background: $card_background;
     color: $card_color;
     padding: $padding;
@@ -15,4 +15,8 @@ $card_radius: true;
     @if $card_radius {
         @include radii;
     }
+}
+
+.card {
+    @extend %card;
 }
