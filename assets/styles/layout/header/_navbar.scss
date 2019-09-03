@@ -1,0 +1,37 @@
+.navbar {
+  margin-left: auto;
+  align-self: center;
+
+  @include transition;
+  @media screen and (max-width: get-breakpoint('md')) {
+    position: fixed;
+    background: $white;
+    top: 0;
+    right: 0;
+    left: 15vw;
+    bottom: 0;
+    opacity: 0;
+    padding: $padding;
+    transform: scale(0, 1);
+    transform-origin: right;
+    display: flex;
+    flex-direction: column;
+    border-left: 5px solid $primary;
+    z-index: 20;
+    @include shadow;
+
+    &.active {
+      transform: scale(1);
+      opacity: 1;
+    }
+
+    .admin-bar & {
+      top: 46px;
+    }
+  }
+}
+
+.menu-item {
+  color: $primary;
+  margin-right: $padding;
+}

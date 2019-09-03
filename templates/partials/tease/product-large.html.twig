@@ -11,11 +11,11 @@
             class="product-large-image"
             src="{{ product.thumbnail.src('medium') }}" />
     </a>
-    <h2 class="product-large-title">
-        <a href="{{ _permalink }}" title="{{ _name }}">
+    <a href="{{ _permalink }}" title="{{ _name }}">
+        <h2 class="product-large-title">
             {{ _name }}
-        </a>
-    </h2>
+        </h2>
+    </a>
     <a href="{{ _permalink }}" class="product-large-price">
         &euro; {{ _product.get_price }}
     </a>

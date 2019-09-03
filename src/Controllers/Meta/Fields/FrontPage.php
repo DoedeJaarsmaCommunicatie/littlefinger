@@ -6,7 +6,7 @@ use Carbon_Fields\Container;
 use Carbon_Fields\Field as Meta;
 
 class FrontPage extends Field {
-	public function register() : void {
+	public function register(): void {
 		Container::make('post_meta', __('Page settings'))
 			->where('post_type', '=', 'page')
 			->where('post_id', '=', get_option( 'page_on_front' ))
@@ -16,7 +16,7 @@ class FrontPage extends Field {
 	private function getFields(): array {
 		$fields = [];
 		$fields [] = Meta::make('text', 'title', __('Title'));
-		$fields [] = Meta::make('association', 'featured_product', '__Featured')
+		$fields [] = Meta::make('association', 'featured_product', __('Featured'))
 		                 ->set_types([
 			                 [
 				                 'type'  => 'post',
@@ -31,6 +31,4 @@ class FrontPage extends Field {
 		
 		return $fields;
 	}
-	
-	
 }

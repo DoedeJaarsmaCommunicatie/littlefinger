@@ -1,0 +1,10 @@
+.products-large-store {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: $padding_small;
+  padding: $padding 0;
+
+  @media screen and (max-width: get-breakpoint('md')) {
+    grid-template-columns: 1fr;
+  }
+}

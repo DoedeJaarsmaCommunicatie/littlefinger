@@ -32,7 +32,14 @@
     </main>
 
     <section class="mt-4">
-        {% include 'partials/blocks/products.twig' with { posts: related_products, title: 'Gerelateerde producten' } only %}
+        {% if stramien_large %}
+            <div class="container mx-auto">
+                <h4 class="text-xl">Gerelateerde producten</h4>
+            </div>
+            {% include 'partials/blocks/products.twig' with { posts: related_products, stramien_large: stramien_large } only %}
+        {% else %}
+            {% include 'partials/blocks/products.twig' with { posts: related_products, title: 'Gerelateerde producten' } only %}
+        {% endif %}
     </section>
 
     {{ add_to_cart(product.get_id, 'product-add-to-cart-container', 'qty') }}

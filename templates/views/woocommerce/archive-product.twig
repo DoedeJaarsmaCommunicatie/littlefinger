@@ -2,10 +2,31 @@
 
 {% block content %}
     <div class="container mx-auto">
-        <div class="products px-4 lg:px-0">
-            {% for product in products %}
-                {% include 'partials/tease/product.twig' with { product: product } only %}
-            {% endfor %}
-        </div>
+        {% if stramien_large %}
+            <section class="lg:ml-auto lg:w-3/4 clearfix mt-4">
+                {% do action('woocommerce_before_shop_loop') %}
+            </section>
+            <div class="flex">
+                <div class="lg:w-1/4">
+                    {{ theme.theme_mod('store_filter')|shortcodes }}
+                </div>
+                <div class="lg:w-3/4">
+                    <div class="products-large-store px-4 lg:px-0">
+                        {% for product in products %}
+                            {% include 'partials/tease/product-large.html.twig' with { product: product } only %}
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            <section class="lg:ml-auto lg:w-3/4">
+                {% do action('woocommerce_after_shop_loop') %}
+            </section>
+        {% else %}
+            <div class="products px-4 lg:px-0">
+                {% for product in products %}
+                    {% include 'partials/tease/product.twig' with { product: product } only %}
+                {% endfor %}
+            </div>
+        {% endif %}
     </div>
 {% endblock %}

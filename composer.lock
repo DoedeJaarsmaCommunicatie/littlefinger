@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "391dc16664748a8c2be2182238fd0883",
+    "content-hash": "8bd13115fb3efd3d50944c2b2a0ea37f",
     "packages": [
         {
             "name": "altorouter/altorouter",
@@ -63,16 +63,16 @@
         },
         {
             "name": "aristath/kirki",
-            "version": "v3.0.44",
+            "version": "v3.0.45",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aristath/kirki.git",
-                "reference": "0ad720aad498ab984acdd6ef29dde426bd00058c"
+                "reference": "5045850cfdfd319c9354fec46c333a140509b098"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aristath/kirki/zipball/0ad720aad498ab984acdd6ef29dde426bd00058c",
-                "reference": "0ad720aad498ab984acdd6ef29dde426bd00058c",
+                "url": "https://api.github.com/repos/aristath/kirki/zipball/5045850cfdfd319c9354fec46c333a140509b098",
+                "reference": "5045850cfdfd319c9354fec46c333a140509b098",
                 "shasum": ""
             },
             "require": {
@@ -110,7 +110,7 @@
                 "customizer",
                 "wordpress"
             ],
-            "time": "2019-06-24T21:32:08+00:00"
+            "time": "2019-09-01T06:56:49+00:00"
         },
         {
             "name": "asm89/twig-cache-extension",
@@ -602,16 +602,16 @@
         },
         {
             "name": "nesbot/carbon",
-            "version": "2.23.1",
+            "version": "2.24.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/briannesbitt/Carbon.git",
-                "reference": "767617a047e5b8b8b3b0b6023a2650847ed7df02"
+                "reference": "934459c5ac0658bc765ad1e53512c7c77adcac29"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/767617a047e5b8b8b3b0b6023a2650847ed7df02",
-                "reference": "767617a047e5b8b8b3b0b6023a2650847ed7df02",
+                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/934459c5ac0658bc765ad1e53512c7c77adcac29",
+                "reference": "934459c5ac0658bc765ad1e53512c7c77adcac29",
                 "shasum": ""
             },
             "require": {
@@ -665,7 +665,7 @@
                 "datetime",
                 "time"
             ],
-            "time": "2019-08-17T13:57:34+00:00"
+            "time": "2019-08-31T16:37:55+00:00"
         },
         {
             "name": "pagerange/metaparsedown",

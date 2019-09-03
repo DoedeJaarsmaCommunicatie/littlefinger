@@ -37,6 +37,9 @@ $frontpage-products-per-row: 2 !default;
   display: grid;
   grid-gap: $frontpage-products-space-between;
 
+  grid-template-areas: 'thumb' 'side';
+  grid-template-columns: 1fr;
+
   @media screen and (min-width: get-breakpoint('lg')) {
     &.image-left {
       grid-template-areas: 'thumb side';
@@ -73,6 +76,7 @@ $frontpage-products-per-row: 2 !default;
 .products-image--products-wrapper {
   grid-area: side;
   display: grid;
+
   @media screen and (min-width: get-breakpoint('lg')) {
     grid-template-areas: ". products products ."
                          ". products products ."
@@ -89,3 +93,7 @@ $frontpage-products-per-row: 2 !default;
   }
 }
 
+.products-image--image {
+  height: 100%;
+  object-fit: cover;
+}

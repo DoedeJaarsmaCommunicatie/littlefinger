@@ -17,7 +17,7 @@ class StoreCustomizerController extends Customizer
             'id'       => CustomizerServiceProvider::CONFIG_ID,
             'type'     => 'text',
             'settings' => 'store_filter',
-            'label'    => 'Shortcode voor het filter',
+            'label'    => 'Shortcode voor het filter voor het grotere stramien',
             'section'  => 'store_settings',
             'priority' => 10,
         ],

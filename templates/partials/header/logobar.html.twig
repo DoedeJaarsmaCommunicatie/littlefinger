@@ -7,6 +7,9 @@
         <a href="/">
             <img src="{{ _logo.src }}" alt="{{ _logo.alt?? 'LOGO ' ~ site.name }}" class="custom_logo" id="logo_{{ post.ID }}" />
         </a>
+        {% if stramien_large %}
+            {% include 'partials/header/navbar.html.twig' %}
+        {% endif %}
         {{ search_form(search_placeholder) }}
     </div>
 </section>

@@ -1,5 +1,5 @@
 $search-form-color: $primary !default;
-$search-form-padding: 0 0 $padding_small !default;
+$search-form-padding: $padding_small !default;
 
 $search-form-border-width: 1px !default;
 $search-form-border-color: $search-form-color !default;
@@ -22,7 +22,6 @@ $search-form-border-color: $search-form-color !default;
 
   @include radii;
   @media screen and (min-width: get-breakpoint('md')) {
-    margin-left: auto;
     min-width: 350px;
   }
 }

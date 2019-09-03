@@ -1,0 +1,9 @@
+<nav class="navbar">
+    {% for item in primaryMenu.items %}
+        <a
+                class="menu-item {{ item.classes|join(' ') }}"
+                href="{{ item.link }}" title="{{ item.title }}">
+            {{ item.title }}
+        </a>
+    {% endfor %}
+</nav>
