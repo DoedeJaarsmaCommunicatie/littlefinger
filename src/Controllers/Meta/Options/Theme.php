@@ -7,6 +7,9 @@ use Carbon_Fields\Field\Field as Meta;
 
 class Theme extends Field {
 	public function register() : void {
+		/**
+		 * @deprecated 2.1
+		 */
 		Container::make('theme_options', 'Frontpage Data')
 			->add_fields(
 				[
