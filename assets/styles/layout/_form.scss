@@ -1,0 +1,17 @@
+.home .mc-form {
+    display: none;
+}
+
+.mc-input {
+    display: block;
+    padding: $padding_small $padding;
+    border: 1px solid $primary;
+    margin: $padding_small 0;
+
+    color: $primary;
+    border-radius: $radius;
+
+    &::placeholder {
+        color: adjust-color($primary, $alpha: -0.3);
+    }
+}

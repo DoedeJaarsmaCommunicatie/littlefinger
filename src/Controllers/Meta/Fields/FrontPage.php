@@ -16,13 +16,15 @@ class FrontPage extends Field {
 	private function getFields(): array {
 		$fields = [];
 		$fields [] = Meta::make('text', 'title', __('Title'));
-		$fields [] = Meta::make('association', 'featured_product', __('Featured'))
-		                 ->set_types([
-			                 [
-				                 'type'  => 'post',
-				                 'post_type' => 'product'
-			                 ]
-		                 ]);
+		if (!$this->isLargeSite()) {
+			$fields [] = Meta::make('association', 'featured_product', __('Featured'))
+			                 ->set_types([
+				                 [
+					                 'type'  => 'post',
+					                 'post_type' => 'product'
+				                 ]
+			                 ]);
+		}
 		$fields [] = Meta::make('image', 'hero_image', __('Image'));
 		
 		if ($this->isLargeSite()) {

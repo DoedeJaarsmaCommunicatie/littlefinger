@@ -8,11 +8,11 @@ use App\Providers\MenuServiceProvider;
 use App\Providers\PageServiceProvider;
 
 return [
-	'providers'     => [
-		MenuServiceProvider::class,
-		CustomizerServiceProvider::class,
-		ContentServiceProvider::class,
-		PageServiceProvider::class,
-		CarbonServiceProvider::class,
-	]
+    'providers'     => [
+        MenuServiceProvider::class,
+        CustomizerServiceProvider::class,
+        ContentServiceProvider::class,
+        PageServiceProvider::class,
+        CarbonServiceProvider::class,
+    ]
 ];

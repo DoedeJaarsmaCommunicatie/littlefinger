@@ -31,6 +31,10 @@
         <section role="complementary" class="content px-4 lg:px-0 seo_large" id="seo_large_{{ post.ID }}">
             {{ theme.theme_mod('seo_large')|wpautop }}
         </section>
+
+        <section role="complementary" class="content px-4 lg:px-0">
+            {% include 'partials/layout/form-mailchimp.html.twig' %}
+        </section>
     </div>
 
     <div class="bg-primary text-white py-6 px-4 lg:px-0">
