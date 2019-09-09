@@ -6,6 +6,7 @@ use App\Controllers\Customizer\General\FooterListsCustomizerController;
 use App\Controllers\Customizer\General\GeneralCustomizerController;
 use App\Controllers\Customizer\General\GeneralLayoutCustomizerController;
 use App\Controllers\Customizer\General\GeneralWoocommerceCustomizerController;
+use App\Controllers\Customizer\General\MailchimpCustomizerController;
 use App\Controllers\Customizer\General\ScriptsCustomizerController;
 use App\Controllers\Customizer\General\SeoCustomizerController;
 use App\Controllers\Customizer\General\StoreCustomizerController;
@@ -23,4 +24,5 @@ return [
 	ScriptsCustomizerController::class,
 	GeneralLayoutCustomizerController::class,
 	GeneralProductCustomizerController::class,
+	MailchimpCustomizerController::class,
 ];
