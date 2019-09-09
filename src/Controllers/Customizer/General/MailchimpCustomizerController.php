@@ -31,7 +31,7 @@ class MailchimpCustomizerController extends Customizer
             'settings'  => 'mailchimp_list',
             'label'     => 'Mailchimp Lijst ID',
             'section'   => 'general_settings_mailchimp',
-            'priority'  => 20,
+            'priority'  => 25,
             'default'   => '4722ceec90'
         ],
         [
