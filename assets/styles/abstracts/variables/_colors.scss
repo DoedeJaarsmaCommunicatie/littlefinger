@@ -1,6 +1,24 @@
-$primary: hsl(30, 100%, 60%) !default;
-$secondary: hsl(157, 100%, 38%) !default;
-$white: hsl(0, 0%, 100%) !default;
-$grey: hsl(0, 0%, 58%) !default;
-$black: hsl(0, 0%, 0%) !default;
+@import "color-functions";
 
+$primary: hsl(30, 100%, 60%) !default;
+$primary-invert: findColorInvert($primary) !default;
+$secondary: hsl(157, 100%, 38%) !default;
+$secondary-invert: hsl(0, 0%, 100%) !default;
+$white: hsl(0, 0%, 100%) !default;
+$white-invert: findColorInvert($white);
+$grey: hsl(0, 0%, 58%) !default;
+$grey-invert: findColorInvert($grey);
+$black: hsl(0, 0%, 0%) !default;
+$black-invert: findColorInvert($black);
+
+$colors: () !default;
+$colors: map-merge(
+    (
+        'primary': ($primary, $primary-invert),
+        'secondary': ($secondary, $secondary-invert),
+        'white': ($white, $white-invert),
+        'black': ($black, $black-invert),
+        'grey': ($grey, $grey-invert)
+    ),
+    $colors
+);

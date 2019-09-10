@@ -4,7 +4,7 @@ namespace App\Controllers\Customizer\General;
 use App\Providers\CustomizerServiceProvider;
 use Kirki;
 
-class MailchimpCustomizerController extends Customizer 
+class MailchimpCustomizerController extends Customizer
 {
     protected $panel_name = 'general';
 
@@ -31,7 +31,7 @@ class MailchimpCustomizerController extends Customizer
             'settings'  => 'mailchimp_list',
             'label'     => 'Mailchimp Lijst ID',
             'section'   => 'general_settings_mailchimp',
-            'priority'  => 25,
+            'priority'  => 20,
             'default'   => '4722ceec90'
         ],
         [
@@ -40,7 +40,7 @@ class MailchimpCustomizerController extends Customizer
             'settings'  => 'mailchimp_form_title',
             'label'     => 'Mailchimp titel',
             'section'   => 'general_settings_mailchimp',
-            'priority'  => 20,
+            'priority'  => 30,
             'default'   => ''
         ],
         [
@@ -49,29 +49,41 @@ class MailchimpCustomizerController extends Customizer
             'settings'  => 'mailchimp_form_context',
             'label'     => 'mailchimp_form_text',
             'section'   => 'general_settings_mailchimp',
-            'priority'  => 20,
+            'priority'  => 40,
             'default'   => ''
         ],
+        [
+            'id'        => CustomizerServiceProvider::CONFIG_ID,
+            'settings'  => 'mailchimp_form_image',
+            'label'     => 'Afbeelding bij mailchimp formulier',
+            'choices'   => [
+                'save_as'       => 'id'
+            ],
+            'section'   => 'general_settings_mailchimp',
+            'priority'  => 40,
+			'type'      => 'image'
+        ]
     ];
 
-    public function register_custom_controls() : void {
+    public function register_custom_controls() : void
+    {
         Kirki::add_field(
-        	CustomizerServiceProvider::CONFIG_ID,
-	        [
-		        'type'          => 'repeater',
-		        'label'         => 'Invoervelden',
-		        'section'       => 'general_settings_mailchimp',
-		        'priority'      => 30,
-		        'row_label'     => [
-		        	'type'          => 'text',
-			        'value'         => 'Invoerveld',
-		        ],
-		        'button_label'  => 'Nieuw item toevoegen',
-		        'settings'      => 'mailchimp_fields',
-		        'fields'        => [
-		        	'type'     => [
-		        		'type'          => 'select',
-				        'label'         => 'Soort invoerveld',
+            CustomizerServiceProvider::CONFIG_ID,
+            [
+                'type'          => 'repeater',
+                'label'         => 'Invoervelden',
+                'section'       => 'general_settings_mailchimp',
+                'priority'      => 30,
+                'row_label'     => [
+                    'type'          => 'text',
+                    'value'         => 'Invoerveld',
+                ],
+                'button_label'  => 'Nieuw item toevoegen',
+                'settings'      => 'mailchimp_fields',
+                'fields'        => [
+                    'type'     => [
+                        'type'          => 'select',
+                        'label'         => 'Soort invoerveld',
                         'default'       => 'text',
                         'choices'       => [
                             'email'     => 'Emailadres',
@@ -94,8 +106,8 @@ class MailchimpCustomizerController extends Customizer
                         'type'          => 'text',
                         'label'         => 'Label'
                     ]
-		        ]
-	        ]
+                ]
+            ]
         );
     }
 }

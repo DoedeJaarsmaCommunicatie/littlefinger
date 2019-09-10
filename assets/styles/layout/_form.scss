@@ -1,4 +1,4 @@
-.home .mc-form {
+.home .mc-form-wrapper {
     display: none;
 }
 
@@ -11,6 +11,7 @@
     color: $primary;
     border-radius: $radius;
 
+    width: 100%;
     &::placeholder {
         color: adjust-color($primary, $alpha: -0.3);
     }

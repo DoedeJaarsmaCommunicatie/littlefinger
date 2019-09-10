@@ -1,9 +1,9 @@
 ---
-title: Over Ons
+title: Over ons
 slug: over-ons
 author: 1
 status: 'publish'
-created_at: 28-08-2019
+created_at: 10-09-2019
 parent: null
 ---
 
@@ -21,11 +21,15 @@ Naast een ruim assortiment en goede prijzen bieden wij goede persoonlijke servic
 __Zit jouw favoriete wijn nog niet in ons assortiment? Stuur ons dan een e-mail! Wij zijn altijd op zoek naar goede nieuwe wijnen.__
 
 ### Contactinformatie
-Postwijnen.nl
+__Postwijnen.nl__
+
 Lauriergracht 54bg
+
 1016 RL Amsterdam
-Tel: 020 261 47 59
-E-mail: info@postwijnen.nl
+
+Tel: [020 261 47 59](tel:020 261 47 59)
+
+E-mail: [info@postwijnen.nl](mailto:info@postwijnen.nl)
 
 ## Duurzaamheid
 We proberen zo duurzaam mogelijk te zijn bij Postwijnen. Zo hergebruiken we al het karton en verpakkingsmateriaal dat we binnen krijgen. Al ontkomen we er niet aan de wijn in stevige verzenddozen te doen van gerecycled karton. Anders overleven de flessen het transport niet.

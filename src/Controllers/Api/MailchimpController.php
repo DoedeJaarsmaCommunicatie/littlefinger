@@ -1,6 +1,7 @@
 <?php
 namespace App\Controllers\Api;
 
+use GuzzleHttp\Exception\GuzzleException;
 use WP_REST_Controller;
 use WP_REST_Request;
 use WP_REST_Response;
@@ -8,8 +9,6 @@ use WP_REST_Server;
 use WP_Error;
 use GuzzleHttp\Client;
 use DusanKasan\Knapsack\Collection;
-use GuzzleHttp\Exception\ClientException;
-use GuzzleHttp\Psr7\Request;
 
 class MailchimpController extends WP_REST_Controller
 {
@@ -48,19 +47,21 @@ class MailchimpController extends WP_REST_Controller
     
     /**
      * Creates a new subscriber in mailchimp
-     * 
-	 * @param WP_REST_Request $request Full details about the request.
-	 * @return WP_REST_Response|WP_Error Response object on success, or WP_Error object on failure.
+     *
+     * @param WP_REST_Request $request Full details about the request.
+     *
+     * @return WP_REST_Response|WP_Error Response object on success, or WP_Error object on failure.
+     * @throws GuzzleException
      */
     public function create_item($request)
     {
         $key = get_theme_mod('mailchimp_key');
         $split_key = explode('-', $key);
         $list = get_theme_mod('mailchimp_list');
-        $dc = $split_key[count($split_key) -1];
+        $dc = $split_key[count($split_key) - 1];
         $fields = new Collection(get_theme_mod('mailchimp_fields'));
 
-        $fields_required = $fields->filter(function ($value) {
+        $fields_required = $fields->filter(static function ($value) {
             return $value['required'];
         })
         ->toArray();
@@ -68,7 +69,7 @@ class MailchimpController extends WP_REST_Controller
         foreach ($fields_required as $field) {
             if (!isset($request[$field['id']])) {
                 return new WP_Error(
-                    'required_field_not_filled', 
+                    'required_field_not_filled',
                     sprintf('Required field %s not supplied', $field['id']),
                     [
                         'status'    => 400
@@ -87,16 +88,17 @@ class MailchimpController extends WP_REST_Controller
                     'Authorization'  => 'Basic ' . base64_encode("anystring:$key"),
                 ],
                 'json'          => [
-                    'email_address' => $request[$fields->filter(function ($v) { return $v['type'] === 'email'; })->first()['id']],
+                    'email_address' => $request[$fields->filter(static function ($v) {
+                        return $v['type'] === 'email';
+                    })->first()['id']],
                     'status'        => 'pending',
-                    'merge_fields'   => $fields->map(function ($f) use ($request){
+                    'merge_fields'   => $fields->map(static function ($f) use ($request) {
                         $v = $request[$f['id']];
-                        if ($f['id'] === 'EMAIL' || !$v) {
+                        if (!$v || $f['id'] === 'EMAIL') {
                             return [];
                         }
-                        if ($v) {
-                            return [$f['id'] => $request [$f['id']]];
-                        }
+                        
+                        return [$f['id'] => $request [$f['id']]];
                     })->flatten()->toArray()
                 ]
             ]
@@ -111,7 +113,7 @@ class MailchimpController extends WP_REST_Controller
     public function get_collection_params()
     {
         $query_params =  parent::get_collection_params();
-	       
-        return apply_filters( 'rest_themes_collection_params', $query_params );
+        
+        return apply_filters('rest_themes_collection_params', $query_params);
     }
 }
