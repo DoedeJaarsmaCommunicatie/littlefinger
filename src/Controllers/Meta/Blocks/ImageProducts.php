@@ -25,7 +25,7 @@ class ImageProducts extends Block
             $fields[ 'category' ] ?? '\\Elderbraum\\CasaProductFactory\\Products\\Red'
         );
         
-        $context ['posts'] = Timber::get_posts($product->boot()->limit($fields['limit']?? 20)->get_args());
+        $context ['posts'] = Timber::get_posts($product->boot()->limit()->get_args());
         
         $context['attributes'] = $attributes;
         $context['button_text'] = $fields['button_text'] ?? false;
@@ -48,6 +48,11 @@ class ImageProducts extends Block
                          '\\Elderbraum\\CasaProductFactory\\Products\\Rose'         => 'Rose wijnen',
                          '\\Elderbraum\\CasaProductFactory\\Products\\Mousserend'   => 'Mousserende wijnen',
                          '\\Elderbraum\\CasaProductFactory\\Products\\Dessert'      => 'Dessert wijnen',
+                         '\\Elderbraum\\CasaProductFactory\\Products\\Awarded'      => 'Prijswinnende wijnen',
+                         '\\Elderbraum\\CasaProductFactory\\Products\\Biologisch'   => 'Biologische wijnen',
+                         '\\Elderbraum\\CasaProductFactory\\Products\\Newest'       => 'Nieuwste wijnen',
+                         '\\Elderbraum\\CasaProductFactory\\Products\\Popular'      => 'Populaire wijnen',
+                         '\\Elderbraum\\CasaProductFactory\\Products\\Sale'         => 'Sale wijnen',
                      ]
                  ),
             

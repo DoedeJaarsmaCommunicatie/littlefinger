@@ -35,7 +35,7 @@ class Producten extends Block
             $fields[ 'category' ] ?? '\\Elderbraum\\CasaProductFactory\\Products\\Red'
         );
         
-        $context ['posts'] = Timber::get_posts($product->boot()->limit($fields['limit']?? 20)->get_args());
+        $context ['posts'] = Timber::get_posts($product->boot()->limit($fields['limit'] ?? 20)->get_args());
         if ($this->isLargeSite()) {
             $context['link'] = $fields['link'];
         }
@@ -64,13 +64,13 @@ class Producten extends Block
         
         if ($this->isLargeSite()) {
             $fields [] = Field::make('text', 'link', __('Link'));
-        } else {
-            $fields [] = Field::make('text', 'limit', __('Limit'))
-                            ->set_attribute('type', 'number')
-                            ->set_attribute('min', 0)
-                            ->set_attribute('max', 20);
         }
-
+        
+        $fields [] = Field::make('text', 'limit', __('Limit'))
+                          ->set_attribute('type', 'number')
+                          ->set_attribute('min', 0)
+                          ->set_attribute('max', 20);
+        
         return $fields;
     }
 }

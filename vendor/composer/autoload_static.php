@@ -197,6 +197,7 @@ class ComposerStaticInit9edba24e2d0ef0c1020337c25818ed0e
         'App\\Controllers\\Http\\FrontPage' => __DIR__ . '/../..' . '/src/Controllers/Http/FrontPage.php',
         'App\\Controllers\\Meta\\Blocks\\Block' => __DIR__ . '/../..' . '/src/Controllers/Meta/Blocks/Block.php',
         'App\\Controllers\\Meta\\Blocks\\ImageProducts' => __DIR__ . '/../..' . '/src/Controllers/Meta/Blocks/ImageProducts.php',
+        'App\\Controllers\\Meta\\Blocks\\ProductList' => __DIR__ . '/../..' . '/src/Controllers/Meta/Blocks/ProductList.php',
         'App\\Controllers\\Meta\\Blocks\\Producten' => __DIR__ . '/../..' . '/src/Controllers/Meta/Blocks/Producten.php',
         'App\\Controllers\\Meta\\Field' => __DIR__ . '/../..' . '/src/Controllers/Meta/Field.php',
         'App\\Controllers\\Meta\\Fields\\FrontPage' => __DIR__ . '/../..' . '/src/Controllers/Meta/Fields/FrontPage.php',

@@ -28,6 +28,12 @@ $frontpage-products-per-row: 2 !default;
   }
 }
 
+.products-large-list {
+  @media screen and (min-width: get-breakpoint('lg')) {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
 .bg-grey-products {
   background: scale-color($grey, $lightness: 90%);
   padding: $frontpage-products-space-between 0;

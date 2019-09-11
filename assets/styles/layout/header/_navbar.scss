@@ -1,6 +1,7 @@
 .navbar {
   margin-left: auto;
   align-self: center;
+  display: flex;
 
   @include transition;
   @media screen and (max-width: get-breakpoint('md')) {
@@ -53,7 +54,7 @@
   position: absolute;
   top: 100%;
   left: 0;
-  min-width: 350px;
+  min-width: 200px;
   background: $white;
   transform: scale(1, 0);
   transform-origin: top;

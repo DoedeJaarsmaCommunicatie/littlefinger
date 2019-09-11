@@ -24,6 +24,7 @@ return array(
     'App\\Controllers\\Http\\FrontPage' => $baseDir . '/src/Controllers/Http/FrontPage.php',
     'App\\Controllers\\Meta\\Blocks\\Block' => $baseDir . '/src/Controllers/Meta/Blocks/Block.php',
     'App\\Controllers\\Meta\\Blocks\\ImageProducts' => $baseDir . '/src/Controllers/Meta/Blocks/ImageProducts.php',
+    'App\\Controllers\\Meta\\Blocks\\ProductList' => $baseDir . '/src/Controllers/Meta/Blocks/ProductList.php',
     'App\\Controllers\\Meta\\Blocks\\Producten' => $baseDir . '/src/Controllers/Meta/Blocks/Producten.php',
     'App\\Controllers\\Meta\\Field' => $baseDir . '/src/Controllers/Meta/Field.php',
     'App\\Controllers\\Meta\\Fields\\FrontPage' => $baseDir . '/src/Controllers/Meta/Fields/FrontPage.php',
