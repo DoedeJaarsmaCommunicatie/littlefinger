@@ -35,3 +35,26 @@
   color: $primary;
   margin-right: $padding;
 }
+
+.menu-item-submenu {
+  position: relative;
+
+  &:hover {
+    .submenu {
+      transform: scale(1);
+    }
+  }
+}
+
+.submenu {
+  @extend %default-shadow;
+  @extend %default-transition;
+  padding: $padding_small;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 350px;
+  background: $white;
+  transform: scale(1, 0);
+  transform-origin: top;
+}

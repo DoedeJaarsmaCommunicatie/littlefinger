@@ -1,9 +1,25 @@
 <nav class="navbar">
     {% for item in primaryMenu.items %}
-        <a
-                class="menu-item {{ item.classes|join(' ') }}"
-                href="{{ item.link }}" title="{{ item.title }}">
-            {{ item.title }}
-        </a>
+        <div class="menu-item-submenu">
+            <a
+                    class="menu-item {{ item.classes|join(' ') }}"
+                    href="{{ item.link }}" title="{{ item.title }}">
+                {{ item.title }}
+            </a>
+
+            {% if item.children %}
+                <div class="submenu">
+                    <ul>
+                        {% for child in item.children %}
+                            <li>
+                                <a href="{{ child.link }}" title="{{ child.title }}">
+                                    {{ child.title }}
+                                </a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            {% endif %}
+        </div>
     {% endfor %}
 </nav>

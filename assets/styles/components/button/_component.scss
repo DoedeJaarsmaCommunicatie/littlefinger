@@ -23,7 +23,7 @@
     &.#{$name} {
       &.outline {
         border: $btn-border-width $btn-border-style nth($map, 1);
-        color: nth($map, 2);
+        color: nth($map, 1);
       }
 
       &:not(.outline) {
