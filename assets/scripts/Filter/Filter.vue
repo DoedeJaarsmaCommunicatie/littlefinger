@@ -1,5 +1,5 @@
 <template>
-    <form role="search" class="homepage-filter" method="get" action="/winkel/">
+    <form role="search" class="homepage-filter" @submit.prevent="fireForm" >
         <h3 :data-title="title" :title="title" class="homepage-filter_title">{{ title }}</h3>
         
         <div class="custom-input">
@@ -65,31 +65,34 @@
 
         @Prop({default: 'Toon resultaat', type: String})
         buttonText: string = 'Toon resultaat';
+        
+        @Prop({default: 'https://italiaansewijnwinkel.nl', type: String})
+        baseUrl?: string = '';
 
         categories: Array<Category> = [
             {
                 title: 'Rode wijn',
-                slug: 'rode-wijn',
+                slug: 'rood',
                 active: false,
             },
             {
                 title: 'Witte wijn',
-                slug: 'witte-wijn',
+                slug: 'wit',
                 active: true,
             },
             {
                 title: 'Mousserende wijn',
-                slug: 'mousserende-wijn',
+                slug: 'mousserend',
                 active: false,
             },
             {
                 title: 'Rose wijn',
-                slug: 'rose-wijn',
+                slug: 'rose',
                 active: false,
             },
             {
                 title: 'Dessert wijn',
-                slug: 'dessert-wijn',
+                slug: 'dessert',
                 active: false,
             },
         ];
@@ -145,6 +148,17 @@
             
             ev.target.classList.toggle('active');
             target.classList.toggle('active');
+        }
+        
+        fireForm() {
+            let price = null;
+            let category = this.activeCategory.slug;
+            
+            if (this.activePrice.slug !== '*') {
+                price = this.activePrice.slug;
+            }
+            
+            window.location.href = `${this.baseUrl}/winkel/${category}/${price? '?price=' + price : ''}`;
         }
     }
 

@@ -50,6 +50,8 @@ export class AddToCart {
             if (res.data.fragments) {
                 this.injectMiniCart(res.data.fragments['div.widget_shopping_cart_content']);
                 this.refreshCartAmount(res.data.fragments['cart_contents_count']);
+            } else {
+                this.injectError(el.querySelector<HTMLButtonElement>('button[type="submit"]')!, 'Product niet meer op voorraad');
             }
         });
     }
@@ -104,6 +106,11 @@ export class AddToCart {
         }
 
         return "1";
+    }
+
+    injectError(button: HTMLButtonElement, msg: string) {
+        button.disabled = true;
+        button.innerHTML = msg;
     }
 }
 
