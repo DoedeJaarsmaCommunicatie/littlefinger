@@ -56,8 +56,11 @@
 <script lang="ts">
     import { Vue, Component, Prop } from 'vue-property-decorator';
     import * as _ from 'lodash';
-
-    @Component
+    import env from '../config/env';
+    import CasaSelect from "./components/casa-select.vue";
+    @Component( {
+        components: { CasaSelect }
+    } )
     export default class HomepageFilter extends Vue {
         @Prop({default: 'Ik ben op zoek naar:'})
         title: string = 'Ik ben op zoek naar:';
@@ -68,41 +71,9 @@
         @Prop({default: 'https://italiaansewijnwinkel.nl', type: String})
         baseUrl?: string = '';
 
-        categories: Array<Category> = [
-            {
-                title: 'Rode wijn',
-                slug: 'rood',
-                active: false,
-            },
-            {
-                title: 'Witte wijn',
-                slug: 'wit',
-                active: true,
-            },
-            {
-                title: 'Mousserende wijn',
-                slug: 'mousserend',
-                active: false,
-            },
-            {
-                title: 'Rose wijn',
-                slug: 'rose',
-                active: false,
-            },
-            {
-                title: 'Dessert wijn',
-                slug: 'dessert',
-                active: false,
-            },
-        ];
+        categories: Array<Category> = env.categories;
 
-        prices: Array<Price> = [
-            { title: 'alle prijzen', slug: '*', active: true, },
-            { title: '5 - 10', slug: '5-10', active: false},
-            { title: '10 - 15', slug: '10-15', active: false},
-            { title: '15 - 25', slug: '15-25', active: false},
-            { title: '25+', slug: '25', active: false},
-        ];
+        prices: Array<Price> = env.prices;
 
         get activeCategory(): Category {
             return this.categories[_.findIndex(this.categories, c => c.active === true)];
@@ -151,13 +122,22 @@
         
         fireForm() {
             let price = null;
-            let category = this.activeCategory.slug;
+            let category = null;
+            
+            if (this.activeCategory.slug !== '*') {
+                category = this.activeCategory.slug
+            }
             
             if (this.activePrice.slug !== '*') {
                 price = this.activePrice.slug;
             }
             
-            window.location.href = `${this.baseUrl}/winkel/${category}/${price? '?price=' + price : ''}`;
+            if (category) {
+                window.location.href = `${this.baseUrl}/winkel/${category}/${price? '?price=' + price : ''}`;
+            } else {
+                window.location.href = `${this.baseUrl}/winkel/${price? '?price=' + price : ''}`;
+            }
+            
         }
     }
 

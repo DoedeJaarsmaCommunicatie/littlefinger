@@ -40,7 +40,7 @@ export default class Linker {
                         el.innerHTML = `<a href="${res.data[0].link}">${res.data[0].title.rendered}</a>`
                     })
                     .catch(e => {
-                        // Do nothing. No link found for this 'domein'
+                        // Do nothing. No link found for this attribute
                     })
             }
         }

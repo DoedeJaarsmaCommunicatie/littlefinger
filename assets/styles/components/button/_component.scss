@@ -39,6 +39,12 @@
   &.large { padding: $btn-padding-large; }
 }
 
+%floating-button {
+  @extend %btn;
+
+  position: fixed;
+}
+
 .btn { @extend %btn; }
 
 

@@ -13,3 +13,21 @@
     @content;
   }
 }
+
+@mixin above-screen($breakpoint: 'md') {
+  @media screen and (min-width: get-breakpoint($breakpoint)) {
+    @content;
+  }
+}
+
+@mixin below-screen($breakpoint: 'md') {
+  @media screen and (max-width:get-breakpoint($breakpoint)) {
+    @content;
+  }
+}
+
+@mixin between-screens($breakpoint-lower: 'sm', $breakpoint-higher: 'md') {
+  @media screen and (min-width: get-breakpoint($breakpoint-lower)) and (max-width: get-breakpoint($breakpoin-higher)) {
+    @content;
+  }
+}
