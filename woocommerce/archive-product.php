@@ -1,5 +1,7 @@
 <?php
-
+/**
+ * @version 3.4.0
+ */
 use Timber\Timber;
 
 $context = Timber::get_context();

@@ -4,13 +4,11 @@ import Router from './tools/Router';
 import common from './routes/common';
 import home from './routes/home';
 import singleProduct from "./routes/singleProduct";
-import postTypeArchiveProduct from "./routes/postTypeArchiveProduct";
 
 const routes = {
     common,
     home,
     singleProduct,
-    postTypeArchiveProduct
 };
 
 const router = new Router(routes);

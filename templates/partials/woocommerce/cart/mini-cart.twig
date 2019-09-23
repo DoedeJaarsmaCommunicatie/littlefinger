@@ -40,7 +40,7 @@
     <footer class="mini-cart-footer">
         <p class="mini-cart_total total">
             <strong>{{ _e('Subtotal', 'woocommerce') }}: </strong>
-            {{ WC.cart.get_cart_subtotal }}
+            {% do action('woocommerce_widget_shopping_cart_total') %}
         </p>
         {% do action('woocommerce_widget_shopping_cart_before_buttons') %}
         <p class="mini-cart_buttons">
@@ -49,7 +49,7 @@
             </button>
             {% do action('woocommerce_widget_shopping_cart_buttons') %}
         </p>
-
+        {% do action('woocommerce_widget_shopping_cart_after_buttons') %}
     </footer>
 </section>
 

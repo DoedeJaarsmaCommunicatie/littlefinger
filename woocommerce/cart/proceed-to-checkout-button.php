@@ -16,11 +16,9 @@
  * @package WooCommerce/Templates
  * @version 2.4.0
  */
-if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly.
-}
+defined('ABSPATH') || exit;
 ?>
 
-<a href="<?php echo esc_url( wc_get_checkout_url() ); ?>" class="btn primary round large shaded">
-	<?php esc_html_e( 'Proceed to checkout', 'woocommerce' ); ?>
+<a href="<?php echo esc_url(wc_get_checkout_url()); ?>" class="btn primary round large shaded">
+    <?php esc_html_e('Proceed to checkout', 'woocommerce'); ?>
 </a>

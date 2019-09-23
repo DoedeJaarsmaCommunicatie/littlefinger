@@ -32,10 +32,10 @@ class Producten extends Block
     
         /** @var \Elderbraum\CasaProductFactory\Products\Product $product */
         $product = ProductsFactory::create(
-            $fields[ 'category' ] !== '' ?: '\\Elderbraum\\CasaProductFactory\\Products\\Red'
+            $fields[ 'category' ] ?? '\\Elderbraum\\CasaProductFactory\\Products\\Red'
         );
         
-        $context ['posts'] = Timber::get_posts($product->boot()->limit($fields['limit']!== ''?: 20)->get_args());
+        $context ['posts'] = Timber::get_posts($product->boot()->limit($fields['limit'] ?? 20)->get_args());
         if ($this->isLargeSite()) {
             $context['link'] = $fields['link'];
         }

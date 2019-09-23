@@ -13,6 +13,15 @@ export default class NavOpener {
 
     boot(): void {
         this.hammer.on('panleft', (ev: any) => {
+            const { x } = this.getStartDirection(ev);
+
+            let maxWindow = window.innerWidth;
+            let offsetWindow = maxWindow - (.2 * maxWindow);
+
+            if (x <= offsetWindow) {
+                return;
+            }
+
             if (!this.menu.classList.contains('active')) {
                 this.menu.classList.add('active');
             }
@@ -33,5 +42,17 @@ export default class NavOpener {
                 this.menu.classList.remove('active')
             }
         });
+    }
+
+    getStartDirection(e: any) {
+        const deltaX = e.deltaX;
+        const deltaY = e.deltaY;
+        const finalX = e.srcEvent.pageX || e.srcEvent.screenX || 0;
+        const finalY = e.srcEvent.pageY || e.srcEvent.screenY || 0;
+
+        return {
+            x: finalX - deltaX,
+            y: finalY - deltaY
+        };
     }
 }
