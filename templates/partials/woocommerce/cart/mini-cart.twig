@@ -1,7 +1,7 @@
 {% do action('woocommerce_before_mini_cart') %}
 
 <section class="mini-cart-contents">
-    <strong class='shopping-cart-title'>Winkelmandje</strong>
+    <strong class='shopping-cart-title'>{{ __('Winkelmandje', 'ltfg')}}</strong>
     {% do action('woocommerce_before_mini_cart_contents') %}
     {% if not WC.cart.is_empty %}
         <ul class="mini-cart cart_list products_list {{ args.list_class }}">
@@ -15,7 +15,7 @@
                     {% set _productLink  = _product.get_permalink(cart_item) %}
 
                     <li class="woo-mini-cart-item">
-                        <a href="{{ _productLink }}" class="woo-mini-cart-item_product">
+                        <a href="{{ _productLink }}" class="woo-mini-cart-item_product" title="{{ __('Bekijk %s', ltfg)|format(_productName) }}">
                             <span class="woo-mini-cart-item_title">
                                 {{ _productName }}
                             </span>
@@ -24,14 +24,14 @@
                             </span>
                         </a>
 
-                        <a href="{{ fn('wc_get_cart_remove_url', cart_item_key) }}" class="remove remove_from_cart_button" aria-label="Verwijder dit product" data-product_id="{{ _productID }}" data-cart_item_key="{{ cart_item_key }}" data-product_sku="{{ _product.get_sku }}">&times;</a>
+                        <a href="{{ fn('wc_get_cart_remove_url', cart_item_key) }}" class="remove remove_from_cart_button" aria-label="{{ __('Delete', 'woocommerce') }}" data-product_id="{{ _productID }}" data-cart_item_key="{{ cart_item_key }}" data-product_sku="{{ _product.get_sku }}">&times;</a>
                     </li>
                 {% endif %}
             {% endfor %}
         </ul>
     {% else %}
         <p class="woocommerce-mini-cart__empty-message">
-            Er zitten geen producten in het winkelmandje
+            {{ __('Er zitten geen producten in het winkelmandje', 'ltfg') }}
         </p>
     {% endif %}
 
@@ -45,7 +45,7 @@
         {% do action('woocommerce_widget_shopping_cart_before_buttons') %}
         <p class="mini-cart_buttons">
             <button type="button" class="mobile-only js-close-cart btn secondary outline round large shaded w-full lg:w-auto mb-4 lg:mb-0 lg:mr-4">
-                {{ __('Verder winkelen') }}
+                {{ __('Verder winkelen', 'ltfg') }}
             </button>
             {% do action('woocommerce_widget_shopping_cart_buttons') %}
         </p>

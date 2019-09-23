@@ -5,6 +5,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  a {
+    text-decoration: none;
+  }
 }
 
 .product-large-price {
@@ -74,3 +78,4 @@
 .products-image--caption {
   text-align: center;
 }
+

@@ -4,7 +4,7 @@
         
         <div class="custom-input">
             <span class="selected" @click="toggleList">
-                Een {{ activeCategory.title }}
+                {{ activeCategory.title }} <i class="fas fa-chevron-down"></i>
             </span>
             
             <ul class="options" ref="categoriesList">
@@ -25,9 +25,8 @@
         
         <div class="custom-input">
             <span class="selected" @click="toggleList">
-                Voor &euro; {{ activePrice.title }}
+                Voor {{ activePrice.title }} <i class="fas fa-chevron-down"></i>
             </span>
-            
             <ul class="options" ref="pricesList">
                 <li
                         v-for="(item, key) in prices"
@@ -249,7 +248,7 @@
                     
                     &.current {
                         color: $grey;
-                        cursor: not-allowed;
+                        /*cursor: not-allowed;*/
                     }
                 }
             }
