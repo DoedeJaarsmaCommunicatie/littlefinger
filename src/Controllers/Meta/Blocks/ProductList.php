@@ -36,7 +36,7 @@ class ProductList extends Block
         
         $context ['posts'] = Timber::get_posts($product->boot()->limit($fields['limit'] ?? 10)->get_args());
         if ($this->isLargeSite()) {
-            $context['link'] = $fields['link'];
+            $context['link'] = $fields['link'] ?? '';
         }
         
         $context['attributes'] = $attributes;

@@ -98,3 +98,7 @@ $hero-usp-banner-color: $white !default;
     color: $hero-usp-banner-color;
   }
 }
+
+.usp-banner--item {
+  text-shadow: 1px 1px 6px $black;
+}

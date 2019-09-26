@@ -193,6 +193,8 @@ class ComposerStaticInit9edba24e2d0ef0c1020337c25818ed0e
         'App\\Controllers\\Customizer\\General\\StoreCustomizerController' => __DIR__ . '/../..' . '/src/Controllers/Customizer/StoreCustomizerController.php',
         'App\\Controllers\\Customizer\\General\\UspCustomizerController' => __DIR__ . '/../..' . '/src/Controllers/Customizer/UspCustomizerController.php',
         'App\\Controllers\\Customizer\\Product\\GeneralProductCustomizerController' => __DIR__ . '/../..' . '/src/Controllers/Customizer/Product/GeneralProductCustomizerController.php',
+        'App\\Controllers\\Filters\\Cart' => __DIR__ . '/../..' . '/src/Controllers/Filters/Cart.php',
+        'App\\Controllers\\Filters\\Filter' => __DIR__ . '/../..' . '/src/Controllers/Filters/Filter.php',
         'App\\Controllers\\Http\\Controller' => __DIR__ . '/../..' . '/src/Controllers/Http/Controller.php',
         'App\\Controllers\\Http\\FrontPage' => __DIR__ . '/../..' . '/src/Controllers/Http/FrontPage.php',
         'App\\Controllers\\Meta\\Blocks\\Block' => __DIR__ . '/../..' . '/src/Controllers/Meta/Blocks/Block.php',

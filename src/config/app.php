@@ -1,6 +1,7 @@
 <?php
 namespace App;
 
+use App\Controllers\Filters\Cart;
 use App\Providers\CarbonServiceProvider;
 use App\Providers\ContentServiceProvider;
 use App\Providers\CustomizerServiceProvider;
@@ -14,5 +15,9 @@ return [
         ContentServiceProvider::class,
         PageServiceProvider::class,
         CarbonServiceProvider::class,
-    ]
+    ],
+    'filters'       => [
+        Cart::class
+    ],
+    'actions'       => []
 ];

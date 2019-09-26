@@ -133,7 +133,7 @@
     }
 }
 
-:not(.home) {
+@include not-home {
     .kiyoh-banner {
         display: none;
     }

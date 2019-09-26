@@ -57,3 +57,13 @@ function enable_product_revisions($args)
     return $args;
 }
 add_filter('woocommerce_register_post_type_product', 'enable_product_revisions');
+
+// Hook in
+add_filter( 'woocommerce_checkout_fields' , 'override_checkout_fields' );
+
+// Our hooked in function - $fields is passed via the filter!
+function override_checkout_fields( $fields ) {
+    $fields['billing']['billing_company']['placeholder'] = __('Alleen voor zakelijke klanten', 'ltfg');
+    $fields['shipping']['billing_company']['placeholder'] = __('Alleen voor zakelijke klanten', 'ltfg');
+    return $fields;
+}

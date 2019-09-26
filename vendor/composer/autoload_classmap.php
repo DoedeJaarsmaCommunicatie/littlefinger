@@ -20,6 +20,8 @@ return array(
     'App\\Controllers\\Customizer\\General\\StoreCustomizerController' => $baseDir . '/src/Controllers/Customizer/StoreCustomizerController.php',
     'App\\Controllers\\Customizer\\General\\UspCustomizerController' => $baseDir . '/src/Controllers/Customizer/UspCustomizerController.php',
     'App\\Controllers\\Customizer\\Product\\GeneralProductCustomizerController' => $baseDir . '/src/Controllers/Customizer/Product/GeneralProductCustomizerController.php',
+    'App\\Controllers\\Filters\\Cart' => $baseDir . '/src/Controllers/Filters/Cart.php',
+    'App\\Controllers\\Filters\\Filter' => $baseDir . '/src/Controllers/Filters/Filter.php',
     'App\\Controllers\\Http\\Controller' => $baseDir . '/src/Controllers/Http/Controller.php',
     'App\\Controllers\\Http\\FrontPage' => $baseDir . '/src/Controllers/Http/FrontPage.php',
     'App\\Controllers\\Meta\\Blocks\\Block' => $baseDir . '/src/Controllers/Meta/Blocks/Block.php',

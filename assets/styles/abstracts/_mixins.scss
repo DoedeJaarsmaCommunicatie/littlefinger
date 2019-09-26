@@ -31,3 +31,9 @@
     @content;
   }
 }
+
+@mixin not-home() {
+  body:not(.home) {
+    @content;
+  }
+}
