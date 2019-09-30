@@ -12,7 +12,7 @@
 
         <aside class="product_sidebar">
             <span class="product-price">
-                &euro; {{ product.get_price }}
+                {{ product.get_price_html }}
                 <small class="product-price_small" hidden>per fles</small>
                 {{ add_to_cart(product.get_id, 'product-form') }}
             </span>

@@ -34,7 +34,7 @@ class ProductList extends Block
             $fields[ 'category' ] ?? '\\Elderbraum\\CasaProductFactory\\Products\\Red'
         );
         
-        $context ['posts'] = Timber::get_posts($product->boot()->limit($fields['limit'] ?? 10)->get_args());
+        $context ['posts'] = Timber::get_posts($product->boot()->limit((int) ($fields['limit'] ?? 10))->get_args());
         if ($this->isLargeSite()) {
             $context['link'] = $fields['link'] ?? '';
         }

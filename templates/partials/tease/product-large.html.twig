@@ -11,13 +11,13 @@
             class="product-large-image"
             src="{{ product.thumbnail.src('medium') }}" />
     </a>
-    <a href="{{ _permalink }}" title="{{ _name }}">
+    <a href="{{ _permalink }}" title="Bekijk {{ _name }}">
         <h2 class="product-large-title">
             {{ _name }}
         </h2>
     </a>
-    <a href="{{ _permalink }}" class="product-large-price">
-        &euro; {{ _product.get_price }}
+    <a href="{{ _permalink }}" class="product-large-price" title="Bekijk {{ _name }}">
+        {{ _product.get_price_html }}
     </a>
 
     {{ add_to_cart(product.ID, 'mx-auto product-large-add-to-cart', 'qty', 'small') }}
