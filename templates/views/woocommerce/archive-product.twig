@@ -36,4 +36,10 @@
             </div>
         {% endif %}
     </div>
+
+    {% if category and category.description %}
+        <div class="container mx-auto mt-5 content">
+            {{ category.description|wpautop }}
+        </div>
+    {% endif %}
 {% endblock %}

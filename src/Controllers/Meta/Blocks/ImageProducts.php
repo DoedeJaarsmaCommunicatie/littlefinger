@@ -9,6 +9,21 @@ class ImageProducts extends Block
 {
     protected $template = 'partials/blocks/products-image.html.twig';
     
+    private static $options = [
+        '\\Elderbraum\\CasaProductFactory\\Products\\Red'          => 'Rode wijnen',
+        '\\Elderbraum\\CasaProductFactory\\Products\\White'        => 'Witte wijnen',
+        '\\Elderbraum\\CasaProductFactory\\Products\\Rose'         => 'Rose wijnen',
+        '\\Elderbraum\\CasaProductFactory\\Products\\Mousserend'   => 'Mousserende wijnen',
+        '\\Elderbraum\\CasaProductFactory\\Products\\Dessert'      => 'Dessert wijnen',
+        '\\Elderbraum\\CasaProductFactory\\Products\\Awarded'      => 'Prijswinnende wijnen',
+        '\\Elderbraum\\CasaProductFactory\\Products\\Biologisch'   => 'Biologische wijnen',
+        '\\Elderbraum\\CasaProductFactory\\Products\\Newest'       => 'Nieuwste wijnen',
+        '\\Elderbraum\\CasaProductFactory\\Products\\Popular'      => 'Populaire wijnen',
+        '\\Elderbraum\\CasaProductFactory\\Products\\Sale'         => 'Sale wijnen',
+    ];
+    
+    
+    
     public function register() : void
     {
         $this->block()::make(__('Products image'))
@@ -21,9 +36,7 @@ class ImageProducts extends Block
         $context = Timber::get_context();
     
         /** @var \Elderbraum\CasaProductFactory\Products\Product $product */
-        $product = ProductsFactory::create(
-            $fields[ 'category' ] ?? '\\Elderbraum\\CasaProductFactory\\Products\\Red'
-        );
+        $product = ProductsFactory::create($this->getCategory($fields));
         
         $context ['posts'] = Timber::get_posts($product->boot()->limit()->get_args());
         
@@ -41,20 +54,7 @@ class ImageProducts extends Block
     {
         return [
             Field::make('select', 'category', __('Category'))
-                 ->set_options(
-                     [
-                         '\\Elderbraum\\CasaProductFactory\\Products\\Red'          => 'Rode wijnen',
-                         '\\Elderbraum\\CasaProductFactory\\Products\\White'        => 'Witte wijnen',
-                         '\\Elderbraum\\CasaProductFactory\\Products\\Rose'         => 'Rose wijnen',
-                         '\\Elderbraum\\CasaProductFactory\\Products\\Mousserend'   => 'Mousserende wijnen',
-                         '\\Elderbraum\\CasaProductFactory\\Products\\Dessert'      => 'Dessert wijnen',
-                         '\\Elderbraum\\CasaProductFactory\\Products\\Awarded'      => 'Prijswinnende wijnen',
-                         '\\Elderbraum\\CasaProductFactory\\Products\\Biologisch'   => 'Biologische wijnen',
-                         '\\Elderbraum\\CasaProductFactory\\Products\\Newest'       => 'Nieuwste wijnen',
-                         '\\Elderbraum\\CasaProductFactory\\Products\\Popular'      => 'Populaire wijnen',
-                         '\\Elderbraum\\CasaProductFactory\\Products\\Sale'         => 'Sale wijnen',
-                     ]
-                 ),
+                 ->set_options(self::$options),
             
             Field::make('text', 'button_text', __('Title Button')),
             
@@ -66,5 +66,18 @@ class ImageProducts extends Block
             
             Field::make('checkbox', 'image_right', __('Afbeelding rechts'))
         ];
+    }
+    
+    private function getCategory($fields): string
+    {
+        if (!isset($fields['category']) || $fields['category'] === '') {
+            return self::DEFAULT;
+        }
+        
+        if (!array_key_exists($fields['category'], self::$options)) {
+            return self::DEFAULT;
+        }
+        
+        return $fields[ 'category' ];
     }
 }

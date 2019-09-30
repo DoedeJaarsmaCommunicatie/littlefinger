@@ -12,10 +12,10 @@ class FrontPage extends Controller
             $this->addFeaturedProduct();
         }
         
-        $this->addtitle();
+        $this->addTitle();
         
         if ($this->isLargeSite()) {
-            $this->addtitle('subtitle');
+            $this->addTitle('subtitle');
         }
         
         $this->addHeroImage();
@@ -25,14 +25,14 @@ class FrontPage extends Controller
     {
         if ($hero_image = $this->post->get_field('hero_image')) {
             $img = new Image($hero_image);
-            $this->context['hero_image'] = $img->src('large');
+            $this->context['hero_image'] = $img->src();
         } elseif ($hero_image = $this->getThemeOption('hero_image')) {
             $img = new Image($hero_image);
-            $this->context['hero_image'] = $img->src('large');
+            $this->context['hero_image'] = $img->src();
         }
     }
     
-    protected function addtitle($type = 'title'): void
+    protected function addTitle($type = 'title'): void
     {
         if ($title = $this->post->get_field($type)) {
             $this->context[$type] = $title;
