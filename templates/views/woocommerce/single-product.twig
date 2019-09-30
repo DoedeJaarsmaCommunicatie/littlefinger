@@ -16,19 +16,17 @@
                 <small class="product-price_small" hidden>per fles</small>
                 {{ add_to_cart(product.get_id, 'product-form') }}
             </span>
-                <table class="w-full">
-                    {% for usp in theme.theme_mod('product_usp') %}
-                        <tr>
-                            <td class="text-center"><i class="{{ usp.icon }} text-xl text-black"></i></td>
-                            <td>{{ usp.usp_title }}</td>
-                        </tr>
-                    {% endfor %}
-                </table>
+            <table class="w-full">
+                {% for usp in theme.theme_mod('product_usp') %}
+                    <tr>
+                        <td class="text-center"><i class="{{ usp.icon }} text-xl text-black"></i></td>
+                        <td>{{ usp.usp_title }}</td>
+                    </tr>
+                {% endfor %}
+            </table>
         </aside>
 
-        <section class="product-content">
-            {{ post.content }}
-        </section>
+        <section class="product-content">{{ post.content }}</section>
     </main>
 
     <section class="mt-4">
