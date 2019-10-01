@@ -51,19 +51,18 @@ function woocommerce_widget_shopping_cart_proceed_to_checkout()
     \Timber\Timber::render('partials/woocommerce/cart/button-cart.html.twig', $context);
 }
 
-function enable_product_revisions($args)
-{
+
+add_filter('woocommerce_register_post_type_product', static function ($args) {
     $args['supports'][] = 'revisions';
     return $args;
-}
-add_filter('woocommerce_register_post_type_product', 'enable_product_revisions');
+});
 
-// Hook in
-add_filter( 'woocommerce_checkout_fields' , 'override_checkout_fields' );
-
-// Our hooked in function - $fields is passed via the filter!
-function override_checkout_fields( $fields ) {
+add_filter('woocommerce_checkout_fields', static function ($fields)
+{
     $fields['billing']['billing_company']['placeholder'] = __('Alleen voor zakelijke klanten', 'ltfg');
     $fields['shipping']['billing_company']['placeholder'] = __('Alleen voor zakelijke klanten', 'ltfg');
+    
+    unset($fields[ 'billing' ][ 'billing_address_2' ], $fields[ 'shipping' ][ 'shipping_address_2' ]);
+    
     return $fields;
-}
+});
