@@ -1,6 +1,7 @@
 <?php
 namespace App\Providers;
 
+use App\Helpers\WP;
 use cdk_model;
 use cdk_hashed_model;
 use Symfony\Component\Finder\Finder;
@@ -60,15 +61,7 @@ class ContentServiceProvider
             static function ($context) {
                 $finder = new Finder();
                 
-                if (function_exists('get_sites')) {
-                    $context['sites'] = get_sites(
-                        [
-                            'site__not_in' => get_current_blog_id(),
-                            'public'       => 1,
-                            'archived'     => 0,
-                        ]
-                    );
-                }
+                $context['sites'] = WP::getAllPublicSitesButCurrent();
                 
                 if (true === get_theme_mod('cdelk_use_hash') && class_exists('cdk_hashed_model')) {
                     $context['kiyoh'] = (new cdk_hashed_model())->get();
@@ -76,7 +69,10 @@ class ContentServiceProvider
                     $context['kiyoh'] = (new cdk_model())->get();
                 }
                 
-                $context['secure_payment'] = $finder->files()->in(get_stylesheet_directory() . '/dist/images/payment_methods')->name('*.svg');
+                $context['secure_payment'] = $finder
+                    ->files()
+                    ->in(get_stylesheet_directory() . '/dist/images/payment_methods')
+                    ->name('*.svg');
                 
                 if (function_exists('wc') &&
                     !is_admin() &&

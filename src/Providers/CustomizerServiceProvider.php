@@ -58,11 +58,11 @@ class CustomizerServiceProvider
      */
     public function register(): void
     {
-	    $fields = include get_stylesheet_directory() . '/src/config/kirki.php';
-	
-	    foreach ($fields as $field) {
-		    new $field();
-	    }
+        $fields = include get_stylesheet_directory() . '/src/config/kirki.php';
+    
+        foreach ($fields as $field) {
+            new $field();
+        }
     }
 
     /**

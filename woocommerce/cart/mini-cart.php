@@ -16,6 +16,7 @@
  * @version 3.7.0
  * @see     https://docs.woocommerce.com/document/template-structure/
  */
+
 defined('ABSPATH') || exit;
 
 $context = \Timber\Timber::get_context();
@@ -23,4 +24,7 @@ $context ['WC'] = WC();
 $context ['cart'] = WC()->cart;
 $context ['args'] = $args;
 
-\Timber\Timber::render('partials/woocommerce/cart/mini-cart.twig', $context);
+\Timber\Timber::render(
+    \App\Helpers\Theme::partialTwigFile('woocommerce/cart/mini-cart'),
+    $context
+);
