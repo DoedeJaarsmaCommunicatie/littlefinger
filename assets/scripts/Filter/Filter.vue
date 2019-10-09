@@ -57,10 +57,7 @@
     import { Vue, Component, Prop } from 'vue-property-decorator';
     import * as _ from 'lodash';
     import env from '../config/env';
-    import CasaSelect from "./components/casa-select.vue";
-    @Component( {
-        components: { CasaSelect }
-    } )
+    
     export default class HomepageFilter extends Vue {
         @Prop({default: 'Ik ben op zoek naar:'})
         title: string = 'Ik ben op zoek naar:';
@@ -228,7 +225,6 @@
                     
                     &.current {
                         color: $grey;
-                        /*cursor: not-allowed;*/
                     }
                 }
             }

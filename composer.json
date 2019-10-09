@@ -1,17 +1,18 @@
 {
     "require": {
-        "yahnis-elsts/plugin-update-checker": "^4.7",
         "aristath/kirki": "^3.0",
-        "timber/timber": "^1.10",
-        "jjgrainger/posttypes": "^2.0",
-        "htmlburger/carbon-fields": "^3.1",
         "dusank/knapsack": "^10.0",
         "elderbraum/casa-products-factory": "^1.0.0",
-        "pagerange/metaparsedown": "^1.0",
+        "guzzlehttp/guzzle": "^6.3",
+        "htmlburger/carbon-fields": "^3.1",
+        "jjgrainger/posttypes": "^2.0",
+        "monolog/monolog": "^2.0",
         "nesbot/carbon": "^2.23",
-        "symfony/yaml": "^4.3",
+        "pagerange/metaparsedown": "^1.0",
         "symfony/finder": "^4.3",
-        "guzzlehttp/guzzle": "^6.3"
+        "symfony/yaml": "^4.3",
+        "timber/timber": "^1.10",
+        "yahnis-elsts/plugin-update-checker": "^4.7"
     },
     "require-dev": {
         "roave/security-advisories": "dev-master"
