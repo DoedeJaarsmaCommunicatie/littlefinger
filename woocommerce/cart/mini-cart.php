@@ -25,6 +25,6 @@ $context ['cart'] = WC()->cart;
 $context ['args'] = $args;
 
 \Timber\Timber::render(
-    \App\Helpers\Theme::partialTwigFile('woocommerce/cart/mini-cart'),
+    \App\Helpers\Template::partialTwigFile('woocommerce/cart/mini-cart'),
     $context
 );

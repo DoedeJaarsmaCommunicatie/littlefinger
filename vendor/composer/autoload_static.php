@@ -21,12 +21,12 @@ class ComposerStaticInit9edba24e2d0ef0c1020337c25818ed0e
     );
 
     public static $prefixLengthsPsr4 = array (
-        'T' => 
+        'T' =>
         array (
             'Twig\\' => 5,
             'Timber\\' => 7,
         ),
-        'S' => 
+        'S' =>
         array (
             'Symfony\\Polyfill\\Mbstring\\' => 26,
             'Symfony\\Polyfill\\Ctype\\' => 23,
@@ -35,116 +35,116 @@ class ComposerStaticInit9edba24e2d0ef0c1020337c25818ed0e
             'Symfony\\Component\\Translation\\' => 30,
             'Symfony\\Component\\Finder\\' => 25,
         ),
-        'P' => 
+        'P' =>
         array (
             'Psr\\Http\\Message\\' => 17,
             'PostTypes\\' => 10,
             'Pagerange\\Markdown\\' => 19,
         ),
-        'G' => 
+        'G' =>
         array (
             'GuzzleHttp\\Psr7\\' => 16,
             'GuzzleHttp\\Promise\\' => 19,
             'GuzzleHttp\\' => 11,
         ),
-        'E' => 
+        'E' =>
         array (
             'Elderbraum\\CasaProductFactory\\' => 30,
         ),
-        'D' => 
+        'D' =>
         array (
             'DusanKasan\\Knapsack\\' => 20,
         ),
-        'C' => 
+        'C' =>
         array (
             'Composer\\Installers\\' => 20,
             'Carbon_Fields\\' => 14,
             'Carbon\\' => 7,
         ),
-        'A' => 
+        'A' =>
         array (
             'App\\' => 4,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'Twig\\' => 
+        'Twig\\' =>
         array (
             0 => __DIR__ . '/..' . '/twig/twig/src',
         ),
-        'Timber\\' => 
+        'Timber\\' =>
         array (
             0 => __DIR__ . '/..' . '/timber/timber/lib',
         ),
-        'Symfony\\Polyfill\\Mbstring\\' => 
+        'Symfony\\Polyfill\\Mbstring\\' =>
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-mbstring',
         ),
-        'Symfony\\Polyfill\\Ctype\\' => 
+        'Symfony\\Polyfill\\Ctype\\' =>
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-ctype',
         ),
-        'Symfony\\Contracts\\Translation\\' => 
+        'Symfony\\Contracts\\Translation\\' =>
         array (
             0 => __DIR__ . '/..' . '/symfony/translation-contracts',
         ),
-        'Symfony\\Component\\Yaml\\' => 
+        'Symfony\\Component\\Yaml\\' =>
         array (
             0 => __DIR__ . '/..' . '/symfony/yaml',
         ),
-        'Symfony\\Component\\Translation\\' => 
+        'Symfony\\Component\\Translation\\' =>
         array (
             0 => __DIR__ . '/..' . '/symfony/translation',
         ),
-        'Symfony\\Component\\Finder\\' => 
+        'Symfony\\Component\\Finder\\' =>
         array (
             0 => __DIR__ . '/..' . '/symfony/finder',
         ),
-        'Psr\\Http\\Message\\' => 
+        'Psr\\Http\\Message\\' =>
         array (
             0 => __DIR__ . '/..' . '/psr/http-message/src',
         ),
-        'PostTypes\\' => 
+        'PostTypes\\' =>
         array (
             0 => __DIR__ . '/..' . '/jjgrainger/posttypes/src',
         ),
-        'Pagerange\\Markdown\\' => 
+        'Pagerange\\Markdown\\' =>
         array (
             0 => __DIR__ . '/..' . '/pagerange/metaparsedown/src',
         ),
-        'GuzzleHttp\\Psr7\\' => 
+        'GuzzleHttp\\Psr7\\' =>
         array (
             0 => __DIR__ . '/..' . '/guzzlehttp/psr7/src',
         ),
-        'GuzzleHttp\\Promise\\' => 
+        'GuzzleHttp\\Promise\\' =>
         array (
             0 => __DIR__ . '/..' . '/guzzlehttp/promises/src',
         ),
-        'GuzzleHttp\\' => 
+        'GuzzleHttp\\' =>
         array (
             0 => __DIR__ . '/..' . '/guzzlehttp/guzzle/src',
         ),
-        'Elderbraum\\CasaProductFactory\\' => 
+        'Elderbraum\\CasaProductFactory\\' =>
         array (
             0 => __DIR__ . '/..' . '/elderbraum/casa-products-factory/src',
         ),
-        'DusanKasan\\Knapsack\\' => 
+        'DusanKasan\\Knapsack\\' =>
         array (
             0 => __DIR__ . '/..' . '/dusank/knapsack/src',
         ),
-        'Composer\\Installers\\' => 
+        'Composer\\Installers\\' =>
         array (
             0 => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers',
         ),
-        'Carbon_Fields\\' => 
+        'Carbon_Fields\\' =>
         array (
             0 => __DIR__ . '/..' . '/htmlburger/carbon-fields/core',
         ),
-        'Carbon\\' => 
+        'Carbon\\' =>
         array (
             0 => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon',
         ),
-        'App\\' => 
+        'App\\' =>
         array (
             0 => __DIR__ . '/../..' . '/src',
         ),
@@ -155,23 +155,23 @@ class ComposerStaticInit9edba24e2d0ef0c1020337c25818ed0e
     );
 
     public static $prefixesPsr0 = array (
-        'T' => 
+        'T' =>
         array (
-            'Twig_' => 
+            'Twig_' =>
             array (
                 0 => __DIR__ . '/..' . '/twig/twig/lib',
             ),
         ),
-        'R' => 
+        'R' =>
         array (
-            'Routes' => 
+            'Routes' =>
             array (
                 0 => __DIR__ . '/..' . '/upstatement/routes',
             ),
         ),
-        'P' => 
+        'P' =>
         array (
-            'Parsedown' => 
+            'Parsedown' =>
             array (
                 0 => __DIR__ . '/..' . '/erusev/parsedown',
             ),
@@ -203,27 +203,27 @@ class ComposerStaticInit9edba24e2d0ef0c1020337c25818ed0e
         'App\\Controllers\\Meta\\Blocks\\Producten' => __DIR__ . '/../..' . '/src/Controllers/Meta/Blocks/Producten.php',
         'App\\Controllers\\Meta\\Field' => __DIR__ . '/../..' . '/src/Controllers/Meta/Field.php',
         'App\\Controllers\\Meta\\Fields\\FrontPage' => __DIR__ . '/../..' . '/src/Controllers/Meta/Fields/FrontPage.php',
-        'App\\Controllers\\Meta\\MenuMeta' => __DIR__ . '/../..' . '/src/Controllers/Meta/MenuMeta.php',
-        'App\\Controllers\\Meta\\Options\\Theme' => __DIR__ . '/../..' . '/src/Controllers/Meta/Options/Theme.php',
-        'App\\Enums\\FontAwesome' => __DIR__ . '/../..' . '/src/Enums/FontAwesome.php',
-        'App\\Exceptions\\CookieNotSetException' => __DIR__ . '/../..' . '/src/Exceptions/CookieNotSetException.php',
+        'App\\Controllers\\Meta\\MenuMeta'              => __DIR__ . '/../..' . '/src/Controllers/Meta/MenuMeta.php',
+        'App\\Controllers\\Meta\\Options\\Theme'        => __DIR__ . '/../..' . '/src/Controllers/Meta/Options/Theme.php',
+        'App\\Enums\\FontAwesome'                       => __DIR__ . '/../..' . '/src/Enums/FontAwesome.php',
+        'App\\Exceptions\\CookieNotSetException'        => __DIR__ . '/../..' . '/src/Exceptions/CookieNotSetException.php',
         'App\\Exceptions\\MultiSiteNotEnabledException' => __DIR__ . '/../..' . '/src/Exceptions/MultiSiteNotEnabledException.php',
-        'App\\Exceptions\\ProductNotFoundException' => __DIR__ . '/../..' . '/src/Exceptions/ProductNotFoundException.php',
-        'App\\Helpers\\Cookie' => __DIR__ . '/../..' . '/src/helpers/Cookie.php',
-        'App\\Helpers\\Counter' => __DIR__ . '/../..' . '/src/helpers/Counter.php',
-        'App\\Helpers\\Errors' => __DIR__ . '/../..' . '/src/helpers/Errors.php',
-        'App\\Helpers\\Str' => __DIR__ . '/../..' . '/src/helpers/Str.php',
-        'App\\Helpers\\Theme' => __DIR__ . '/../..' . '/src/helpers/Theme.php',
-        'App\\Helpers\\WP' => __DIR__ . '/../..' . '/src/helpers/WP.php',
-        'App\\Helpers\\Woo' => __DIR__ . '/../..' . '/src/helpers/Woo.php',
-        'App\\Models\\Menu\\Menu' => __DIR__ . '/../..' . '/src/Models/Menu/Menu.php',
-        'App\\Models\\Menu\\MenuItem' => __DIR__ . '/../..' . '/src/Models/Menu/MenuItem.php',
-        'App\\Post' => __DIR__ . '/../..' . '/src/Post.php',
-        'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/src/Providers/AppServiceProvider.php',
-        'App\\Providers\\CarbonServiceProvider' => __DIR__ . '/../..' . '/src/Providers/CarbonServiceProvider.php',
-        'App\\Providers\\ContentServiceProvider' => __DIR__ . '/../..' . '/src/Providers/ContentServiceProvider.php',
-        'App\\Providers\\CustomizerServiceProvider' => __DIR__ . '/../..' . '/src/Providers/CustomizerServiceProvider.php',
-        'App\\Providers\\MenuServiceProvider' => __DIR__ . '/../..' . '/src/Providers/MenuServiceProvider.php',
+        'App\\Exceptions\\ProductNotFoundException'     => __DIR__ . '/../..' . '/src/Exceptions/ProductNotFoundException.php',
+        'App\\Helpers\\Cookie'                          => __DIR__ . '/../..' . '/src/helpers/Cookie.php',
+        'App\\Helpers\\Counter'                         => __DIR__ . '/../..' . '/src/helpers/Counter.php',
+        'App\\Helpers\\Errors'                          => __DIR__ . '/../..' . '/src/helpers/Errors.php',
+        'App\\Helpers\\Str'                             => __DIR__ . '/../..' . '/src/helpers/Str.php',
+        'App\\Helpers\\Template'                        => __DIR__ . '/../..' . '/src/helpers/Theme.php',
+        'App\\Helpers\\WP'                              => __DIR__ . '/../..' . '/src/helpers/WP.php',
+        'App\\Helpers\\Woo'                             => __DIR__ . '/../..' . '/src/helpers/Woo.php',
+        'App\\Models\\Menu\\Menu'                       => __DIR__ . '/../..' . '/src/Models/Menu/Menu.php',
+        'App\\Models\\Menu\\MenuItem'                   => __DIR__ . '/../..' . '/src/Models/Menu/MenuItem.php',
+        'App\\Post'                                     => __DIR__ . '/../..' . '/src/Post.php',
+        'App\\Providers\\AppServiceProvider'            => __DIR__ . '/../..' . '/src/Providers/AppServiceProvider.php',
+        'App\\Providers\\CarbonServiceProvider'         => __DIR__ . '/../..' . '/src/Providers/CarbonServiceProvider.php',
+        'App\\Providers\\ContentServiceProvider'        => __DIR__ . '/../..' . '/src/Providers/ContentServiceProvider.php',
+        'App\\Providers\\CustomizerServiceProvider'     => __DIR__ . '/../..' . '/src/Providers/CustomizerServiceProvider.php',
+        'App\\Providers\\MenuServiceProvider'           => __DIR__ . '/../..' . '/src/Providers/MenuServiceProvider.php',
         'App\\Providers\\PageServiceProvider' => __DIR__ . '/../..' . '/src/Providers/PageServiceProvider.php',
         'Asm89\\Twig\\CacheExtension\\CacheProviderInterface' => __DIR__ . '/..' . '/asm89/twig-cache-extension/lib/Asm89/Twig/CacheExtension/CacheProviderInterface.php',
         'Asm89\\Twig\\CacheExtension\\CacheProvider\\DoctrineCacheAdapter' => __DIR__ . '/..' . '/asm89/twig-cache-extension/lib/Asm89/Twig/CacheExtension/CacheProvider/DoctrineCacheAdapter.php',

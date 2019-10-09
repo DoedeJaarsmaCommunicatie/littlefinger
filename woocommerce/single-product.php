@@ -18,6 +18,6 @@ $context['related_products'] =  Timber::get_posts($related_ids);
 wp_reset_postdata();
 
 Timber::render(
-    \App\Helpers\Theme::viewTwigFile('woocommerce/single-product'),
+    \App\Helpers\Template::viewTwigFile('woocommerce/single-product'),
     $context
 );

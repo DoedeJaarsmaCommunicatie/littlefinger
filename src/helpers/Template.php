@@ -1,7 +1,7 @@
 <?php
 namespace App\Helpers;
 
-class Theme
+class Template
 {
     /**
      * returns view file
@@ -88,7 +88,7 @@ class Theme
      *
      * @return array|string
      */
-    private static function getFile($dir_prefix, $name, $extension)
+    private static function getFile(string $dir_prefix, $name, string $extension)
     {
         if (!Str::startsWith($extension, '.')) {
             $extension = Str::start($extension, '.');

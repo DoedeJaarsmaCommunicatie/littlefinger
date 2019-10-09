@@ -8,6 +8,6 @@ $context = \Timber\Timber::get_context();
 $context['checkout'] = $checkout;
 
 echo \Timber\Timber::compile(
-    \App\Helpers\Theme::partialHtmlTwigFile('woocommerce/checkout/form'),
+    \App\Helpers\Template::partialHtmlTwigFile('woocommerce/checkout/form'),
     $context
 );

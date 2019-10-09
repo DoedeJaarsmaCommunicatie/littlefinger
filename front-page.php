@@ -7,6 +7,6 @@ $fp = new \App\Controllers\Http\FrontPage(new Post());
 $context = $fp->getContext();
 
 Timber::render(
-    \App\Helpers\Theme::viewTwigFile(['front-page', 'index']),
+    \App\Helpers\Template::viewTwigFile(['front-page', 'index']),
     $context
 );

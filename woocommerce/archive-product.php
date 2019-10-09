@@ -15,6 +15,6 @@ if (is_product_category()) {
 }
 
 Timber::render(
-    \App\Helpers\Theme::viewTwigFile('woocommerce/archive-product'),
+    \App\Helpers\Template::viewTwigFile('woocommerce/archive-product'),
     $context
 );
