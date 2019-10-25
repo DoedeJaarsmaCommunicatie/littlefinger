@@ -1,3 +1,12 @@
+.menu-button {
+  position: absolute;
+  right: 1rem;
+  top: 0.5rem;
+  @media screen and (min-width: get-breakpoint('md')) {
+    display: none;
+  }
+}
+
 .navbar {
   margin-left: auto;
   align-self: center;

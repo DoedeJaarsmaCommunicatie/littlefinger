@@ -68,7 +68,7 @@ class Log
      *
      * @return void
      */
-    public static function error($message, $context): void
+    public static function error($message, $context = []): void
     {
         static::log('error', $message, $context);
     }
@@ -81,7 +81,7 @@ class Log
      *
      * @return void
      */
-    public static function critical($message, $context): void
+    public static function critical($message, $context = []): void
     {
         static::log('critical', $message, $context);
     }
@@ -94,7 +94,7 @@ class Log
      *
      * @return void
      */
-    public static function alert($message, $context): void
+    public static function alert($message, $context = []): void
     {
         static::log('alert', $message, $context);
     }
@@ -107,7 +107,7 @@ class Log
      *
      * @return void
      */
-    public static function emergency($message, $context): void
+    public static function emergency($message, $context = []): void
     {
         static::log('emergency', $message, $context);
     }

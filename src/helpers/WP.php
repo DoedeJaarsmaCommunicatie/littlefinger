@@ -6,6 +6,11 @@ use App\Exceptions\MultiSiteNotEnabledException;
 
 class WP
 {
+    /**
+     * Returns an array of all public sites.
+     *
+     * @return array|int
+     */
     public static function getAllPublicSitesButCurrent()
     {
         if (function_exists('get_sites')) {
@@ -21,6 +26,12 @@ class WP
         return [];
     }
     
+    /**
+     * Returns an array of all public sites. Or fails.
+     *
+     * @return array|int
+     * @throws MultiSiteNotEnabledException
+     */
     public static function getAllPublicSitesButCurrentOrFail()
     {
         if (!function_exists('get_sites')) {

@@ -5,10 +5,7 @@ use App\Helpers\WP;
 use cdk_model;
 use cdk_hashed_model;
 use Symfony\Component\Finder\Finder;
-use Timber\Post;
 use Timber\Twig_Function;
-use Twig\TwigFunction;
-use function get_sites;
 
 /**
  * Class ContentServiceProvider

@@ -12,6 +12,34 @@ export default class NavOpener {
     }
 
     boot(): void {
+        const button = document.querySelector('.menu-button');
+
+        if (!button) {
+            return;
+        }
+
+        button.addEventListener('click',  () => {
+            if (!this.menu.classList.contains('active')) {
+                this.menu.classList.add('active');
+            }
+        });
+
+        document.body.addEventListener('click', (ev: any) => {
+            if (ev.target == this.menu || this.menu.contains(ev.target) ||
+                ev.target == button || button.contains(ev.target)) {
+                return;
+            }
+
+            if (this.menu.classList.contains('active')) {
+                this.menu.classList.remove('active')
+            }
+        });
+    }
+
+    /**
+     * @deprecated
+     */
+    hammerBoot(): void {
         this.hammer.on('panleft', (ev: any) => {
             const { x } = this.getStartDirection(ev);
 

@@ -8,6 +8,9 @@
             <img src="{{ _logo.src }}" alt="{{ _logo.alt?? 'LOGO ' ~ site.name }}" class="custom_logo" id="logo_{{ post.ID }}" />
         </a>
         {% if stramien_large %}
+            <button class="menu-button">
+                <i class="fas fa-bars fa-2x"></i>
+            </button>
             {% include 'partials/header/navbar.html.twig' %}
         {% endif %}
         {{ search_form(search_placeholder) }}
