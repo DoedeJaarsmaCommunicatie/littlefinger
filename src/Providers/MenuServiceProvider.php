@@ -16,7 +16,7 @@ class MenuServiceProvider
      *
      * @var array
      */
-    protected $menus = [
+    protected static $menus = [
         'top-menu'     => 'Topmenu',
         'primary-menu' => 'Primary',
         'footer-menu'  => 'Footer menu',
@@ -37,7 +37,7 @@ class MenuServiceProvider
      */
     public function boot(): void
     {
-        register_nav_menus($this->menus);
+        register_nav_menus(static::$menus);
 
         add_filter('timber/context', [ $this, 'registerContent' ]);
     }
@@ -51,7 +51,7 @@ class MenuServiceProvider
      */
     public function registerContent($content)
     {
-        foreach ($this->menus as $key => $name) {
+        foreach (static::$menus as $key => $name) {
             $content[ \App\Helpers\Str::camel($key) ] = new Menu($key);
         }
         return $content;

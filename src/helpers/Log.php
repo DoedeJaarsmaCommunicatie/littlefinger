@@ -8,6 +8,7 @@ use Monolog\Processor\PsrLogMessageProcessor;
 
 class Log
 {
+    protected static $log_dir_cache = null;
     /**
      * Send a debug message to the log.
      *
@@ -136,12 +137,16 @@ class Log
     
     private static function logDirectory(): string
     {
+        if (null !== static::$log_dir_cache) {
+            return static::$log_dir_cache;
+        }
+        
         $dir = wp_get_upload_dir()['basedir'] . '/logs';
         
         if (!is_dir($dir)) {
             wp_mkdir_p($dir);
         }
-        return $dir;
+        return static::$log_dir_cache = $dir;
     }
     
     private static function logFile(): string

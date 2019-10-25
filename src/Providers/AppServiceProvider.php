@@ -1,6 +1,8 @@
 <?php
 namespace App\Providers;
 
+use App\Helpers\WP;
+
 class AppServiceProvider
 {
     protected $providers;
@@ -10,8 +12,8 @@ class AppServiceProvider
 
     public function __construct()
     {
-        $providers = include get_stylesheet_directory() . '/src/config/app.php';
-        $routes = include get_stylesheet_directory() . '/src/routes/routes.php';
+        $providers = include WP::getStylesheetDir() . '/src/config/app.php';
+        $routes = include WP::getStylesheetDir() . '/src/routes/routes.php';
         
         $this->providers = $providers['providers'];
         $this->filters = $providers['filters'];

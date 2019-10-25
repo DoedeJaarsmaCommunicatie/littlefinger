@@ -154,7 +154,8 @@
     @include shadow;
     justify-content: space-between;
 
-    #qty {
+    #qty,
+    #qty-mob {
         max-width: 3rem;
         border: 1px solid $black;
         @include radii;

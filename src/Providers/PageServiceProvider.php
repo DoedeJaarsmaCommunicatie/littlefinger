@@ -1,6 +1,7 @@
 <?php
 namespace App\Providers;
 
+use App\Helpers\WP;
 use Carbon\Carbon;
 use Pagerange\Markdown\MetaParsedown;
 use Symfony\Component\Yaml\Yaml;
@@ -65,7 +66,7 @@ class PageServiceProvider
     
     protected function fill_files()
     {
-        $directory = get_stylesheet_directory() . '/page_templates/';
+        $directory = WP::getStylesheetDir() . '/page_templates/';
         
         array_map(function ($file) use ($directory) {
             $this->files [] = $directory . $file;
@@ -80,7 +81,7 @@ class PageServiceProvider
     protected function createFAQ()
     {
         $pd = new \Parsedown();
-        $faq_file = get_stylesheet_directory() . '/faq.yml';
+        $faq_file = WP::getStylesheetDir() . '/faq.yml';
         
         $contents = Yaml::parseFile($faq_file);
         
@@ -133,4 +134,6 @@ class PageServiceProvider
             return $query->posts[0];
         }
     }
+    
+    
 }

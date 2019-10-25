@@ -68,7 +68,7 @@ class ContentServiceProvider
                 
                 $context['secure_payment'] = $finder
                     ->files()
-                    ->in(get_stylesheet_directory() . '/dist/images/payment_methods')
+                    ->in(WP::getStylesheetDir() . '/dist/images/payment_methods')
                     ->name('*.svg');
                 
                 if (function_exists('wc') &&

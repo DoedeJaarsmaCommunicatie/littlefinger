@@ -1,6 +1,7 @@
 <?php
 namespace App\Providers;
 
+use App\Helpers\WP;
 use Carbon_Fields\Carbon_Fields;
 
 class CarbonServiceProvider
@@ -18,7 +19,7 @@ class CarbonServiceProvider
     
     private function register_meta_fields(): void
     {
-        $fields = include get_stylesheet_directory() . '/src/config/meta.php';
+        $fields = include WP::getStylesheetDir() . '/src/config/meta.php';
         
         foreach ($fields as $field) {
             add_action('carbon_fields_register_fields', [ new $field(), 'register']);

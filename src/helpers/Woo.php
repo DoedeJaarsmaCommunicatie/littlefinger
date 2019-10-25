@@ -5,6 +5,7 @@ use App\Exceptions\ProductNotFoundException;
 
 class Woo
 {
+    protected static $products_cache = [];
     /**
      * Returns the WC_Product if it exists
      *
@@ -14,7 +15,11 @@ class Woo
      */
     public static function getProduct(int $ID)
     {
-        return wc_get_product($ID);
+        if (isset(static::$products_cache[$ID])) {
+            return static::$products_cache[$ID];
+        }
+        
+        return static::$products_cache[$ID] = wc_get_product($ID);
     }
     
     /**
