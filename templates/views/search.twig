@@ -21,6 +21,13 @@
                     </a>
                 </h2>
                 <div class="product-content content">
+                    {% if post.post_type is same as('product') %}
+                    <p class="product-content_attributes">
+                        <span>Streek: {{ _product.get_attribute('pa_streek') }}</span>
+                        <span>Jaargang: {{ _product.get_attribute('pa_jaar') }}</span>
+                        <span>Druiven: {{ _product.get_attribute('pa_druif') }}</span>
+                    </p>
+                    {% endif %}
                     {{ post.content|excerpt(15) }} <a href="{{ post.link }}">Lees meer</a>
                 </div>
                 {% if post.post_type is same as ('product') %}
