@@ -1,0 +1,32 @@
+{% macro productSTD(product, post) %}
+{% set _thumb = post.thumbnail %}
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org/",
+        "@type": "Product",
+        "name": "{{ product.get_title }}",
+        "image": [
+            "{{ _thumb.src }}"
+        ],
+        "description": "{{ product.get_description }}",
+        "brand": {
+            "@type": "Thing",
+            "name": "{{ product.get_attribute('pa_domein') }}"
+        },
+        "offers": {
+            "@type": "Offer",
+            "url": "{{ product.get_permalink }}",
+            "priceCurrency": "EUR",
+            "price": "{{ product.get_price }}",
+            "priceValidUntil": "2021",
+            "availability": "https://schema.org/InStock",
+            "itemCondition": "https://schema.org/NewCondition",
+            "seller": {
+                "@type": "Organization",
+                "name": "{{ fn('get_bloginfo', 'name') }}",
+                "url": "{{ fn('get_bloginfo', 'url') }}"
+            }
+        }
+    }
+</script>
+{% endmacro %}

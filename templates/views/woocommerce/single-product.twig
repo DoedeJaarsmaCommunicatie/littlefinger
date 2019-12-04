@@ -1,5 +1,6 @@
 {% extends 'base/app.twig' %}
 {% from "macro/add-to-cart.twig" import add_to_cart %}
+{% from "macro/std.macro.twig" import productSTD as std %}
 
 {% block content %}
     {% do action('woocommerce_before_single_product') %}
@@ -44,6 +45,7 @@
             {% include 'partials/blocks/products.twig' with { posts: related_products, title: 'Gerelateerde producten' } only %}
         {% endif %}
     </section>
+    {{ std(product, post) }}
 
     {{ add_to_cart(product.get_id, 'product-add-to-cart-container', 'qty-mob') }}
 {% endblock %}
