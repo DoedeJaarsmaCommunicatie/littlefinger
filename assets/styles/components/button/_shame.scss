@@ -27,6 +27,7 @@
 
 .products-large-cta {
   @extend %default-shadow;
+  background: scale-color($grey, $lightness: 90%);
   border: 2px solid $primary;
   display: flex;
   flex-direction: column;
@@ -34,10 +35,13 @@
   justify-content: center;
   font-size: $fontSizeLarge;
   font-weight: 600;
+  border-radius: $radius;
+  color: $black;
+  text-align: center;
+  transition: all 225ms ease;
 
-  > .btn {
-    margin-top: 2rem;
-    padding: 0 $padding_small;
-    font-weight: 400;
+
+  &:hover {
+    border: 2px double $primary;
   }
 }

@@ -51,6 +51,7 @@ class Producten extends Block
         
         $context['attributes'] = $attributes;
         $context['title'] = $fields['title'] ?? false;
+        $context['kiyoh'] = $fields['show_kiyoh'] ?? false;
         
         Timber::render($this->template, $context);
     }
@@ -71,6 +72,11 @@ class Producten extends Block
                           ->set_attribute('type', 'number')
                           ->set_attribute('min', 0)
                           ->set_attribute('max', 20);
+        
+        if ($this->isLargeSite()) {
+            $fields [] = Field::make('checkbox', 'show_kiyoh', __('Kiyoh'));
+        }
+        
         
         return $fields;
     }
