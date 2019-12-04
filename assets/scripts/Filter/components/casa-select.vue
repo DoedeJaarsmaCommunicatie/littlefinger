@@ -1,10 +1,10 @@
 <template>
     <div class="custom-input">
         <span class="selected">
-            <slot name="selected"></slot> <i class="fas fa-chevron-down"></i>
+            <slot name="selected" /> <i class="fas fa-chevron-down" />
         </span>
         
-        <ul class="options" ref="list">
+        <ul class="options" ref="list" role="listbox">
             <li
                 v-for="(item, key) in items"
                 :key="key"
@@ -13,7 +13,8 @@
                 :data-value="item.slug"
                 @click.exact.prevent="itemSelected(key)"
                 v-html="item.title"
-            ></li>
+                role="option"
+            />
         </ul>
     </div>
 </template>

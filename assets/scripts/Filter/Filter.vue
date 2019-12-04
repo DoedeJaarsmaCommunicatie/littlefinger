@@ -4,19 +4,20 @@
         
         <div class="custom-input">
             <span class="selected" @click="toggleList">
-                {{ activeCategory.title }} <i class="fas fa-chevron-down"></i>
+                {{ activeCategory.title }} <i class="fas fa-chevron-down" />
             </span>
             
-            <ul class="options" ref="categoriesList">
+            <ul class="options" ref="categoriesList" role="listbox">
                 <li
-                        v-for="(item, key) in categories"
-                        :key="key"
-                        :data-key="key"
-                        class="option"
-                        data-param="product-categorie"
-                        :data-value="item.slug"
-                        @click.exact.prevent="setActiveCategory(key)"
-                        :class="{ current: activeCategory.slug === item.slug }"
+                    v-for="(item, key) in categories"
+                    :key="key"
+                    :data-key="key"
+                    class="option"
+                    data-param="product-categorie"
+                    :data-value="item.slug"
+                    @click.exact.prevent="setActiveCategory(key)"
+                    :class="{ current: activeCategory.slug === item.slug }"
+                    role="option"
                 >
                     {{ item.title }}
                 </li>
@@ -72,13 +73,11 @@
 
         prices: Array<Price> = env.prices;
 
-        get activeCategory(): Category {
-            return this.categories[_.findIndex(this.categories, c => c.active === true)];
-        }
-
-        get activePrice(): Price {
-            return this.prices[_.findIndex(this.prices, p => p.active === true)];
-        }
+        // @ts-ignore
+        activeCategory: Category = this.categories[_.findIndex(this.categories, c => c.active === true)];
+        
+        // @ts-ignore
+        activePrice: Price = this.prices[_.findIndex(this.prices, p => p.active === true)];
 
         setActiveCategory(key: number): void {
             let category = this.categories[key];
@@ -86,7 +85,7 @@
                 this.categories[_.findIndex(this.categories, c => c.active === true)].active = false;
                 category.active = true;
             }
-
+            this.activateCategory();
             this.closeAllLists();
         }
 
@@ -96,6 +95,7 @@
                 this.prices[_.findIndex(this.prices, p => p.active === true)].active = false;
                 price.active = true;
             }
+            
             this.closeAllLists();
         }
 
@@ -103,9 +103,8 @@
             (<HTMLElement>this.$refs['categoriesList']).classList.remove('active');
             (<HTMLElement>this.$refs['pricesList']).classList.remove('active');
         }
-
-        // noinspection JSMethodCanBeStatic
-        toggleList(ev: any): void {
+        
+        toggleList(ev: any): void { // noinspection JSMethodCanBeStatic
             let parent = ev.target.parentElement as HTMLElement;
             let target = parent.querySelector('.options');
 
@@ -134,7 +133,11 @@
             } else {
                 window.location.href = `${this.baseUrl}/winkel/${price? '?price=' + price : ''}`;
             }
-            
+        }
+        
+        activateCategory() {
+            this.activeCategory = this.categories[_.findIndex(this.categories, c => c.active === true)];
+            console.dir(this.activeCategory);
         }
     }
 

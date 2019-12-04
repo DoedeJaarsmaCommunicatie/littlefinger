@@ -6381,9 +6381,9 @@ svgo@^1.0.0:
     util.promisify "~1.0.0"
 
 tailwindcss@^1.1.2:
-  version "1.1.2"
-  resolved "https://registry.yarnpkg.com/tailwindcss/-/tailwindcss-1.1.2.tgz#0107dc092c3edee6132b105d896b109c0f66afd6"
-  integrity sha512-mcTzZHXMipnQY9haB17baNJmBTkYYcC8ljfMdB9/97FfhKJIzlglJcyGythuQTOu7r/QIbLfZYYWZhAvaGj95A==
+  version "1.1.4"
+  resolved "https://registry.yarnpkg.com/tailwindcss/-/tailwindcss-1.1.4.tgz#786bd5faaf485c9eddcb821dd55666c56baa814e"
+  integrity sha512-p4AxVa4CKpX7IbNxImwNMGG9MHuLgratOaOE/iGriNd4AsRQRM2xMisoQ3KQHqShunrWuObga7rI7xbNsVoWGA==
   dependencies:
     autoprefixer "^9.4.5"
     bytes "^3.0.0"
@@ -6534,9 +6534,9 @@ trim-right@^1.0.1:
   integrity sha1-yy4SAwZ+DI3h9hQJS5/kVwTqYAM=
 
 ts-loader@^6.1.2:
-  version "6.1.2"
-  resolved "https://registry.yarnpkg.com/ts-loader/-/ts-loader-6.1.2.tgz#ff6bc767334970226438949fbde2e211147a1325"
-  integrity sha512-dudxFKm0Ellrg/gLNlu+97/UgwvoMK0SdUVImPUSzq3IcRUVtShylZvcMX+CgvCQL1BEKb913NL0gAP1GA/OFw==
+  version "6.2.1"
+  resolved "https://registry.yarnpkg.com/ts-loader/-/ts-loader-6.2.1.tgz#67939d5772e8a8c6bdaf6277ca023a4812da02ef"
+  integrity sha512-Dd9FekWuABGgjE1g0TlQJ+4dFUfYGbYcs52/HQObE0ZmUNjQlmLAS7xXsSzy23AMaMwipsx5sNHvoEpT2CZq1g==
   dependencies:
     chalk "^2.3.0"
     enhanced-resolve "^4.0.0"
@@ -6573,9 +6573,9 @@ typedarray@^0.0.6:
   integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
 
 typescript@^3.6.3:
-  version "3.6.3"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.6.3.tgz#fea942fabb20f7e1ca7164ff626f1a9f3f70b4da"
-  integrity sha512-N7bceJL1CtRQ2RiG0AQME13ksR7DiuQh/QehubYcghzv20tnh+MQnQIuJddTmsbqYj+dztchykemz0zFzlvdQw==
+  version "3.7.3"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.7.3.tgz#b36840668a16458a7025b9eabfad11b66ab85c69"
+  integrity sha512-Mcr/Qk7hXqFBXMN7p7Lusj1ktCBydylfQM/FZCk5glCNQJrCUKPkMHdo9R0MTFWsC/4kPFvDS0fDPvukfCkFsw==
 
 uglify-js@3.4.x:
   version "3.4.10"
@@ -6765,7 +6765,7 @@ vm-browserify@^1.0.1:
   resolved "https://registry.yarnpkg.com/vm-browserify/-/vm-browserify-1.1.0.tgz#bd76d6a23323e2ca8ffa12028dc04559c75f9019"
   integrity sha512-iq+S7vZJE60yejDYM0ek6zg308+UZsdtPExWP9VZoCFCz1zkJoXFnAX7aZfd/ZwrkidzdUZL0C/ryW+JwAiIGw==
 
-vue-class-component@^7.0.1:
+vue-class-component@^7.1.0:
   version "7.1.0"
   resolved "https://registry.yarnpkg.com/vue-class-component/-/vue-class-component-7.1.0.tgz#b33efcb10e17236d684f70b1e96f1946ec793e87"
   integrity sha512-G9152NzUkz0i0xTfhk0Afc8vzdXxDR1pfN4dTwE72cskkgJtdXfrKBkMfGvDuxUh35U500g5Ve4xL8PEGdWeHg==
@@ -6775,7 +6775,7 @@ vue-hot-reload-api@^2.3.0:
   resolved "https://registry.yarnpkg.com/vue-hot-reload-api/-/vue-hot-reload-api-2.3.4.tgz#532955cc1eb208a3d990b3a9f9a70574657e08f2"
   integrity sha512-BXq3jwIagosjgNVae6tkHzzIk6a8MHFtzAdwhnV5VlvPTFxDCvIttgSiHWjdGoTJvXtmRu5HacExfdarRcFhog==
 
-vue-loader@^15.4.2, vue-loader@^15.7.1:
+vue-loader@^15.4.2:
   version "15.7.1"
   resolved "https://registry.yarnpkg.com/vue-loader/-/vue-loader-15.7.1.tgz#6ccacd4122aa80f69baaac08ff295a62e3aefcfd"
   integrity sha512-fwIKtA23Pl/rqfYP5TSGK7gkEuLhoTvRYW+TU7ER3q9GpNLt/PjG5NLv3XHRDiTg7OPM1JcckBgds+VnAc+HbA==
@@ -6786,12 +6786,23 @@ vue-loader@^15.4.2, vue-loader@^15.7.1:
     vue-hot-reload-api "^2.3.0"
     vue-style-loader "^4.1.0"
 
-vue-property-decorator@^8.2.2:
-  version "8.2.2"
-  resolved "https://registry.yarnpkg.com/vue-property-decorator/-/vue-property-decorator-8.2.2.tgz#ac895e9508ee1bf86e3a28568d94d842c2c8e42f"
-  integrity sha512-3gRrIeoUtjXvkoMX2stJsVs7805Pa9MXEndnk21ej+sWO7AIc5HF1TKqK0Pox5TEjpO02UbadIF0QWNrx6ZwXQ==
+vue-loader@^15.7.1:
+  version "15.7.2"
+  resolved "https://registry.yarnpkg.com/vue-loader/-/vue-loader-15.7.2.tgz#cc89e2716df87f70fe656c9da9d7f8bec06c73d6"
+  integrity sha512-H/P9xt/nkocyu4hZKg5TzPqyCT1oKOaCSk9zs0JCbJuy0Q8KtR0bjJpnT/5R5x/Ckd1GFkkLQnQ1C4x6xXeLZg==
   dependencies:
-    vue-class-component "^7.0.1"
+    "@vue/component-compiler-utils" "^3.0.0"
+    hash-sum "^1.0.2"
+    loader-utils "^1.1.0"
+    vue-hot-reload-api "^2.3.0"
+    vue-style-loader "^4.1.0"
+
+vue-property-decorator@^8.2.2:
+  version "8.3.0"
+  resolved "https://registry.yarnpkg.com/vue-property-decorator/-/vue-property-decorator-8.3.0.tgz#536f027dc7d626f37c8d85a2dc02f0a6cb979440"
+  integrity sha512-77YtTbZHd5CNiPzbqv51kEgL48yvD2dUDfF28vEyw3MbQ9bBAb/tDyFzskcqjNRbWyXk1vq4oM2CK/LfhxuIBg==
+  dependencies:
+    vue-class-component "^7.1.0"
 
 vue-style-loader@^4.1.0:
   version "4.1.2"

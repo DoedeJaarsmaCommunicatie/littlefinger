@@ -30,8 +30,8 @@ export default class Linker {
     }
 
     loop(): void {
-        for (let elem in this.els) {
-            if (this.els.hasOwnProperty(elem)) {
+        for (let elem in this.els!) {
+            if (this.els!.hasOwnProperty(elem)) {
                 // @ts-ignore
                 const el = this.els[elem] as HTMLElement;
 

@@ -60,14 +60,14 @@ export class ButtonHandler {
     }
 
     increaseQty(): void {
-        if (!this.maximum || this.input!.valueAsNumber < (this.maximum as unknown as number)) {
-            this.input!.value = (this.input!.valueAsNumber + 1 ) as unknown as string;
+        if (!this.maximum || this.input!.valueAsNumber < (this.maximum as any as number)) {
+            this.input!.value = (this.input!.valueAsNumber + 1 ) as any as string;
         }
     }
 
     decreaseQty(): void {
         if (this.input!.valueAsNumber > 1) {
-            this.input!.value = (this.input!.valueAsNumber - 1) as unknown as string;
+            this.input!.value = (this.input!.valueAsNumber - 1) as any as string;
         }
     }
 }
