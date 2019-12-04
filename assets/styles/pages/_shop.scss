@@ -29,3 +29,9 @@
     }
   }
 }
+
+label[for^="payment_method_"] {
+  & img {
+    display: inline;
+  }
+}
