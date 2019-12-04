@@ -10,3 +10,9 @@
         font-size: $fontSizeLarge;
     }
 }
+
+@media screen and (max-width: 414px) {
+    .homepage-filter {
+        display: none;
+    }
+}

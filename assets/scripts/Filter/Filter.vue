@@ -3,7 +3,7 @@
         <h3 :data-title="title" :title="title" class="homepage-filter_title">{{ title }}</h3>
         
         <div class="custom-input">
-            <span class="selected" @click="toggleList">
+            <span class="selected" @click="toggleList" v-if="activeCategory">
                 {{ activeCategory.title }} <i class="fas fa-chevron-down" />
             </span>
             
@@ -25,7 +25,7 @@
         </div>
         
         <div class="custom-input">
-            <span class="selected" @click="toggleList">
+            <span class="selected" @click="toggleList" v-if="activePrice">
                 Voor {{ activePrice.title }} <i class="fas fa-chevron-down"></i>
             </span>
             <ul class="options" ref="pricesList">
@@ -59,6 +59,7 @@
     import * as _ from 'lodash';
     import env from '../config/env';
     
+    @Component
     export default class HomepageFilter extends Vue {
         @Prop({default: 'Ik ben op zoek naar:'})
         title: string = 'Ik ben op zoek naar:';
@@ -67,25 +68,25 @@
         buttonText: string = 'Toon resultaat';
         
         @Prop({default: 'https://italiaansewijnwinkel.nl', type: String})
-        baseUrl?: string = '';
+        baseUrl?: string;
 
         categories: Array<Category> = env.categories;
 
         prices: Array<Price> = env.prices;
 
         // @ts-ignore
-        activeCategory: Category = this.categories[_.findIndex(this.categories, c => c.active === true)];
+        activeCategory: Category = false;
         
         // @ts-ignore
-        activePrice: Price = this.prices[_.findIndex(this.prices, p => p.active === true)];
+        activePrice: Price = false;
 
         setActiveCategory(key: number): void {
             let category = this.categories[key];
             if (this.activeCategory.slug !== category.slug) {
                 this.categories[_.findIndex(this.categories, c => c.active === true)].active = false;
                 category.active = true;
+                this.activateCategory();
             }
-            this.activateCategory();
             this.closeAllLists();
         }
 
@@ -94,6 +95,7 @@
             if (this.activePrice.slug !== price.slug) {
                 this.prices[_.findIndex(this.prices, p => p.active === true)].active = false;
                 price.active = true;
+                this.activatePrice();
             }
             
             this.closeAllLists();
@@ -135,9 +137,17 @@
             }
         }
         
+        mounted () {
+            this.activateCategory();
+            this.activatePrice();
+        }
+        
         activateCategory() {
             this.activeCategory = this.categories[_.findIndex(this.categories, c => c.active === true)];
-            console.dir(this.activeCategory);
+        }
+        
+        activatePrice() {
+            this.activePrice = this.prices[_.findIndex(this.prices, p => p.active === true)];
         }
     }
 
