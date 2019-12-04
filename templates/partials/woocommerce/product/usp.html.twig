@@ -1,0 +1,33 @@
+<table class="product-usp">
+    {% if product %}
+        <tr>
+            {% if product.is_in_stock %}
+                <th><i class="fas fa-check"></i></th>
+                {% if not product.get_stock_quantity %}
+                    <td>Op voorraad</td>
+                {% elseif product.get_stock_quantity > 18 %}
+                    <td>Op voorraad</td>
+                {% else %}
+                    <td>Nog {{ product.get_stock_quantity }} op voorraad.</td>
+                {% endif %}
+            {% endif %}
+        </tr>
+    {% endif %}
+
+    <tr>
+        <th><i class="fas fa-store-alt"></i></th>
+        <td>{{ theme.theme_mod('more_shops', 'Bestellen bij meerdere webshops.') }}</td>
+    </tr>
+
+    <tr>
+        <th><i class="fas fa-truck"></i></th>
+        <td>{{ theme.theme_mod('shipping_fee', 'Gratis verzending vanaf € 50,-') }}</td>
+    </tr>
+
+    <tr>
+        <th><i class="fas fa-dolly"></i></th>
+        <td>
+            {{ theme.theme_mod('delivery_time', 'Voor 15:00 besteld, dezelfde werkdag verzonden.') }}
+        </td>
+    </tr>
+</table>
