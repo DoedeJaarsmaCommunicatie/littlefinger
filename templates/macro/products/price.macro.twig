@@ -1,0 +1,8 @@
+{% macro tease_price(product) %}
+    <a
+        class="product-large-price"
+        title="Bekijk {{ product.get_title }}"
+        href="{{ product.get_permalink }}">
+        {{ product.get_price_html }}
+    </a>
+{% endmacro %}

@@ -2,23 +2,20 @@
 {% set _name = _product.get_name %}
 {% set _permalink = _product.get_permalink %}
 {% from 'macro/add-to-cart.twig' import add_to_cart %}
+{% from 'macro/products/images.macro.twig' import tease_thumbnail %}
+{% from 'macro/products/price.macro.twig' import tease_price %}
 
 <article class="product-card-large-horizontal">
     <span class="product-label" hidden>Aanbieding</span>
     <a href="{{ _permalink }}" class="product-large-image-wrapper" title="Bekijk {{ _name }}">
-        <img
-                alt="{{ product.thumbnail.alt }}"
-                class="product-large-image"
-                src="{{ product.thumbnail.src('medium') }}" />
+        {{ tease_thumbnail(product) }}
     </a>
     <h2 class="product-large-title">
         <a href="{{ _permalink }}" title="Bekijk {{ _name }}">
             {{ _name }}
         </a>
     </h2>
-    <a href="{{ _permalink }}" class="product-large-price" title="Bekijk {{ _name }}">
-        {{ _product.get_price_html }}
-    </a>
+    {{ tease_price(_product) }}
 
     {{ add_to_cart(product.ID, 'mx-auto product-large-add-to-cart', 'qty', 'small') }}
 </article>

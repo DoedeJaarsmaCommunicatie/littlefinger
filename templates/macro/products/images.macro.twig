@@ -1,0 +1,7 @@
+{% macro tease_thumbnail(post) %}
+    {% set thumbnail = post.thumbnail %}
+    <img
+        alt="{{ thumbnail.alt }}"
+        class="product-large-iamge"
+        src="{{ thumbnail.src('medium') }}" />
+{% endmacro %}

@@ -1,32 +1,26 @@
 {% if stramien_large %}
-
+    {% if title %}
+        <h2 class="bg-primary text-2xl text-white py-2 text-center md:hidden">{{ title }}</h2>
+    {% endif %}
     <section class="products-large container mx-auto p-4 lg:px-0 {{ attributes.className }}">
         {% for product in posts %}
-            {% include 'partials/tease/product-large.html.twig' with { product: product } only %}
+            {{ include('partials/tease/product-large.html.twig', { product:product }) }}
         {% endfor %}
         {% if title and link %}
             <a href="{{ link }}" class="products-large-cta">
-                <h3>
-                    {{ title }}
-                </h3>
-                <span class="btn primary">
-                    >
-                </span>
+                <h3>{{ title }}</h3>
+                <span class="btn primary">></span>
             </a>
         {% endif %}
     </section>
-
 {% else %}
-
     {% if title %}
         <h2 class="bg-primary text-2xl text-white py-2 text-center">{{ title }}</h2>
     {% endif %}
-
     <section class="products container mx-auto p-4 lg:px-0 {{ attributes.className }}">
         {% for product in posts %}
             {% include 'partials/tease/product.twig' with { product: product } only %}
         {% endfor %}
     </section>
-
 {% endif %}
 
