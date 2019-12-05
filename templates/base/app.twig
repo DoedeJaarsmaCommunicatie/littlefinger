@@ -7,6 +7,7 @@
     {{ fn('wp_head') }}
 </head>
 <body {{ fn('body_class') }}>
+{{ theme.theme_mod('code_body_html')|raw }}
 
 {% block header %}{% include('base/helpers/header.twig') %}{% endblock %}
 {% block content %}{{ post.content }}{% endblock %}

@@ -1,10 +1,10 @@
 .product {
     display: grid;
     grid-template-areas: "thumb . title title"
-                         "thumb . attributes attributes"
-                         "thumb . attributes attributes"
-                         "thumb . . ."
                          "thumb . sidebar sidebar"
+                         "thumb . sidebar sidebar"
+                         "thumb . . ."
+                         "attributes attributes attributes attributes"
                          "main main main main";
 
     grid-template-columns: repeat(4, 1fr);
@@ -75,8 +75,8 @@
         padding: $padding;
         grid-area: main;
         margin-top: $padding;
-        background: $secondary;
-        color: $white;
+        background: scale-color($grey, $lightness: 90%);
+        color: $black;
 
         @for $i from 1 through 6 {
             h#{$i} {
@@ -95,19 +95,12 @@
     .product_sidebar {
         grid-area: sidebar;
         background: transparent;
-        & table {
-            display: none;
-        }
         @media screen and (min-width: 1023px) {
             padding: $padding;
             background: scale-color($grey, $lightness: 90%);
             position: absolute;
             top: 0;
             right: 0;
-
-            & table {
-                display: unset;
-            }
         }
     }
 
@@ -151,7 +144,7 @@
     background: $white;
     padding: $padding_small $padding;
     display: flex;
-    @include shadow;
+    @include inverse-shadow;
     justify-content: space-between;
 
     #qty,
@@ -179,14 +172,6 @@
                 padding-right: unset;
             }
         }
-
-        @media screen and (max-width: 1024px) {
-            tr {
-                @include after-first(3) {
-                    display: none;
-                }
-            }
-        }
     }
     @media screen and (min-width: 1023px) {
         & table {
@@ -206,5 +191,15 @@
 .product-usp {
     & th {
         padding: 0 10px 0;
+    }
+
+    @media screen and (max-width: 1024px) {
+        & tr {
+            border-bottom: 2px solid scale-color($primary, $alpha: -45%);
+        }
+
+        & th {
+            display: none;
+        }
     }
 }

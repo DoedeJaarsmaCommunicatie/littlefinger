@@ -1,11 +1,12 @@
 {% extends 'base/app.twig' %}
 {% from "macro/add-to-cart.twig" import add_to_cart %}
 {% from "macro/std.macro.twig" import productSTD as std %}
+{% from "macro/products/images.macro.twig" import product_image as thumbnail %}
 
 {% block content %}
     {% do action('woocommerce_before_single_product') %}
     <main class="product container mx-auto">
-        <img src="{{ post.thumbnail.src('large') }}" alt="{{ post.thumbnail.alt }}" class="product-image" />
+        {{ thumbnail(post) }}
 
         <h1 class="product-title">{{ post.title }}</h1>
 

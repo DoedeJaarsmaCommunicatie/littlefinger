@@ -72,5 +72,17 @@ class ScriptsCustomizerController extends Customizer
                 'language' => 'html',
             ]
         ],
+        [
+            'id'          => CustomizerServiceProvider::CONFIG_ID,
+            'type'        => 'code',
+            'settings'    => 'code_body_html',
+            'description' => 'Voer hier HTML in voor net na het openen van de body tag.',
+            'label'       => 'Body HTML',
+            'section'     => 'general_settings_scripts',
+            'priority'    => 20,
+            'choices'     => [
+                'language' => 'html',
+            ]
+        ],
     ];
 }
