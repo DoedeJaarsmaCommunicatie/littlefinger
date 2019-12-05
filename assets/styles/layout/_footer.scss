@@ -13,3 +13,25 @@ $nix18-width: 150px !default;
     margin: $nix18-margins;
   }
 }
+
+@media screen and (max-width: 1023px) {
+  .shortened-list {
+    &:not(.active) {
+      cursor: pointer;
+      max-height: 8rem;
+      overflow: hidden;
+      position: relative;
+
+      &::after {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        content: ' ';
+
+        background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 1));
+      }
+    }
+  }
+}
