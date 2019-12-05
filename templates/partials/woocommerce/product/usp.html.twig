@@ -1,15 +1,21 @@
 <table class="product-usp">
     {% if product %}
-        <tr>
-            {% if product.is_in_stock %}
+        <tr class="product-usp-stock stock-{{ product.get_stock_quantity }}">
+            {% if product.is_in_stock and not product.is_in_backorder %}
                 <th><i class="fas fa-check"></i></th>
                 {% if not product.get_stock_quantity %}
-                    <td>Op voorraad</td>
+                    <td><i class="fas fa-check lg:hidden"></i> Op voorraad</td>
                 {% elseif product.get_stock_quantity > 18 %}
-                    <td>Op voorraad</td>
+                    <td><i class="fas fa-check lg:hidden"></i> Op voorraad</td>
                 {% else %}
-                    <td>Nog {{ product.get_stock_quantity }} op voorraad.</td>
+                    <td><i class="fas fa-check lg:hidden"></i> Nog {{ product.get_stock_quantity }} op voorraad.</td>
                 {% endif %}
+            {% elseif product.is_in_backorder %}
+                <th><i class="fas fa-exclamation-triangle"></i></th>
+                <td>Alleen op nabestelling</td>
+            {% else %}
+                <th><i class="fas fa-exclamation-triangle"></i></th>
+                <td>Niet op voorraad</td>
             {% endif %}
         </tr>
     {% endif %}

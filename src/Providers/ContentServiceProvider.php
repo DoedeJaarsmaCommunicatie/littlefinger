@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Providers;
 
 use App\Helpers\WP;
@@ -71,9 +72,11 @@ class ContentServiceProvider
                     ->in(WP::getStylesheetDir() . '/dist/images/payment_methods')
                     ->name('*.svg');
                 
-                if (function_exists('wc') &&
+                if (
+                    function_exists('wc') &&
                     !is_admin() &&
-                    wc()->cart) {
+                    wc()->cart
+                ) {
                     $context['wc_cart_count'] = wc()->cart->get_cart_contents_count();
                 }
                 
