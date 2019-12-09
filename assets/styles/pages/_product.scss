@@ -163,16 +163,11 @@
 
 .product-attributes {
     & table {
-        & td {
-            padding-right: 4rem;
-            display: block;
-
-            &:last-of-type {
-                border-bottom: 1px solid $white;
-                padding-right: unset;
-            }
+        & tr {
+            border-bottom: 1px solid $white;
         }
     }
+
     @media screen and (min-width: 1023px) {
         & table {
             display: unset;
@@ -201,5 +196,11 @@
         & th {
             display: none;
         }
+    }
+}
+
+.product-usp-stock {
+    &.stock-instock {
+        color: $secondary;
     }
 }

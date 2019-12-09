@@ -1,7 +1,7 @@
 <table class="product-usp">
     {% if product %}
-        <tr class="product-usp-stock stock-{{ product.get_stock_quantity }}">
-            {% if product.is_in_stock and not product.is_in_backorder %}
+        <tr class="product-usp-stock stock-{{ product.get_stock_status }}">
+            {% if product.is_in_stock and not product.is_on_backorder %}
                 <th><i class="fas fa-check"></i></th>
                 {% if not product.get_stock_quantity %}
                     <td><i class="fas fa-check lg:hidden"></i> Op voorraad</td>
@@ -10,9 +10,9 @@
                 {% else %}
                     <td><i class="fas fa-check lg:hidden"></i> Nog {{ product.get_stock_quantity }} op voorraad.</td>
                 {% endif %}
-            {% elseif product.is_in_backorder %}
+            {% elseif product.is_on_backorder %}
                 <th><i class="fas fa-exclamation-triangle"></i></th>
-                <td>Alleen op nabestelling</td>
+                <td>Nabestelling. Langere levertijd</td>
             {% else %}
                 <th><i class="fas fa-exclamation-triangle"></i></th>
                 <td>Niet op voorraad</td>
@@ -20,7 +20,7 @@
         </tr>
     {% endif %}
 
-    <tr>
+    <tr hidden>
         <th><i class="fas fa-store-alt"></i></th>
         <td>{{ theme.theme_mod('more_shops', 'Bestellen bij meerdere webshops.') }}</td>
     </tr>
