@@ -191,6 +191,10 @@
     @media screen and (max-width: 1024px) {
         & tr {
             border-bottom: 2px solid scale-color($primary, $alpha: -45%);
+
+            &:nth-of-type(n+5) {
+                display: none;
+            }
         }
 
         & th {

@@ -21,5 +21,13 @@ class StoreCustomizerController extends Customizer
             'section'  => 'store_settings',
             'priority' => 10,
         ],
+        [
+            'id'       => CustomizerServiceProvider::CONFIG_ID,
+            'type'     => 'text',
+            'settings' => 'store_breadcrumbs_filter',
+            'label'    => 'Shortcode voor breadcrumbs bij het filter voor het grotere stramien',
+            'section'  => 'store_settings',
+            'priority' => 20,
+        ],
     ];
 }

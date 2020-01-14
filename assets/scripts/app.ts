@@ -1,4 +1,6 @@
 import Router from './tools/Router';
+import './bootstrap';
+import ready from './tools/Ready';
 
 // Import routes
 import common from './routes/common';
@@ -13,7 +15,4 @@ const routes = {
 
 const router = new Router(routes);
 
-// @ts-ignore
-window['routes'] = router;
-
-document.addEventListener('DOMContentLoaded', () => router.loadEvents());
+ready(router.loadEvents());

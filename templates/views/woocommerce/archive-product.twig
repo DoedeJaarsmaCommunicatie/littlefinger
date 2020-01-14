@@ -9,6 +9,9 @@
             <section class="lg:ml-auto lg:w-3/4 clearfix mt-4">
                 {% do action('woocommerce_before_shop_loop') %}
             </section>
+            <div class="lg:ml-auto lg:w-3/4 clearfix">
+                {{ theme.theme_mod('store_breadcrumbs_filter')|shortcodes }}
+            </div>
             <div class="flex">
                 <div class="lg:w-1/4 lg:pr-4 js-filter-container filter-container">
                     {{ theme.theme_mod('store_filter')|shortcodes }}
@@ -24,7 +27,6 @@
             <section class="lg:ml-auto lg:w-3/4">
                 {% do action('woocommerce_after_shop_loop') %}
             </section>
-
             <button class="js-filter-opener filter-opener">
                 <i class="fas fa-filter"></i>
             </button>

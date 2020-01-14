@@ -14,7 +14,7 @@ const purger = mix.inProduction()
 
             defaultExtractor: content => content.match(/[\w-\/:]+(?<!:)/g) || [],
         })
-    ] : []
+        ] : [];
 
 mix
     .sass('assets/styles/main.scss', 'dist/styles/app.css')
@@ -23,8 +23,8 @@ mix
     .options({
         processCssUrls: false,
         postCss: [
-            require('tailwindcss'),
-            require('autoprefixer'),
-            ...purger
+        require('tailwindcss'),
+        require('autoprefixer'),
+        ...purger
         ]
     })
