@@ -2,6 +2,8 @@
 
 namespace App\Controllers\Meta\Blocks;
 
+use cdk_hashed_model;
+use cdk_model;
 use Elderbraum\CasaProductFactory\ProductsFactory;
 use Carbon_Fields\Field;
 use Timber\Timber;
@@ -51,7 +53,7 @@ class Producten extends Block
         
         $context['attributes'] = $attributes;
         $context['title'] = $fields['title'] ?? false;
-        $context['kiyoh'] = $fields['show_kiyoh'] ?? false;
+        $context['kiyoh'] =  $this->getKiyoh($fields);
         
         Timber::render($this->template, $context);
     }
@@ -92,5 +94,20 @@ class Producten extends Block
         }
         
         return $fields[ 'category' ];
+    }
+    
+    private function getKiyoh(array $fields)
+    {
+        if ($fields['show_kiyoh']) {
+            if (true === get_theme_mod('cdelk_use_hash') && class_exists('cdk_hashed_model')) {
+                return  (new cdk_hashed_model())->get();
+            } elseif (class_exists('cdk_model')) {
+                return (new cdk_model())->get();
+            }
+            
+            return false;
+        }
+        
+        return false;
     }
 }
