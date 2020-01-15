@@ -153,7 +153,7 @@ class WP
     public static function removeScript($handle)
     {
         if (!isset(static::$dequeue_cache_scripts[$handle])) {
-            \wp_dequeue_script($handle);
+            \wp_deregister_script($handle);
             static::$dequeue_cache_scripts[$handle] = $handle;
         }
     }
