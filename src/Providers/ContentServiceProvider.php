@@ -45,6 +45,7 @@ class ContentServiceProvider
     public function registered(): void
     {
         $this->add_count_to_wc_fragment();
+        \add_action('wp_enqueue_scripts', [$this, 'handleAssets']);
     }
     
     /**
@@ -140,5 +141,11 @@ class ContentServiceProvider
                 return $context;
             }
         );
+    }
+    
+    public function handleAssets(): void
+    {
+        WP::removeStyle('wc-block-style');
+        WP::removeStyle('wp-block-library');
     }
 }
