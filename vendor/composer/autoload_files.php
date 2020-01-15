@@ -14,7 +14,7 @@ return array(
     '5d9c5be1aa1fbc12016e2c5bd16bbc70' => $vendorDir . '/dusank/knapsack/src/collection_functions.php',
     'e5fde315a98ded36f9b25eb160f6c9fc' => $vendorDir . '/dusank/knapsack/src/utility_functions.php',
     '37a3dc5111fe8f707ab4c132ef1dbc62' => $vendorDir . '/guzzlehttp/guzzle/src/functions_include.php',
-    '89ff252b349d4d088742a09c25f5dd74' => $vendorDir . '/yahnis-elsts/plugin-update-checker/plugin-update-checker.php',
+    'eb560c198217526cfde8ceb63ae508de' => $vendorDir . '/yahnis-elsts/plugin-update-checker/load-v4p8.php',
     'c39e5e966364f845b8dc03db0a1c135c' => $vendorDir . '/aristath/kirki/kirki.php',
     '644832821dc5f369571c226eb740f0b8' => $baseDir . '/src/app.php',
 );
