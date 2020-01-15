@@ -1,4 +1,5 @@
 <?php
+
 use App\Post;
 use Timber\Timber;
 

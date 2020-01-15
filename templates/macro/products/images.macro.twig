@@ -1,9 +1,11 @@
 {% macro _image(post, class, size = 'medium') %}
     {% set thumbnail = post.thumbnail %}
     <img
-        alt="{{ thumbnail.alt }}"
-        class="{{ class }}"
-        src="{{ thumbnail.src(size) }}" />
+            alt="{{ thumbnail.alt }}"
+            class="{{ class }} lazy-load-me"
+            src="#"
+            srcset="{{ thumbnail.src(size)|retina(2) }} 2x"
+            data-lazy="{{ thumbnail.src(size) }}" />
 {% endmacro %}
 
 {% macro tease_thumbnail(post) %}

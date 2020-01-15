@@ -6,6 +6,7 @@ use App\Helpers\WP;
 use cdk_model;
 use cdk_hashed_model;
 use Symfony\Component\Finder\Finder;
+use Timber\Helper;
 use Timber\Twig_Function;
 
 /**
@@ -57,8 +58,7 @@ class ContentServiceProvider
     {
         add_filter(
             'timber/context',
-            static function ($context) {
-                $finder = new Finder();
+            function ($context) {
                 
                 $context['sites'] = WP::getAllPublicSitesButCurrent();
                 
@@ -68,10 +68,7 @@ class ContentServiceProvider
                     $context['kiyoh'] = (new cdk_model())->get();
                 }
                 
-                $context['secure_payment'] = $finder
-                    ->files()
-                    ->in(WP::getStylesheetDir() . '/dist/images/payment_methods')
-                    ->name('*.svg');
+                $context['secure_payment'] = static::get_cached_payment_icons();
                 
                 if (
                     function_exists('wc') &&
@@ -125,6 +122,18 @@ class ContentServiceProvider
                 return $fragments;
             }
         );
+    }
+    
+    public static function get_cached_payment_icons()
+    {
+        return Helper::transient('payment_icons', static function () {
+            $finder = new Finder();
+            
+            return $finder
+                ->files()
+                ->in(WP::getStylesheetDir() . '/dist/images/payment_methods')
+                ->name('*.svg');
+        }, 3600);
     }
     
     public function add_search_placeholder(): void

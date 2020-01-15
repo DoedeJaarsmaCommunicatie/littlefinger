@@ -55,7 +55,7 @@ class Producten extends Block
         $context['title'] = $fields['title'] ?? false;
         $context['kiyoh'] =  $this->getKiyoh($fields);
         
-        Timber::render($this->template, $context);
+        return Timber::render($this->template, $context);
     }
     
     public function fields(): array

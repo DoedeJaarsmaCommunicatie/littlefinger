@@ -3,6 +3,7 @@ import { OpenFlyoutMenu } from "./shops/flyout-menu";
 import NavOpener from "./navigation/NavOpener";
 import Mailchimp from './MC/Mailchimp';
 import { FilterOpener } from "./shops/FilterOpener";
+import './products/LazyLoader';
 
 export default {
     init() {
@@ -28,4 +29,4 @@ const openShortList = () => {
     for ( let i = 0; i < lists.length; i++ ) {
         lists[i].addEventListener('click', () => lists[i].classList.add('active'));
     }
-}
+};

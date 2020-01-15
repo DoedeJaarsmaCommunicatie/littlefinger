@@ -4,7 +4,7 @@
 <article class="product-card">
     <span class="product-label" hidden>&euro; {{ _product.get_price }}</span>
     <a href="{{ product.link }}" class="product-image-wrapper" title="Bekijk {{ _name }}">
-        <img src="{{ product.thumbnail.src('medium') }}" alt="{{ product.thumbnail.alt }}" class="product-image">
+        <img src="#" data-src="{{ product.thumbnail.src('medium') }}" alt="{{ product.thumbnail.alt }}" class="product-image lazy-load-me">
     </a>
     <h2 class="product-title">
         <a href="{{ product.link }}" title="Bekijk {{ _name }}">{{ product.name }}</a>
