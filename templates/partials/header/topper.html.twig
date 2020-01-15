@@ -13,6 +13,7 @@
                 <a
                         class="top-nav-item {{ item.get_field('has_shopping_bubble')? 'has-badge': '' }} {{ item.classes|join(' ') }}"
                         href="{{ item.link }}"
+                        title="{{ item.title }}"
                 >
                     {% if item.get_field('menu_icon') %}
                         <span class="bulbed">

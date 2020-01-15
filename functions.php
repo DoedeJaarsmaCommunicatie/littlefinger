@@ -57,8 +57,7 @@ add_filter('woocommerce_register_post_type_product', static function ($args) {
     return $args;
 });
 
-add_filter('woocommerce_checkout_fields', static function ($fields)
-{
+add_filter('woocommerce_checkout_fields', static function ($fields) {
     $fields['billing']['billing_company']['placeholder'] = __('Alleen voor zakelijke klanten', 'ltfg');
     $fields['shipping']['billing_company']['placeholder'] = __('Alleen voor zakelijke klanten', 'ltfg');
     
