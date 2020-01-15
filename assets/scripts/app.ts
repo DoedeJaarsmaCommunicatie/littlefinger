@@ -15,4 +15,4 @@ const routes = {
 
 const router = new Router(routes);
 
-ready(router.loadEvents());
+ready(() => router.loadEvents());
