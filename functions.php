@@ -65,16 +65,3 @@ add_filter('woocommerce_checkout_fields', static function ($fields) {
     
     return $fields;
 });
-
-add_filter('woocommerce_enqueue_styles', 'littl_dequeue_woo_styles');
-function littl_dequeue_woo_styles($enqueue_styles)
-{
-    if (!(is_cart() || is_checkout() || is_woocommerce())) {
-        unset(
-            $enqueue_styles[ 'woocommerce-general' ],
-            $enqueue_styles[ 'woocommerce-layout' ],
-            $enqueue_styles[ 'woocommerce-smallscreen' ]
-        );
-    }
-    return $enqueue_styles;
-}
