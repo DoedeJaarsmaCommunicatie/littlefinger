@@ -156,6 +156,7 @@ class ContentServiceProvider
     {
         WP::removeStyle('wc-block-style');
         WP::removeStyle('wp-block-library');
+        // Remove jQuery.
         WP::removeScript('jquery');
         WP::addScript('jquery', 'https://code.jquery.com/jquery-3.4.1.min.js');
     }

@@ -2,7 +2,7 @@
 
 {% block content %}
     <main class="container mx-auto px-4 lg:px-0 py-4 content">
-        <h1>{{ post.title }}</h1>
+        <h1>Wijnen van {{ post.title }}</h1>
         {{ post.post_excerpt|wpautop }}
         <div class="products px-4 lg:px-0 py-4">
             {% for product in products %}
