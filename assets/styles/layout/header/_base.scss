@@ -28,6 +28,8 @@ header.header {
 }
 
 .top-navigation {
+  margin-left: auto;
+
   @if ($topnav-spacing) {
     & > .top-nav-item:not(:last-of-type) {
       margin-right: $topnav-spacing;

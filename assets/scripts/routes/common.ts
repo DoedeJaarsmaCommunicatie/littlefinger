@@ -9,7 +9,7 @@ export default {
     init() {
         // Fires on all pages.
         new AddToCart();
-        new OpenFlyoutMenu();
+        // new OpenFlyoutMenu();
         new NavOpener();
         new Mailchimp();
         FilterOpener();

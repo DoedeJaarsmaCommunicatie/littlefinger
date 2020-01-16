@@ -5,13 +5,9 @@
         <div role="group" class="lg:flex seo_small px-4 lg:px-0 mb-4">
             <section class="lg:w-1/4 hidden lg:block">
                 <h4>{{ theme.theme_mod('shop_list_title', 'Onze winkels')}}</h4>
-                {% if theme.theme_mod('shop_list_dynamic') %}
-                    <div class="flex flex-col">
-                        {{ sites_list(sites) }}
-                    </div>
-                {% else %}
+                <div class="flex flex-col">
                     {{ theme.theme_mod('shop_list') }}
-                {% endif %}
+                </div>
             </section>
             <section class="lg:w-1/4 shortened-list">
                 <h4>{{ theme.theme_mod('domain_list_title', 'Onze wijnhuizen')}}</h4>
