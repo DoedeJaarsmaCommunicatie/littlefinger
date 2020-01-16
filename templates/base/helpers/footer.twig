@@ -1,27 +1,6 @@
-{% from "macro/sites.twig" import sites_list %}
-
 <footer role="group" class="footer">
     <div role="group" class="container content mx-auto my-4">
-        <div role="group" class="lg:flex seo_small px-4 lg:px-0 mb-4">
-            <section class="lg:w-1/4 hidden lg:block">
-                <h4>{{ theme.theme_mod('shop_list_title', 'Onze winkels')}}</h4>
-                <div class="flex flex-col">
-                    {{ theme.theme_mod('shop_list') }}
-                </div>
-            </section>
-            <section class="lg:w-1/4 shortened-list">
-                <h4>{{ theme.theme_mod('domain_list_title', 'Onze wijnhuizen')}}</h4>
-                {{ theme.theme_mod('domain_list') }}
-            </section>
-            <section class="lg:w-1/4 shortened-list">
-                <h4>{{ theme.theme_mod('grapes_list_title', 'Druiven') }}</h4>
-                {{ theme.theme_mod('grapes_list') }}
-            </section>
-            <section class="lg:w-1/4 shortened-list">
-                <h4>{{ theme.theme_mod('regions_list_titel', 'Al onze regio\'s') }}</h4>
-                {{ theme.theme_mod('regions_list') }}
-            </section>
-        </div>
+        {{ include('partials/layout/footer/small_seo.html.twig') }}
 
         <section role="complementary" class="content px-4 lg:px-0 seo_large" id="seo_large_{{ post.ID }}">
             {{ theme.theme_mod('seo_large')|wpautop }}
@@ -32,33 +11,11 @@
         </section>
     </div>
 
+    <!-- Primary bar  -->
     <div class="bg-primary text-white py-6 px-4 lg:px-0">
         <div role="group" class="container mx-auto lg:flex">
-            <address class="lg:w-1/4 addressInfo">
-                <strong>Contact</strong>
-                <p class="mb-2">
-                    {{ __('%s is een webshop van:')|format(site.name) }}
-                </p>
-                <p>Postwijnen.nl</p>
-                <p>{{ theme.theme_mod('address', 'Lauriergracht 54BG <br> (afhalen op afspraak)')}}</p>
-                <p>{{ theme.theme_mod('postalcode', '1016RL')}} {{ theme.theme_mod('city', 'Amsterdam')}}</p>
-                <p>Telefoon: <a href="tel:{{ theme.theme_mod('phone', '020-2614758') }}">{{ theme.theme_mod('phone', '020-2614758')}}</a></p>
-                <p>Email: <a href="mailto:{{ theme.theme_mod('email', 'info@postwijnen.nl') }}">{{ theme.theme_mod('email', 'info@postwijnen.nl')}}</a></p>
-            </address>
-            <nav role="navigation" class="lg:w-1/4 flex flex-col menu">
-                <strong>Meer informatie</strong>
-                {% for item in footerMenu.items %}
-                    <a
-                            class="menuitem"
-                            href="{{ item.link }}"
-                            target="_self"
-                            title="{{ item.title }}"
-                            role="navigation"
-                    >
-                        {{ item.title }}
-                    </a>
-                {% endfor %}
-            </nav>
+            {{ include('partials/layout/footer/address.html.twig') }}
+            {{ include('partials/layout/footer/navigation.html.twig') }}
             <aside role="complementary" class="nix-block lg:w-1/4">
                 {% if theme.theme_mod('no_alcohol') %}
                     {{ theme.theme_mod('no_alcohol')|wpautop }}

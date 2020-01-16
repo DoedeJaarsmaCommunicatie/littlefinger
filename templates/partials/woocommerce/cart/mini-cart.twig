@@ -3,6 +3,7 @@
 <section class="mini-cart-contents">
     <strong class='shopping-cart-title'>{{ __('Winkelmandje', 'ltfg')}}</strong>
     {% do action('woocommerce_before_mini_cart_contents') %}
+
     {% if not WC.cart.is_empty %}
         <ul class="mini-cart cart_list products_list {{ args.list_class }}">
             {% for cart_item_key, cart_item in WC.cart.get_cart %}

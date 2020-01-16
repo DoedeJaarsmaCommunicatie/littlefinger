@@ -20,6 +20,7 @@ mix
     .sass('assets/styles/main.scss', 'dist/styles/app.css')
     .copyDirectory('assets/images', 'dist/images')
     .ts('assets/scripts/app.ts', 'dist/scripts')
+    .js('assets/elements/main.js', 'dist/elements.js')
     .options({
         processCssUrls: false,
         postCss: [

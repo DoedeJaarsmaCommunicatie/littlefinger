@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Proceed to checkout button
  *
@@ -16,6 +17,7 @@
  * @package WooCommerce/Templates
  * @version 2.4.0
  */
+
 defined('ABSPATH') || exit;
 ?>
 
