@@ -19,4 +19,8 @@ $logo-height: 45px !default;
 
 .custom_logo {
   max-height: $logo-height;
+  @media screen and (max-width: 1023px) {
+    max-width: 300px;
+    margin-bottom: .5rem;
+  }
 }
