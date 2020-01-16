@@ -4,7 +4,8 @@
         <a class="products-image--image-wrapper" href="{{ link }}">
             <img data-lazy="{{ _image.src('large') }}"
                  src="#"
-                 data-srcset="{{ _image.src('large')|retina(2) }} 2x"
+                 data-srcset="{{ _image.src('large')|retina(2) }} 2x,
+                              {{ _image.src('large')|retina(4) }} 4x"
                  alt="{{ _image.alt }}" class="products-image--image lazy-load-me">
             <span class="products-image--caption">
                 {{ image_title }}

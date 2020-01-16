@@ -4,7 +4,8 @@
             alt="{{ thumbnail.alt }}"
             class="{{ class }} lazy-load-me"
             src="#"
-            data-srcset="{{ thumbnail.src(size)|retina(2) }} 2x"
+            data-srcset="{{ thumbnail.src(size)|retina(2) }} 2x,
+                         {{ thumbnail.src(size)|retina(4) }} 4x"
             data-lazy="{{ thumbnail.src(size) }}" />
 {% endmacro %}
 
