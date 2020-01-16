@@ -9,6 +9,7 @@ const options = {
 
 const preloadImage = (element: any) => {
     element.setAttribute('src', element.dataset.lazy);
+    element.setAttribute('srcset', element.dataset.srcset);
 };
 
 if ('IntersectionObserver' in window && images.length > 0) {
