@@ -15,6 +15,7 @@ export default {
     },
     finalize() {
         // Fires on all pages after page specific JS is loaded.
+        openMobileSubmenu();
     }
 }
 
@@ -26,5 +27,26 @@ const openShortList = () => {
 
     for ( let i = 0; i < lists.length; i++ ) {
         lists[i].addEventListener('click', () => lists[i].classList.add('active'));
+    }
+};
+
+const openMobileSubmenu = () => {
+    const openers = document.querySelectorAll('.js-submenu-button');
+    if (!openers) {
+        return;
+    }
+
+    for ( let i = 0; i < openers.length; i++ ) {
+        const button = openers[i];
+
+
+        button.addEventListener('click', (ev) => {
+            const target = ev.target as HTMLElement;
+            const submenu = target.parentElement?.querySelector('.submenu');
+
+            if (submenu) {
+                submenu.classList.toggle('active');
+            }
+        })
     }
 };

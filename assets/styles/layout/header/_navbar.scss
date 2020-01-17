@@ -47,24 +47,57 @@
 }
 
 .menu-item-submenu {
-  position: relative;
-
   &:hover {
     .submenu {
       transform: scale(1);
     }
+  }
+
+  @media screen and (max-width: get-breakpoint('md')) {
+    position: relative;
   }
 }
 
 .submenu {
   @extend %default-shadow;
   @extend %default-transition;
-  padding: $padding_small;
+  transition-delay: 300ms;
+
+  padding: $padding;
   position: absolute;
   top: 100%;
   left: 0;
-  min-width: 200px;
+  right: 0;
   background: $white;
   transform: scale(1, 0);
   transform-origin: top;
+
+  @media screen and (max-width: get-breakpoint('md')) {
+    &.active {
+      transform: scale(1);
+    }
+
+    & .submenu-title {
+      display: none;
+    }
+  }
+}
+
+@media screen and (min-width: get-breakpoint('md')) {
+  .mega-menu {
+    display: flex;
+    flex-wrap: wrap;
+
+    li {
+      flex: 1 1 auto;
+    }
+  }
+
+  .submenu-title {
+    font-weight: 600;
+  }
+
+  .submenu-button {
+    display: none;
+  }
 }

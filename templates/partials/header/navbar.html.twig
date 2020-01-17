@@ -2,19 +2,40 @@
     {% for item in primaryMenu.items %}
         <div class="menu-item-submenu">
             <a
-                    class="menu-item {{ item.classes|join(' ') }}"
-                    href="{{ item.link }}" title="{{ item.title }}">
+                class="menu-item {{ item.classes|join(' ') }}"
+                href="{{ item.link }}" title="{{ item.title }}"
+            >
                 {{ item.title }}
             </a>
-
+            <button class="js-submenu-button submenu-button">
+                <i class="fas fa-chevron-down" style="pointer-events: none"></i>
+            </button>
             {% if item.children %}
                 <div class="submenu">
-                    <ul>
+                    <ul class="mega-menu">
                         {% for child in item.children %}
                             <li>
-                                <a href="{{ child.link }}" title="{{ child.title }}">
-                                    {{ child.title }}
-                                </a>
+                                {% if child.link is same as('#') %}
+                                    <span title="{{ child.title }}" class="submenu-title">
+                                        {{ child.title }}
+                                    </span>
+                                {% else %}
+                                    <a href="{{ child.link }}" title="{{ child.title }}">
+                                        {{ child.title }}
+                                    </a>
+                                {% endif %}
+
+                                {% if child.children %}
+                                    <ul>
+                                        {% for subchild in child.children %}
+                                            <li>
+                                                <a href="{{ subchild.link }}" title="{{ subchild.title }}">
+                                                    {{ subchild.title }}
+                                                </a>
+                                            </li>
+                                        {% endfor %}
+                                    </ul>
+                                {% endif %}
                             </li>
                         {% endfor %}
                     </ul>
