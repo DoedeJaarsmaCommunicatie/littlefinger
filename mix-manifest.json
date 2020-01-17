@@ -1,5 +1,6 @@
 {
     "/dist/elements.js": "/dist/elements.js",
     "/dist/styles/app.css": "/dist/styles/app.css",
-    "/dist/scripts/app.js": "/dist/scripts/app.js"
+    "/dist/scripts/app.js": "/dist/scripts/app.js",
+    "/dist/elements/remove-from-cart.js": "/dist/elements/remove-from-cart.js"
 }
