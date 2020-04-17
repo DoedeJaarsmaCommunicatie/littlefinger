@@ -6,8 +6,12 @@
         <a style="display: flex;flex-direction: column;justify-content: center;" href="{{ kiyoh.kiyoh_url }}" title="Beoordeel ons op Kiyoh">
             <span class="kiyoh-score">{{ kiyoh.total_score }}</span>
             <span class="block">
-                        {{ kiyoh.total_reviews }} Beoordelingen
-                    </span>
+                {{ kiyoh.total_reviews }} Beoordelingen
+            </span>
         </a>
     </h2>
+    <div class="mt-2 text-center hidden lg:block">
+        <strong>Dit zeggen onze klanten:</strong><br>
+        {{ kiyoh.reviews.pro }}
+    </div>
 </article>
