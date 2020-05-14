@@ -1,15 +1,17 @@
 $logo-height: 45px !default;
 
 .logo-header {
+  background: $primary;
   @if ($header-sticky) {
-    background: $white;
-    @include sticky(56px);
-
     .admin-bar & {
-      @media screen and (min-width: 415px) {
+      @screen lg {
         @include sticky(88px);
       }
     }
+  }
+
+  @screen lg {
+    background: white;
   }
 
   @if $header_shadow {
@@ -22,5 +24,12 @@ $logo-height: 45px !default;
   @media screen and (max-width: 1023px) {
     max-width: 300px;
     margin-bottom: .5rem;
+  }
+
+  .logo-header & {
+    display: none;
+    @screen lg {
+      display: block;
+    }
   }
 }

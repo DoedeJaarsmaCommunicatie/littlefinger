@@ -2,16 +2,96 @@
 <html lang="{{ site.language }}">
 <!--suppress HtmlRequiredTitleElement -->
 <head>
-    {% block head %}{% include 'base/helpers/head.twig' %}{% endblock %}
+    <meta charset="{{ site.charset }}">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>{% block title %}{{ wp_title }}{% endblock %}</title>
+
+    <meta name="description" content="{{ site.description }}">
+    <meta name="base_assets" content="{{ theme.link }}/">
+
+    <script src="https://kit.fontawesome.com/945889d7f9.js" async></script>
+
+    <link rel="stylesheet" type="text/css" href="{{ theme.link }}/dist/styles/app.css">
+
+    <!-- start custom theme code -->
+    <script>
+        {{ theme.theme_mod('code_header_js')|raw }}
+    </script>
+
+    <style type="text/css">
+        {{ theme.theme_mod('code_header_css')|raw }}
+    </style>
+
+    {{ theme.theme_mod('code_header_html')|raw }}
+    <!-- end custom theme code -->
 
     {{ fn('wp_head') }}
 </head>
 <body {{ fn('body_class') }}>
 {{ theme.theme_mod('code_body_html')|raw }}
 
-{% block header %}{% include('base/helpers/header.twig') %}{% endblock %}
+{% block header %}
+    {% include 'partials/header/topper.html.twig' %}
+
+    {% include 'partials/header/logobar.html.twig' %}
+
+    {% if fn('is_front_page') %}
+        {% include 'partials/home/herobanner.html.twig' %}
+    {% endif %}
+
+    {% if not stramien_large %}
+        {% include 'partials/header/kiyohbanner.html.twig' %}
+    {% endif %}
+{% endblock %}
+
 {% block content %}{{ post.content }}{% endblock %}
-{% block footer %}{% include 'base/helpers/footer.twig' %}{% endblock footer %}
+
+{% block footer %}
+    <footer role="group" class="footer">
+        <div role="group" class="container content mx-auto my-4">
+            {{ include('partials/layout/footer/small_seo.html.twig') }}
+
+            <section role="complementary" class="content px-4 lg:px-0 seo_large" id="seo_large_{{ post.ID }}">
+                {{ theme.theme_mod('seo_large')|wpautop }}
+            </section>
+
+            <section role="complementary" class="content px-4 lg:px-0">
+                {% include 'partials/layout/form-mailchimp.html.twig' %}
+            </section>
+        </div>
+
+        <!-- Primary bar  -->
+        <div class="bg-primary text-white py-6 px-4 lg:px-0">
+            <div role="group" class="container mx-auto lg:flex">
+                {{ include('partials/layout/footer/address.html.twig') }}
+                {{ include('partials/layout/footer/navigation.html.twig') }}
+                <aside role="complementary" class="nix-block lg:w-1/4">
+                    {% if theme.theme_mod('no_alcohol') %}
+                        {{ theme.theme_mod('no_alcohol')|wpautop }}
+                    {% else %}
+                        {{ include('partials/layout/footer/nix.html.twig') }}
+                        {{ include('partials/layout/footer/secure_pay.twig') }}
+                    {% endif %}
+                </aside>
+                <aside role="complementary" class="benefits-block lg:w-1/4">
+                    {% if theme.theme_mod('benefits') %}
+                        {{ theme.theme_mod('benefits')|wpautop }}
+                    {% else %}
+                        {{ include('partials/layout/footer/benefits-list.html.twig') }}
+                    {% endif %}
+                </aside>
+            </div>
+        </div>
+    </footer>
+    <div class="widget_shopping_cart_content"></div>
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:200,400,600&display=swap" rel="stylesheet">
+    <script src="{{ theme.link }}/dist/scripts/app.js" defer></script>
+    <script src="{{ theme.link }}/dist/elements.js" defer></script>
+{% endblock footer %}
 {{ fn('wp_footer') }}
 </body>
 </html>

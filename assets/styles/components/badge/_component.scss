@@ -14,7 +14,10 @@
   border-radius: $badge-border-radius;
 
   &.right {
-    right: -1rem;
+    right: -.5rem;
+    @screen lg {
+      right: -1rem;
+    }
   }
 
   &.top {
@@ -22,7 +25,10 @@
   }
 
   &.left {
-    left: -1rem;
+    left: -.5rem;
+    @screen lg {
+      left: -1rem;
+    }
   }
 
   &.bottom {

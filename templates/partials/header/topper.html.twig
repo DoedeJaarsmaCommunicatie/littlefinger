@@ -1,13 +1,26 @@
 <!-- Header topper -->
 <header class="header" role="banner">
     <div class="container mx-auto">
+        {% if stramien_large %}
+            <button class="menu-button">
+                <i class="fas fa-bars"></i>
+                <small class="block" style="font-size: .8rem;">Menu</small>
+            </button>
+        {% endif %}
+
+        <a href="/">
+            <img
+                src="{{ Image(theme.theme_mod('custom_logo')).src }}"
+                alt="Logo {{ site.name }}"
+                class="custom_logo"
+                id="logo_{{ post.ID }}" />
+        </a>
+
         <nav class="top-navigation" role="navigation">
             {% for item in topMenu.items %}
-                <a
-                        class="top-nav-item {{ item.get_field('has_shopping_bubble')? 'has-badge': '' }} {{ item.classes|join(' ') }}"
-                        href="{{ item.link }}"
-                        title="{{ item.title }}"
-                >
+                <a class="top-nav-item {{ item.get_field('has_shopping_bubble')? 'has-badge': '' }} {{ item.classes|join(' ') }}"
+                   href="{{ item.link }}"
+                   title="{{ item.title }}" >
                     {% if item.get_field('menu_icon') %}
                         <span class="bulbed">
                             <i class="{{ item.get_field('menu_icon')|replace({'_': ' '}) }}"></i>
@@ -21,6 +34,21 @@
                     {% endif %}
                 </a>
             {% endfor %}
+        </nav>
+
+        <nav class="top-mobile-navigation" role="navigation">
+            <a href="{{ fn('get_permalink', fn('get_option', 'woocommerce_myaccount_page_id')) }}" class="top-nav-item">
+
+
+            </a>
+            <a href="{{ fn('wc_get_cart_url') }}"
+               class="has-badge top-nav-item">
+                <span class="bulbed">
+                    <i class="fas fa-shopping-cart"></i>
+                </span>
+
+                <span class="badge top right white js-cart-amount" data-amount="{{ wc_cart_count }}">{{ wc_cart_count }}</span>
+            </a>
         </nav>
     </div>
 </header>

@@ -6,9 +6,13 @@ $header-sticky: true !default;
 $topnav-spacing: $padding_small !default;
 
 header.header {
-  background: $header-background;
-  color: $header-color;
+  background: #f4f4f4;
   padding: $header-padding;
+
+  @screen lg {
+    background: $header-background;
+    color: $header-color;
+  }
 
   & > .container {
     display: flex;
@@ -27,13 +31,34 @@ header.header {
   }
 }
 
+.custom_logo {
+  header.header & {
+    margin-bottom: 0;
+    max-width: 250px;
+    @screen lg {
+      display: none;
+    }
+  }
+}
+
 .top-navigation {
+  display: none;
   margin-left: auto;
 
   @if ($topnav-spacing) {
     & > .top-nav-item:not(:last-of-type) {
       margin-right: $topnav-spacing;
     }
+  }
+
+  @screen lg {
+    display: block;
+  }
+}
+
+.top-mobile-navigation {
+  @screen lg {
+    display: none;
   }
 }
 
