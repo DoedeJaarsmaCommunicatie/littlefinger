@@ -59,7 +59,9 @@ class ContentServiceProvider
         add_filter(
             'timber/context',
             function ($context) {
-                
+
+                $context['sites'] = WP::getAllPublicSitesButCurrent();
+    
                 if (true === get_theme_mod('cdelk_use_hash') && class_exists('cdk_hashed_model')) {
                     $context['kiyoh'] = (new cdk_hashed_model())->get();
                 } elseif (class_exists('cdk_model')) {
