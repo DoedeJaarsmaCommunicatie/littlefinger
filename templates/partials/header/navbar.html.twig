@@ -1,7 +1,7 @@
 <nav class="navbar">
     {% for item in primaryMenu.items %}
         <div class="menu-item-submenu">
-            <a class="menu-item {{ item.classes|join(' ') }}"
+            <a class="menu-item block {{ item.classes|join(' ') }}"
                href="{{ item.link }}" title="{{ item.title }}">
                 <i class="fas fa-chevron-right lg:hidden"></i>
                {{ item.name }}
@@ -24,16 +24,16 @@
     {% endfor %}
 
     <div class="menu-item-submenu lg:hidden">
-        <a class="menu-item"
-           href="" title="Winkelmand">
+        <a class="menu-item block"
+           href="/mijn-account/" title="Account">
             <i class="fas fa-user lg:hidden"></i>
             Account
         </a>
     </div>
 
     <div class="menu-item-submenu lg:hidden font-bold">
-        <a class="menu-item"
-           href="" title="Winkelmand">
+        <a class="menu-item block"
+           href="/winkelmand/" title="Winkelmand">
             <i class="fas fa-shopping-cart lg:hidden"></i>
             Wijnmandje
         </a>
