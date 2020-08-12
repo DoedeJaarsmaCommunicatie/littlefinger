@@ -1,6 +1,7 @@
 <?php
 namespace App\Controllers\Meta\Blocks;
 
+use App\Models\Product;
 use Carbon_Fields\Field;
 use Elderbraum\CasaProductFactory\ProductsFactory;
 use Timber\Timber;
@@ -34,7 +35,7 @@ class ProductList extends Block
             $fields[ 'category' ] ?? '\\Elderbraum\\CasaProductFactory\\Products\\Red'
         );
         
-        $context ['posts'] = Timber::get_posts($product->boot()->limit((int) ($fields['limit'] ?? 10))->get_args());
+        $context ['posts'] = Timber::get_posts($product->boot()->limit((int) ($fields['limit'] ?? 10))->get_args(), Product::class);
         if ($this->isLargeSite()) {
             $context['link'] = $fields['link'] ?? '';
         }

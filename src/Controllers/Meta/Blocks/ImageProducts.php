@@ -1,6 +1,7 @@
 <?php
 namespace App\Controllers\Meta\Blocks;
 
+use App\Models\Product;
 use Elderbraum\CasaProductFactory\ProductsFactory;
 use Carbon_Fields\Field;
 use Timber\Timber;
@@ -38,7 +39,7 @@ class ImageProducts extends Block
         /** @var \Elderbraum\CasaProductFactory\Products\Product $product */
         $product = ProductsFactory::create($this->getCategory($fields));
         
-        $context ['posts'] = Timber::get_posts($product->boot()->limit()->get_args());
+        $context ['posts'] = Timber::get_posts($product->boot()->limit()->get_args(), Product::class);
         
         $context['attributes'] = $attributes;
         $context['button_text'] = $fields['button_text'] ?? false;

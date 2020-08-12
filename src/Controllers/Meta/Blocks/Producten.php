@@ -2,6 +2,7 @@
 
 namespace App\Controllers\Meta\Blocks;
 
+use App\Models\Product;
 use cdk_hashed_model;
 use cdk_model;
 use Elderbraum\CasaProductFactory\ProductsFactory;
@@ -45,7 +46,7 @@ class Producten extends Block
         /** @var \Elderbraum\CasaProductFactory\Products\Product $product */
         $product = ProductsFactory::create($this->getCategory($fields));
 
-        $context ['posts'] = Timber::get_posts($product->boot()->limit((int) ($fields['limit'] ?? 10))->get_args());
+        $context ['posts'] = Timber::get_posts($product->boot()->limit((int) ($fields['limit'] ?? 10))->get_args(), Product::class);
 
         if ($this->isLargeSite()) {
             $context['link'] = $fields['link'];
