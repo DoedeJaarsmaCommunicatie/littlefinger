@@ -1,6 +1,18 @@
 {% macro sites_list(sites, classes) %}
-    {% for site in sites %}
-        {% if site.domain is not same as('casadelvino.nl') and site.domain is not same as('magasinduvin.nl') and site.domain is not same as('wijnenvantom.nl') %}
+   <a href="//wijnen.nl" class=" site-nav-item" rel="nofollow">wijnen.nl</a>
+   <a href="//duitsewijnwinkel.nl" class=" site-nav-item" rel="nofollow">duitsewijnwinkel.nl</a>
+   <a href="//spaansewijnwinkel.nl" class=" site-nav-item" rel="nofollow">spaansewijnwinkel.nl</a>
+   <a href="//fransewijnwinkel.nl" class=" site-nav-item" rel="nofollow">fransewijnwinkel.nl</a>
+   <a href="//italiaansewijnwinkel.nl" class=" site-nav-item" rel="nofollow">italiaansewijnwinkel.nl</a>
+   <a href="//portugesewijnwinkel.nl" class=" site-nav-item" rel="nofollow">portugesewijnwinkel.nl</a>
+   <a href="//zuidafrikaansewijnwinkel.nl" class=" site-nav-item" rel="nofollow">zuidafrikaansewijnwinkel.nl</a>
+   <a href="//champagnewinkel.nl" class=" site-nav-item" rel="nofollow">champagnewinkel.nl</a>
+   <a href="//wijnclubamsterdam.nl" class=" site-nav-item" rel="nofollow">wijnclubamsterdam.nl</a>
+   <a href="//casadelvino.nl" class=" site-nav-item" rel="nofollow">casadelvino.nl</a>
+
+   
+   <!-- {% for site in sites %}
+        {% if site.domain is not same as('magasinduvin.nl') and site.domain is not same as('wijnenvantom.nl') %}
             <a href="//{{ site.domain }}" class="{{ classes }} site-nav-item" rel="nofollow">{{ site.domain }}</a>
         {% endif %}
 
@@ -8,5 +20,5 @@
         <a class="site-nav-item">
             Er zijn geen andere sites gevonden.
         </a>
-    {% endfor %}
+    {% endfor %} -->
 {% endmacro %}
